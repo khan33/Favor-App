@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809304E29DDC21C003BFEFE /* The_FavourApp.swift */; };
+		E809305129DDC21C003BFEFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305029DDC21C003BFEFE /* ContentView.swift */; };
+		E809305329DDC21D003BFEFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E809305229DDC21D003BFEFE /* Assets.xcassets */; };
+		E809305629DDC21D003BFEFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E809305529DDC21D003BFEFE /* Preview Assets.xcassets */; };
+		E809305D29DDCB92003BFEFE /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305C29DDCB92003BFEFE /* PageView.swift */; };
+		E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */; };
+		E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809306029DE841C003BFEFE /* AllServicesView.swift */; };
+		E84BB30229E01B7F002D94A6 /* favourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BB30129E01B7F002D94A6 /* favourView.swift */; };
+		E853CAA029EC0DD400021DCB /* FavorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CA9F29EC0DD400021DCB /* FavorText.swift */; };
+		E853CAA329EC0E3400021DCB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAA229EC0E3400021DCB /* Color+Extension.swift */; };
+		E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAA429EC0EAE00021DCB /* Font+Extension.swift */; };
+		E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAA629EC126F00021DCB /* FavorButton.swift */; };
+		E853CAA929EC137100021DCB /* FavorSocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAA829EC137100021DCB /* FavorSocialButton.swift */; };
+		E853CAAB29EC13FD00021DCB /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAAA29EC13FD00021DCB /* UIScreen+Extension.swift */; };
+		E853CAAD29EC147300021DCB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAAC29EC147300021DCB /* View+Extension.swift */; };
+		E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAAE29EC157A00021DCB /* FavorTextField.swift */; };
+		E853CAB129EC163500021DCB /* FavourTextFieldWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */; };
+		E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16629F900190077E2F0 /* FavorCardView.swift */; };
+		E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16829F912820077E2F0 /* SignupView1.swift */; };
+		E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */; };
+		E8A5E16D29F9241A0077E2F0 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16C29F9241A0077E2F0 /* AvatarView.swift */; };
+		E8A5E16F29F9314D0077E2F0 /* ProfilePicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16E29F9314D0077E2F0 /* ProfilePicModal.swift */; };
+		E8A5E17129F9383C0077E2F0 /* SignupView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17029F9383C0077E2F0 /* SignupView2.swift */; };
+		E8A5E17429F939FA0077E2F0 /* DocumentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17329F939FA0077E2F0 /* DocumentButton.swift */; };
+		E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17529F93D1D0077E2F0 /* DocumentUploadView.swift */; };
+		E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17729F93D7F0077E2F0 /* DocumentUploadButton.swift */; };
+		E8A5E17A29F949670077E2F0 /* AddPaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17929F949670077E2F0 /* AddPaymentMethods.swift */; };
+		E8A5E17C29F949BA0077E2F0 /* PaymentButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17B29F949BA0077E2F0 /* PaymentButtonView.swift */; };
+		E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17D29F95A020077E2F0 /* AddNewCard.swift */; };
+		E8A5E18029F95E180077E2F0 /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E17F29F95E180077E2F0 /* CongratulationView.swift */; };
+		E8A5E18229F961A70077E2F0 /* CreateNewPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18129F961A70077E2F0 /* CreateNewPinView.swift */; };
+		E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */; };
+		E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = E8A5E18629F966CC0077E2F0 /* DPOTPView */; };
+		E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18829F969500077E2F0 /* OTPTextView.swift */; };
+		E8BF4AAB29EC410F005A56BB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AAA29EC410F005A56BB /* SignupView.swift */; };
+		E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AAC29EC4119005A56BB /* LoginView.swift */; };
+		E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AAE29EC4C17005A56BB /* FavorDividerView.swift */; };
+		E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */; };
+		E8BF4AB329EC5B7E005A56BB /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB229EC5B7E005A56BB /* ForgotPasswordView.swift */; };
+		E8BF4AB529EC5CB4005A56BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB429EC5CB4005A56BB /* MainView.swift */; };
+		E8F9ED9229E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */; };
+		E8F9ED9329E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E809304B29DDC21C003BFEFE /* The Favour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Favour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E809304E29DDC21C003BFEFE /* The_FavourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_FavourApp.swift; sourceTree = "<group>"; };
+		E809305029DDC21C003BFEFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E809305229DDC21D003BFEFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E809305529DDC21D003BFEFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E809305C29DDCB92003BFEFE /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		E809306029DE841C003BFEFE /* AllServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesView.swift; sourceTree = "<group>"; };
+		E84BB30129E01B7F002D94A6 /* favourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favourView.swift; sourceTree = "<group>"; };
+		E853CA9F29EC0DD400021DCB /* FavorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorText.swift; sourceTree = "<group>"; };
+		E853CAA229EC0E3400021DCB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		E853CAA429EC0EAE00021DCB /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		E853CAA629EC126F00021DCB /* FavorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorButton.swift; sourceTree = "<group>"; };
+		E853CAA829EC137100021DCB /* FavorSocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorSocialButton.swift; sourceTree = "<group>"; };
+		E853CAAA29EC13FD00021DCB /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		E853CAAC29EC147300021DCB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		E853CAAE29EC157A00021DCB /* FavorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorTextField.swift; sourceTree = "<group>"; };
+		E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavourTextFieldWithImage.swift; sourceTree = "<group>"; };
+		E8A5E16629F900190077E2F0 /* FavorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorCardView.swift; sourceTree = "<group>"; };
+		E8A5E16829F912820077E2F0 /* SignupView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView1.swift; sourceTree = "<group>"; };
+		E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAddPhoto.swift; sourceTree = "<group>"; };
+		E8A5E16C29F9241A0077E2F0 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		E8A5E16E29F9314D0077E2F0 /* ProfilePicModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicModal.swift; sourceTree = "<group>"; };
+		E8A5E17029F9383C0077E2F0 /* SignupView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView2.swift; sourceTree = "<group>"; };
+		E8A5E17329F939FA0077E2F0 /* DocumentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentButton.swift; sourceTree = "<group>"; };
+		E8A5E17529F93D1D0077E2F0 /* DocumentUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUploadView.swift; sourceTree = "<group>"; };
+		E8A5E17729F93D7F0077E2F0 /* DocumentUploadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUploadButton.swift; sourceTree = "<group>"; };
+		E8A5E17929F949670077E2F0 /* AddPaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethods.swift; sourceTree = "<group>"; };
+		E8A5E17B29F949BA0077E2F0 /* PaymentButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButtonView.swift; sourceTree = "<group>"; };
+		E8A5E17D29F95A020077E2F0 /* AddNewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCard.swift; sourceTree = "<group>"; };
+		E8A5E17F29F95E180077E2F0 /* CongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
+		E8A5E18129F961A70077E2F0 /* CreateNewPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinView.swift; sourceTree = "<group>"; };
+		E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureprintView.swift; sourceTree = "<group>"; };
+		E8A5E18829F969500077E2F0 /* OTPTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		E8BF4AAA29EC410F005A56BB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		E8BF4AAC29EC4119005A56BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E8BF4AAE29EC4C17005A56BB /* FavorDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorDividerView.swift; sourceTree = "<group>"; };
+		E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialIconView.swift; sourceTree = "<group>"; };
+		E8BF4AB229EC5B7E005A56BB /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		E8BF4AB429EC5CB4005A56BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Favour-Info.plist"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E809304829DDC21C003BFEFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E809304229DDC21C003BFEFE = {
+			isa = PBXGroup;
+			children = (
+				E809304D29DDC21C003BFEFE /* The Favour */,
+				E809304C29DDC21C003BFEFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E809304C29DDC21C003BFEFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E809304B29DDC21C003BFEFE /* The Favour.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E809304D29DDC21C003BFEFE /* The Favour */ = {
+			isa = PBXGroup;
+			children = (
+				E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */,
+				E894EE8B29E0252500837AFD /* App */,
+				E894EE8C29E0252B00837AFD /* Presentation */,
+				E894EE8F29E0254C00837AFD /* Business Logic */,
+				E894EE9029E0255800837AFD /* Core */,
+				E809304E29DDC21C003BFEFE /* The_FavourApp.swift */,
+				E809305029DDC21C003BFEFE /* ContentView.swift */,
+				E809305229DDC21D003BFEFE /* Assets.xcassets */,
+				E809305429DDC21D003BFEFE /* Preview Content */,
+				E809306029DE841C003BFEFE /* AllServicesView.swift */,
+				E84BB30129E01B7F002D94A6 /* favourView.swift */,
+				E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */,
+				E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */,
+			);
+			path = "The Favour";
+			sourceTree = "<group>";
+		};
+		E809305429DDC21D003BFEFE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E809305529DDC21D003BFEFE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E853CA9E29EC0DB500021DCB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E853CA9F29EC0DD400021DCB /* FavorText.swift */,
+				E853CAA629EC126F00021DCB /* FavorButton.swift */,
+				E853CAA829EC137100021DCB /* FavorSocialButton.swift */,
+				E853CAAE29EC157A00021DCB /* FavorTextField.swift */,
+				E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */,
+				E8BF4AAE29EC4C17005A56BB /* FavorDividerView.swift */,
+				E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */,
+				E8A5E16629F900190077E2F0 /* FavorCardView.swift */,
+				E8A5E16C29F9241A0077E2F0 /* AvatarView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E853CAA129EC0E2000021DCB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E853CAA229EC0E3400021DCB /* Color+Extension.swift */,
+				E853CAA429EC0EAE00021DCB /* Font+Extension.swift */,
+				E853CAAA29EC13FD00021DCB /* UIScreen+Extension.swift */,
+				E853CAAC29EC147300021DCB /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E894EE8B29E0252500837AFD /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E894EE8C29E0252B00837AFD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E853CAA129EC0E2000021DCB /* Extensions */,
+				E853CA9E29EC0DB500021DCB /* CustomViews */,
+				E894EE9229E0257600837AFD /* Walk Through */,
+				E894EE9129E0256F00837AFD /* Login */,
+				E894EE9329E0258500837AFD /* Signup */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E894EE8F29E0254C00837AFD /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E894EE9629E025A600837AFD /* Models */,
+				E894EE9529E0259F00837AFD /* Services */,
+				E894EE9729E025AE00837AFD /* Endpoints */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		E894EE9029E0255800837AFD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E894EE9429E0259600837AFD /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E894EE9129E0256F00837AFD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E8BF4AAC29EC4119005A56BB /* LoginView.swift */,
+				E8BF4AB229EC5B7E005A56BB /* ForgotPasswordView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E894EE9229E0257600837AFD /* Walk Through */ = {
+			isa = PBXGroup;
+			children = (
+				E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */,
+				E809305C29DDCB92003BFEFE /* PageView.swift */,
+			);
+			path = "Walk Through";
+			sourceTree = "<group>";
+		};
+		E894EE9329E0258500837AFD /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				E8A5E17229F939BA0077E2F0 /* Supported Views */,
+				E8BF4AAA29EC410F005A56BB /* SignupView.swift */,
+				E8BF4AB429EC5CB4005A56BB /* MainView.swift */,
+				E8A5E16829F912820077E2F0 /* SignupView1.swift */,
+				E8A5E17029F9383C0077E2F0 /* SignupView2.swift */,
+				E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */,
+				E8A5E17529F93D1D0077E2F0 /* DocumentUploadView.swift */,
+				E8A5E17929F949670077E2F0 /* AddPaymentMethods.swift */,
+				E8A5E17D29F95A020077E2F0 /* AddNewCard.swift */,
+				E8A5E18129F961A70077E2F0 /* CreateNewPinView.swift */,
+				E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		E894EE9429E0259600837AFD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E894EE9529E0259F00837AFD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E894EE9629E025A600837AFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E894EE9729E025AE00837AFD /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		E8A5E17229F939BA0077E2F0 /* Supported Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8A5E16E29F9314D0077E2F0 /* ProfilePicModal.swift */,
+				E8A5E17329F939FA0077E2F0 /* DocumentButton.swift */,
+				E8A5E17729F93D7F0077E2F0 /* DocumentUploadButton.swift */,
+				E8A5E17B29F949BA0077E2F0 /* PaymentButtonView.swift */,
+				E8A5E17F29F95E180077E2F0 /* CongratulationView.swift */,
+				E8A5E18829F969500077E2F0 /* OTPTextView.swift */,
+			);
+			path = "Supported Views";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E809304A29DDC21C003BFEFE /* The Favour */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E809305929DDC21D003BFEFE /* Build configuration list for PBXNativeTarget "The Favour" */;
+			buildPhases = (
+				E809304729DDC21C003BFEFE /* Sources */,
+				E809304829DDC21C003BFEFE /* Frameworks */,
+				E809304929DDC21C003BFEFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Favour";
+			packageProductDependencies = (
+				E8A5E18629F966CC0077E2F0 /* DPOTPView */,
+			);
+			productName = "The Favour";
+			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E809304329DDC21C003BFEFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					E809304A29DDC21C003BFEFE = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = E809304629DDC21C003BFEFE /* Build configuration list for PBXProject "The Favour" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E809304229DDC21C003BFEFE;
+			packageReferences = (
+				E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */,
+			);
+			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E809304A29DDC21C003BFEFE /* The Favour */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E809304929DDC21C003BFEFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E809305629DDC21D003BFEFE /* Preview Assets.xcassets in Resources */,
+				E809305329DDC21D003BFEFE /* Assets.xcassets in Resources */,
+				E8F9ED9229E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf in Resources */,
+				E8F9ED9329E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E809304729DDC21C003BFEFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */,
+				E853CAA929EC137100021DCB /* FavorSocialButton.swift in Sources */,
+				E8BF4AB529EC5CB4005A56BB /* MainView.swift in Sources */,
+				E809305129DDC21C003BFEFE /* ContentView.swift in Sources */,
+				E809305D29DDCB92003BFEFE /* PageView.swift in Sources */,
+				E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */,
+				E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */,
+				E8A5E17C29F949BA0077E2F0 /* PaymentButtonView.swift in Sources */,
+				E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */,
+				E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */,
+				E8A5E16D29F9241A0077E2F0 /* AvatarView.swift in Sources */,
+				E8A5E18229F961A70077E2F0 /* CreateNewPinView.swift in Sources */,
+				E84BB30229E01B7F002D94A6 /* favourView.swift in Sources */,
+				E853CAAB29EC13FD00021DCB /* UIScreen+Extension.swift in Sources */,
+				E853CAB129EC163500021DCB /* FavourTextFieldWithImage.swift in Sources */,
+				E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */,
+				E8A5E17129F9383C0077E2F0 /* SignupView2.swift in Sources */,
+				E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */,
+				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
+				E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */,
+				E8A5E18029F95E180077E2F0 /* CongratulationView.swift in Sources */,
+				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
+				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
+				E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */,
+				E8A5E17429F939FA0077E2F0 /* DocumentButton.swift in Sources */,
+				E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */,
+				E8A5E17A29F949670077E2F0 /* AddPaymentMethods.swift in Sources */,
+				E8A5E16F29F9314D0077E2F0 /* ProfilePicModal.swift in Sources */,
+				E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */,
+				E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */,
+				E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */,
+				E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */,
+				E8BF4AAB29EC410F005A56BB /* SignupView.swift in Sources */,
+				E853CAAD29EC147300021DCB /* View+Extension.swift in Sources */,
+				E853CAA029EC0DD400021DCB /* FavorText.swift in Sources */,
+				E8BF4AB329EC5B7E005A56BB /* ForgotPasswordView.swift in Sources */,
+				E853CAA329EC0E3400021DCB /* Color+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E809305729DDC21D003BFEFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E809305829DDC21D003BFEFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E809305A29DDC21D003BFEFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
+				DEVELOPMENT_TEAM = DG7754Y75R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The-Favour-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Favour";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E809305B29DDC21D003BFEFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
+				DEVELOPMENT_TEAM = DG7754Y75R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The-Favour-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Favour";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E809304629DDC21C003BFEFE /* Build configuration list for PBXProject "The Favour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E809305729DDC21D003BFEFE /* Debug */,
+				E809305829DDC21D003BFEFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E809305929DDC21D003BFEFE /* Build configuration list for PBXNativeTarget "The Favour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E809305A29DDC21D003BFEFE /* Debug */,
+				E809305B29DDC21D003BFEFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Datt1994/DPOTPView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8A5E18629F966CC0077E2F0 /* DPOTPView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */;
+			productName = DPOTPView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E809304329DDC21C003BFEFE /* Project object */;
+}
