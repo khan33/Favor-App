@@ -14,7 +14,6 @@ struct DocumentUploadView: View {
                 .padding(.horizontal, 8)
             
             FavorText(text: "Upload a jpg, png or pdf, max size 1mb", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
-                .tracking(0.2)
             
             DocumentUploadButton(title: "Upload Id Front")
             

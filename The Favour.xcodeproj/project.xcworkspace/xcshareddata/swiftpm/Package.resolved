@@ -8,6 +8,15 @@
         "revision" : "950ecde0feef20f96abdd20a7442aa0ac2461626",
         "version" : "1.5.12"
       }
+    },
+    {
+      "identity" : "halfasheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/franklynw/HalfASheet",
+      "state" : {
+        "revision" : "4f43296b3722082dd5735521ee0fbf25e61cd21c",
+        "version" : "1.0.2"
+      }
     }
   ],
   "version" : 2

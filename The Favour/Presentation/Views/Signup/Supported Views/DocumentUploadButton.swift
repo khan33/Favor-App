@@ -30,7 +30,7 @@ struct DocumentUploadButton: View {
                     }
                 
                 
-                FavorText(text: title, textColor: Color(#colorLiteral(red: 0.46, green: 0.46, blue: 0.46, alpha: 1)), fontType: .semiBold, fontSize: 18).tracking(0.2)
+                FavorText(text: title, textColor: Color(#colorLiteral(red: 0.46, green: 0.46, blue: 0.46, alpha: 1)), fontType: .semiBold, fontSize: 18)
                     
       
                 

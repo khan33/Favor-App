@@ -31,7 +31,7 @@ struct FavorCardView: View {
                 VStack (alignment: .leading, spacing: 8) {
                     FavorText(text: title, textColor: .appWhite, fontType: .bold, fontSize: 24)
                     
-                    FavorText(text: subTitle, textColor: .appWhite, fontType: .regular, fontSize: 14).tracking(0.2)
+                    FavorText(text: subTitle, textColor: .appWhite, fontType: .regular, fontSize: 14)
                 }
                 .padding(20)
                 //Image

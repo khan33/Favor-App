@@ -14,9 +14,9 @@ struct PaymentButtonView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .fill(.white.shadow(.inner(color: Color(hex: "#F8F8F8"), radius: 10)))
-            .frame(width: .infinity, height: 88)
-            
+                .fill(.white)
+                .shadow(color: Color(hex: "#F8F8F8"), radius: 10, x: 1, y: 1)
+                .frame(width: .infinity, height: 88)
             
             HStack {
                 Image(image)
@@ -28,7 +28,7 @@ struct PaymentButtonView: View {
                 FavorText(text: method, textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .bold, fontSize: 18)
                 Spacer()
                 
-                FavorText(text: status, textColor: .appPrimaryColor, fontType: .bold, fontSize: 18).tracking(0.2)
+                FavorText(text: status, textColor: .appPrimaryColor, fontType: .bold, fontSize: 18)
                     .padding(.trailing, 24)
       
                 

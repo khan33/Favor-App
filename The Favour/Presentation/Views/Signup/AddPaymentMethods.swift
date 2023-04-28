@@ -14,7 +14,6 @@ struct AddPaymentMethods: View {
                 .padding(.horizontal, 8)
             
             FavorText(text: "Add a payment method to get paid", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
-                .tracking(0.2)
             
             PaymentButtonView(image: "google", method: "Google Pay", status: "Not Connected")
             

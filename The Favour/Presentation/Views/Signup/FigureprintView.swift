@@ -11,7 +11,7 @@ struct FigureprintView: View {
     var body: some View {
         VStack {
             FavorText(text: "Add a fingerprint to make your account more secure", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
-                .tracking(0.2)
+           
 
             Image("finger")
                 .resizable()

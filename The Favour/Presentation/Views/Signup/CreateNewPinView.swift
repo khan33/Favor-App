@@ -13,7 +13,6 @@ struct CreateNewPinView: View {
     var body: some View {
         VStack {
             FavorText(text: "Add a PIN number to make your account more secure.", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
-                .tracking(0.2)
             otpTextView
             
             FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {

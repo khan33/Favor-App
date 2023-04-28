@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8064FDC29F9A261000A3D3F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8064FDB29F9A261000A3D3F /* ProfileView.swift */; };
+		E8064FDE29F9A939000A3D3F /* SettingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */; };
 		E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809304E29DDC21C003BFEFE /* The_FavourApp.swift */; };
 		E809305129DDC21C003BFEFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305029DDC21C003BFEFE /* ContentView.swift */; };
 		E809305329DDC21D003BFEFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E809305229DDC21D003BFEFE /* Assets.xcassets */; };
@@ -24,6 +26,9 @@
 		E853CAAD29EC147300021DCB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAAC29EC147300021DCB /* View+Extension.swift */; };
 		E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAAE29EC157A00021DCB /* FavorTextField.swift */; };
 		E853CAB129EC163500021DCB /* FavourTextFieldWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */; };
+		E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595A4429FA4C8200CF9302 /* SecurityView.swift */; };
+		E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */; };
+		E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8595A4929FAAC2100CF9302 /* HalfASheet */; };
 		E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16629F900190077E2F0 /* FavorCardView.swift */; };
 		E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16829F912820077E2F0 /* SignupView1.swift */; };
 		E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */; };
@@ -41,6 +46,13 @@
 		E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */; };
 		E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = E8A5E18629F966CC0077E2F0 /* DPOTPView */; };
 		E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18829F969500077E2F0 /* OTPTextView.swift */; };
+		E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30729FB876500D6B5A0 /* PaymentView.swift */; };
+		E8BAA30A29FB8AB700D6B5A0 /* E-ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30929FB8AB700D6B5A0 /* E-ReceiptView.swift */; };
+		E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */; };
+		E8BAA30F29FB94B800D6B5A0 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30E29FB94B800D6B5A0 /* AlertView.swift */; };
+		E8BAA31129FB94C400D6B5A0 /* AlertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA31029FB94C400D6B5A0 /* AlertCardView.swift */; };
+		E8BAA31329FB9FA400D6B5A0 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA31229FB9FA400D6B5A0 /* ReportView.swift */; };
+		E8BAA31529FB9FB700D6B5A0 /* ReportCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA31429FB9FB700D6B5A0 /* ReportCellView.swift */; };
 		E8BF4AAB29EC410F005A56BB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AAA29EC410F005A56BB /* SignupView.swift */; };
 		E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AAC29EC4119005A56BB /* LoginView.swift */; };
 		E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AAE29EC4C17005A56BB /* FavorDividerView.swift */; };
@@ -52,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8064FDB29F9A261000A3D3F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuItem.swift; sourceTree = "<group>"; };
 		E809304B29DDC21C003BFEFE /* The Favour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Favour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E809304E29DDC21C003BFEFE /* The_FavourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_FavourApp.swift; sourceTree = "<group>"; };
 		E809305029DDC21C003BFEFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +84,8 @@
 		E853CAAC29EC147300021DCB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		E853CAAE29EC157A00021DCB /* FavorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorTextField.swift; sourceTree = "<group>"; };
 		E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavourTextFieldWithImage.swift; sourceTree = "<group>"; };
+		E8595A4429FA4C8200CF9302 /* SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityView.swift; sourceTree = "<group>"; };
+		E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		E8A5E16629F900190077E2F0 /* FavorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorCardView.swift; sourceTree = "<group>"; };
 		E8A5E16829F912820077E2F0 /* SignupView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView1.swift; sourceTree = "<group>"; };
 		E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAddPhoto.swift; sourceTree = "<group>"; };
@@ -86,6 +102,13 @@
 		E8A5E18129F961A70077E2F0 /* CreateNewPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinView.swift; sourceTree = "<group>"; };
 		E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureprintView.swift; sourceTree = "<group>"; };
 		E8A5E18829F969500077E2F0 /* OTPTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		E8BAA30729FB876500D6B5A0 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		E8BAA30929FB8AB700D6B5A0 /* E-ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-ReceiptView.swift"; sourceTree = "<group>"; };
+		E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTwoLabelView.swift; sourceTree = "<group>"; };
+		E8BAA30E29FB94B800D6B5A0 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		E8BAA31029FB94C400D6B5A0 /* AlertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCardView.swift; sourceTree = "<group>"; };
+		E8BAA31229FB9FA400D6B5A0 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		E8BAA31429FB9FB700D6B5A0 /* ReportCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCellView.swift; sourceTree = "<group>"; };
 		E8BF4AAA29EC410F005A56BB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E8BF4AAC29EC4119005A56BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E8BF4AAE29EC4C17005A56BB /* FavorDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorDividerView.swift; sourceTree = "<group>"; };
@@ -103,12 +126,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
+				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8064FD929F9A23C000A3D3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8BAA30D29FB949D00D6B5A0 /* Alerts & Report */,
+				E8BAA30629FB875100D6B5A0 /* Payments */,
+				E8595A4329FA4C6900CF9302 /* Others */,
+				E8064FDA29F9A255000A3D3F /* Profile */,
+				E894EE9229E0257600837AFD /* Walk Through */,
+				E894EE9129E0256F00837AFD /* Login */,
+				E894EE9329E0258500837AFD /* Signup */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E8064FDA29F9A255000A3D3F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E8064FDB29F9A261000A3D3F /* ProfileView.swift */,
+				E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		E809304229DDC21C003BFEFE = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +212,7 @@
 				E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */,
 				E8A5E16629F900190077E2F0 /* FavorCardView.swift */,
 				E8A5E16C29F9241A0077E2F0 /* AvatarView.swift */,
+				E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -180,6 +228,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E8595A4329FA4C6900CF9302 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				E8595A4429FA4C8200CF9302 /* SecurityView.swift */,
+				E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		E894EE8B29E0252500837AFD /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,11 +247,9 @@
 		E894EE8C29E0252B00837AFD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E8064FD929F9A23C000A3D3F /* Views */,
 				E853CAA129EC0E2000021DCB /* Extensions */,
 				E853CA9E29EC0DB500021DCB /* CustomViews */,
-				E894EE9229E0257600837AFD /* Walk Through */,
-				E894EE9129E0256F00837AFD /* Login */,
-				E894EE9329E0258500837AFD /* Signup */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -294,6 +349,26 @@
 			path = "Supported Views";
 			sourceTree = "<group>";
 		};
+		E8BAA30629FB875100D6B5A0 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				E8BAA30729FB876500D6B5A0 /* PaymentView.swift */,
+				E8BAA30929FB8AB700D6B5A0 /* E-ReceiptView.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		E8BAA30D29FB949D00D6B5A0 /* Alerts & Report */ = {
+			isa = PBXGroup;
+			children = (
+				E8BAA30E29FB94B800D6B5A0 /* AlertView.swift */,
+				E8BAA31029FB94C400D6B5A0 /* AlertCardView.swift */,
+				E8BAA31229FB9FA400D6B5A0 /* ReportView.swift */,
+				E8BAA31429FB9FB700D6B5A0 /* ReportCellView.swift */,
+			);
+			path = "Alerts & Report";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +387,7 @@
 			name = "The Favour";
 			packageProductDependencies = (
 				E8A5E18629F966CC0077E2F0 /* DPOTPView */,
+				E8595A4929FAAC2100CF9302 /* HalfASheet */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -343,6 +419,7 @@
 			mainGroup = E809304229DDC21C003BFEFE;
 			packageReferences = (
 				E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */,
+				E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -372,14 +449,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BAA31529FB9FB700D6B5A0 /* ReportCellView.swift in Sources */,
 				E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */,
+				E8BAA31329FB9FA400D6B5A0 /* ReportView.swift in Sources */,
 				E853CAA929EC137100021DCB /* FavorSocialButton.swift in Sources */,
 				E8BF4AB529EC5CB4005A56BB /* MainView.swift in Sources */,
 				E809305129DDC21C003BFEFE /* ContentView.swift in Sources */,
 				E809305D29DDCB92003BFEFE /* PageView.swift in Sources */,
 				E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */,
+				E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */,
 				E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */,
 				E8A5E17C29F949BA0077E2F0 /* PaymentButtonView.swift in Sources */,
+				E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */,
 				E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */,
 				E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */,
 				E8A5E16D29F9241A0077E2F0 /* AvatarView.swift in Sources */,
@@ -388,19 +469,25 @@
 				E853CAAB29EC13FD00021DCB /* UIScreen+Extension.swift in Sources */,
 				E853CAB129EC163500021DCB /* FavourTextFieldWithImage.swift in Sources */,
 				E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */,
+				E8064FDC29F9A261000A3D3F /* ProfileView.swift in Sources */,
 				E8A5E17129F9383C0077E2F0 /* SignupView2.swift in Sources */,
+				E8BAA30F29FB94B800D6B5A0 /* AlertView.swift in Sources */,
 				E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */,
 				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
 				E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */,
 				E8A5E18029F95E180077E2F0 /* CongratulationView.swift in Sources */,
+				E8BAA30A29FB8AB700D6B5A0 /* E-ReceiptView.swift in Sources */,
 				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
 				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
 				E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */,
 				E8A5E17429F939FA0077E2F0 /* DocumentButton.swift in Sources */,
 				E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */,
+				E8BAA31129FB94C400D6B5A0 /* AlertCardView.swift in Sources */,
 				E8A5E17A29F949670077E2F0 /* AddPaymentMethods.swift in Sources */,
 				E8A5E16F29F9314D0077E2F0 /* ProfilePicModal.swift in Sources */,
 				E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */,
+				E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */,
+				E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */,
 				E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */,
 				E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */,
 				E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */,
@@ -408,6 +495,7 @@
 				E853CAAD29EC147300021DCB /* View+Extension.swift in Sources */,
 				E853CAA029EC0DD400021DCB /* FavorText.swift in Sources */,
 				E8BF4AB329EC5B7E005A56BB /* ForgotPasswordView.swift in Sources */,
+				E8064FDE29F9A939000A3D3F /* SettingMenuItem.swift in Sources */,
 				E853CAA329EC0E3400021DCB /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +634,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,6 +665,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,6 +703,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/franklynw/HalfASheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Datt1994/DPOTPView.git";
@@ -624,6 +722,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E8595A4929FAAC2100CF9302 /* HalfASheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */;
+			productName = HalfASheet;
+		};
 		E8A5E18629F966CC0077E2F0 /* DPOTPView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */;

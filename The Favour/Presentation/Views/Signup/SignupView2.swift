@@ -14,7 +14,6 @@ struct SignupView2: View {
                 .padding(.horizontal, 8)
             
             FavorText(text: "We need to verify your information.\nPlease submit any documents from below to process your application.", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
-                .tracking(0.2)
             
             
             DocumentButton(title: "ID Card / Driving License")

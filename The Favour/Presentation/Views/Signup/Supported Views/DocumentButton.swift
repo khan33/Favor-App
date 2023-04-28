@@ -15,7 +15,7 @@ struct DocumentButton: View {
             .fill(Color(#colorLiteral(red: 0.9450980424880981, green: 0.9058823585510254, blue: 1, alpha: 1)))
             .frame(width: .infinity, height: 73)
             HStack {
-                FavorText(text: title, textColor: Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)), fontType: .semiBold, fontSize: 18).tracking(0.2)
+                FavorText(text: title, textColor: Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)), fontType: .semiBold, fontSize: 18)
                     .padding(.leading, 24)
                 Spacer()
                 Image(systemName: "chevron.right")
