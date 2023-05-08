@@ -13,7 +13,7 @@ struct FavorText: View {
     var fontType: DefaultFontFamily = .light
     var fontSize: CGFloat = 14
     var alignment: TextAlignment = .leading
-    var lineSpace: CGFloat = 6
+    var lineSpace: CGFloat = 1
     
     var body: some View {
         Text(text)

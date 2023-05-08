@@ -9,12 +9,17 @@ import SwiftUI
 
 struct SignupAddPhoto: View {
     @State private var showModally = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var isNext = false
+
     var body: some View {
         ZStack {
-            VStack(alignment: .center, spacing: 12) {
-                Spacer()
+            VStack(alignment: .center, spacing: 24) {
+                NavigationLink(destination: SignupView2(), isActive: $isNext) { EmptyView() }
+
                 FavorText(text: "Steps 1 of 3", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
-                    .padding(.horizontal, 8)
+                    .padding(.top, 36)
+                    .padding(.bottom, 16)
                 
                 ZStack(alignment: .bottomTrailing) {
                     AvatarView(image: Image("avatar"), size: 200)
@@ -30,6 +35,7 @@ struct SignupAddPhoto: View {
                 
                 
                 FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                    isNext = true
                 }
                 
                 FavorButton(text: "Skip", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
@@ -43,11 +49,22 @@ struct SignupAddPhoto: View {
                 
                 
             }
-            
+            .padding()
             ProfilePicModal(show: $showModally)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
+        .navigationTitle("Fill Your Profile")
     }
-    
+    var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image("ic_back") // set image here
+                    .aspectRatio(contentMode: .fit)
+                }
+            }
+        }
     
 }
 

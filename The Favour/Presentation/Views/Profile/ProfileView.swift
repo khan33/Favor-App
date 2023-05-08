@@ -12,46 +12,52 @@ struct ProfileView: View {
     @State var isOn = false
     @State var showLogoutSheet: Bool = false
 
+    
+    @State private var isShowHome = false
+
     var body: some View {
-        ZStack {
-            VStack(alignment: .center) {
-                avatarImage
-                personalInfo
-                if isOn == false {
-                    availableBalance
-                        .padding(.vertical, 4)
-                    FavorButton(text: "Withdraw",  width: 160, height: 44, bgColor: .appLightBlack) {
+        NavigationView {
+            NavigationLink(destination: HomeView(), isActive: $isShowHome) { EmptyView() }
+            ZStack {
+                VStack(alignment: .center) {
+                    avatarImage
+                    personalInfo
+                    if isOn == false {
+                        availableBalance
+                            .padding(.vertical, 4)
+                        FavorButton(text: "Withdraw",  width: 134, height: 34, bgColor: .appLightBlack) {
+                        }
                     }
-                }
-                switchAccount
-                FavorDividerView(width: .infinity, height: 1)
-                    .padding(.vertical, 8)
-                menuItems
-                Spacer()
-            }
-            .padding(.top, 24)
-            
-            // MARK: - HALF SHEET FOR LOGOUT
-            HalfASheet(isPresented: $showLogoutSheet, title: "Logout") {
-                VStack(spacing: 16) {
+                    switchAccount
                     FavorDividerView(width: .infinity, height: 1)
-                    FavorText(text: "Are you sure you want to log out?",
-                              textColor: Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)) , fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
-                    .padding(.vertical, 24)
-                    HStack {
-                        FavorButton(text: "Cancel", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
+                        .padding(.vertical, 8)
+                    menuItems
+                    Spacer()
+                }
+                .padding(.top, 24)
+                
+                // MARK: - HALF SHEET FOR LOGOUT
+                HalfASheet(isPresented: $showLogoutSheet, title: "Logout") {
+                    VStack(spacing: 16) {
+                        FavorDividerView(width: .infinity, height: 1)
+                        FavorText(text: "Are you sure you want to log out?",
+                                  textColor: Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)) , fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
+                        .padding(.vertical, 24)
+                        HStack {
+                            FavorButton(text: "Cancel", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
+                            }
+                            FavorButton(text: "Yes, Logout", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                                
+                            }
+                            
                         }
-                        FavorButton(text: "Yes, Logout", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
-
-                        }
-
                     }
                 }
+                
+                .height(.proportional(0.3))
+                .backgroundColor(.white)
+                .contentInsets(EdgeInsets(top: 50, leading: 10, bottom: 5, trailing: 10))
             }
-
-            .height(.proportional(0.3))
-            .backgroundColor(.white)
-            .contentInsets(EdgeInsets(top: 50, leading: 10, bottom: 5, trailing: 10))
         }
         
     }
@@ -95,7 +101,11 @@ struct ProfileView: View {
     
     private var menuItems: some View {
         VStack(spacing: 24) {
-            SettingMenuItem(title: "Home", image: "Home", isLogout: false)
+                SettingMenuItem(title: "Home", image: "Home", isLogout: false) {
+                    isShowHome = true
+                }
+            
+            
 
             SettingMenuItem(title: "Edit Profile", image: "Profile", isLogout: false)
 

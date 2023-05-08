@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DocumentButton: View {
     let title: String
+    var action: (() -> Void)?
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
@@ -21,6 +22,9 @@ struct DocumentButton: View {
                 Image(systemName: "chevron.right")
                     .padding(.trailing, 24)
             }
+        }
+        .onTapGesture {
+            action?()
         }
         .padding(.horizontal, 16)
     }

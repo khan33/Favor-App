@@ -39,26 +39,22 @@ struct LoginView: View {
                         .frame(width: 24, height: 24)
                     FavorText(text: "Remember me", textColor: .appBlack, fontType: .bold, fontSize: 14.0)
                 }
-                .padding(.horizontal,24)
                 .padding(.vertical, 16)
                 
                 FavorButton(text: "Sign in with Password", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                 }
-                .padding(.horizontal,24)
                 
                 FavorButton(text: "Forgot the password?", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: .white) {
                     self.isShowingForgotPasswordView = true
                 }
-                .padding(.horizontal,24)
             }
             HStack(spacing: 24) {
-                FavorDividerView(width: (UIScreen.screenWidth / 3), height: 1, bgColor: .appBorderColor)
+                FavorDividerView(width: (UIScreen.screenWidth / 2.7), height: 1, bgColor: .appBorderColor)
                 FavorText(text:"or")
-                FavorDividerView(width: (UIScreen.screenWidth / 3), height: 1, bgColor: .appBorderColor)
+                FavorDividerView(width: (UIScreen.screenWidth / 2.7), height: 1, bgColor: .appBorderColor)
                 
                 
             }
-            .padding(.horizontal,24)
             .padding(.bottom, 16)
 
             HStack {
@@ -72,7 +68,6 @@ struct LoginView: View {
             
             FavorButton(text: "Guest Login", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
             }
-            .padding(.horizontal,24)
             
             Spacer()
 
@@ -88,6 +83,7 @@ struct LoginView: View {
             
             
         }
+        .padding(24)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
     }

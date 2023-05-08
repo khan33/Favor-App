@@ -45,6 +45,20 @@ struct SettingMenuItem: View {
 
 struct SettingMenuItem_Previews: PreviewProvider {
     static var previews: some View {
-        SettingMenuItem(title: "Home", image: "Home", isLogout: false)
+        VStack(spacing: 20) {
+            SettingMenuItem(title: "Home", image: "Home", isLogout: false)
+            SettingMenuItem(title: "Edit Profile", image: "Profile", isLogout: false)
+
+            SettingMenuItem(title: "Payment", image: "Wallet", isLogout: false)
+
+            SettingMenuItem(title: "Security", image: "Shield Done", isLogout: false)
+
+            SettingMenuItem(title: "Privacy Policy", image: "Lock", isLogout: false) {
+                print("privacy policy")
+            }
+            
+            SettingMenuItem(title: "Logout", image: "Logout", isLogout: true) {
+            }
+        }
     }
 }

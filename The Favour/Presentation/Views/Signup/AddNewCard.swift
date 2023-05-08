@@ -13,10 +13,13 @@ struct AddNewCard: View {
     @State var expiryDate: String = ""
     @State var cvv: String = ""
     
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var isNext = false
+
     var body: some View {
         VStack (alignment: .leading){
-            
+            NavigationLink(destination: CreateNewPinView(), isActive: $isNext) { EmptyView() }
+
             Image("card")
                 .resizable()
                 .scaledToFit()
@@ -46,16 +49,26 @@ struct AddNewCard: View {
                 }
             }
             .padding(.bottom, 30)
-            
-            
-            
-            FavorButton(text: "Add New ", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+            FavorButton(text: "Add New Card", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                isNext = true
             }
             
            
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
+        .navigationTitle("Add New Card")
         .padding()
     }
+    var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image("ic_back") // set image here
+                    .aspectRatio(contentMode: .fit)
+                }
+            }
+        }
 }
 
 struct AddNewCard_Previews: PreviewProvider {

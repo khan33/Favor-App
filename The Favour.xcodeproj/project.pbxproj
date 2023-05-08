@@ -29,6 +29,12 @@
 		E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595A4429FA4C8200CF9302 /* SecurityView.swift */; };
 		E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */; };
 		E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8595A4929FAAC2100CF9302 /* HalfASheet */; };
+		E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B0982A050A2600D7F524 /* ServicesView.swift */; };
+		E8A2B09B2A05168400D7F524 /* SeeAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B09A2A05168400D7F524 /* SeeAllView.swift */; };
+		E8A2B0A12A05191600D7F524 /* FavorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B0A02A05191600D7F524 /* FavorListView.swift */; };
+		E8A2B0A32A051FCE00D7F524 /* ServiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B0A22A051FCE00D7F524 /* ServiceButtonView.swift */; };
+		E8A2B0A52A052CA400D7F524 /* DistanceSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B0A42A052CA400D7F524 /* DistanceSliderView.swift */; };
+		E8A2B0A82A056C4500D7F524 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */; };
 		E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16629F900190077E2F0 /* FavorCardView.swift */; };
 		E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16829F912820077E2F0 /* SignupView1.swift */; };
 		E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */; };
@@ -59,6 +65,9 @@
 		E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */; };
 		E8BF4AB329EC5B7E005A56BB /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB229EC5B7E005A56BB /* ForgotPasswordView.swift */; };
 		E8BF4AB529EC5CB4005A56BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB429EC5CB4005A56BB /* MainView.swift */; };
+		E8E57A622A08D077000F452F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A612A08D077000F452F /* SearchBarView.swift */; };
+		E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */; };
+		E8E57A662A08D907000F452F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A652A08D907000F452F /* HomeView.swift */; };
 		E8F9ED9229E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */; };
 		E8F9ED9329E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
@@ -86,6 +95,11 @@
 		E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavourTextFieldWithImage.swift; sourceTree = "<group>"; };
 		E8595A4429FA4C8200CF9302 /* SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityView.swift; sourceTree = "<group>"; };
 		E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		E8A2B0982A050A2600D7F524 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+		E8A2B09A2A05168400D7F524 /* SeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllView.swift; sourceTree = "<group>"; };
+		E8A2B0A02A05191600D7F524 /* FavorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorListView.swift; sourceTree = "<group>"; };
+		E8A2B0A22A051FCE00D7F524 /* ServiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceButtonView.swift; sourceTree = "<group>"; };
+		E8A2B0A42A052CA400D7F524 /* DistanceSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSliderView.swift; sourceTree = "<group>"; };
 		E8A5E16629F900190077E2F0 /* FavorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorCardView.swift; sourceTree = "<group>"; };
 		E8A5E16829F912820077E2F0 /* SignupView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView1.swift; sourceTree = "<group>"; };
 		E8A5E16A29F922B50077E2F0 /* SignupAddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAddPhoto.swift; sourceTree = "<group>"; };
@@ -115,6 +129,9 @@
 		E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialIconView.swift; sourceTree = "<group>"; };
 		E8BF4AB229EC5B7E005A56BB /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		E8BF4AB429EC5CB4005A56BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E8E57A612A08D077000F452F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		E8E57A652A08D907000F452F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Favour-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -126,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
+				E8A2B0A82A056C4500D7F524 /* SwiftUITooltip in Frameworks */,
 				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +154,8 @@
 		E8064FD929F9A23C000A3D3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E8A2B09C2A05188500D7F524 /* Home */,
+				E866E54B29FC35A30042F01F /* Services */,
 				E8BAA30D29FB949D00D6B5A0 /* Alerts & Report */,
 				E8BAA30629FB875100D6B5A0 /* Payments */,
 				E8595A4329FA4C6900CF9302 /* Others */,
@@ -184,7 +204,6 @@
 				E809305029DDC21C003BFEFE /* ContentView.swift */,
 				E809305229DDC21D003BFEFE /* Assets.xcassets */,
 				E809305429DDC21D003BFEFE /* Preview Content */,
-				E809306029DE841C003BFEFE /* AllServicesView.swift */,
 				E84BB30129E01B7F002D94A6 /* favourView.swift */,
 				E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */,
 				E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */,
@@ -213,6 +232,11 @@
 				E8A5E16629F900190077E2F0 /* FavorCardView.swift */,
 				E8A5E16C29F9241A0077E2F0 /* AvatarView.swift */,
 				E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */,
+				E8A2B09A2A05168400D7F524 /* SeeAllView.swift */,
+				E8A2B0A22A051FCE00D7F524 /* ServiceButtonView.swift */,
+				E8A2B0A42A052CA400D7F524 /* DistanceSliderView.swift */,
+				E8E57A612A08D077000F452F /* SearchBarView.swift */,
+				E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -235,6 +259,15 @@
 				E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		E866E54B29FC35A30042F01F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E809306029DE841C003BFEFE /* AllServicesView.swift */,
+				E8A2B0982A050A2600D7F524 /* ServicesView.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E894EE8B29E0252500837AFD /* App */ = {
@@ -336,6 +369,23 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		E8A2B09C2A05188500D7F524 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E8A2B09D2A05189000D7F524 /* View */,
+				E8E57A652A08D907000F452F /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E8A2B09D2A05189000D7F524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8A2B0A02A05191600D7F524 /* FavorListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E8A5E17229F939BA0077E2F0 /* Supported Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +438,7 @@
 			packageProductDependencies = (
 				E8A5E18629F966CC0077E2F0 /* DPOTPView */,
 				E8595A4929FAAC2100CF9302 /* HalfASheet */,
+				E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -420,6 +471,7 @@
 			packageReferences = (
 				E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */,
 				E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */,
+				E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -459,12 +511,15 @@
 				E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */,
 				E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */,
 				E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */,
+				E8A2B09B2A05168400D7F524 /* SeeAllView.swift in Sources */,
 				E8A5E17C29F949BA0077E2F0 /* PaymentButtonView.swift in Sources */,
 				E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */,
 				E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */,
 				E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */,
+				E8A2B0A12A05191600D7F524 /* FavorListView.swift in Sources */,
 				E8A5E16D29F9241A0077E2F0 /* AvatarView.swift in Sources */,
 				E8A5E18229F961A70077E2F0 /* CreateNewPinView.swift in Sources */,
+				E8A2B0A32A051FCE00D7F524 /* ServiceButtonView.swift in Sources */,
 				E84BB30229E01B7F002D94A6 /* favourView.swift in Sources */,
 				E853CAAB29EC13FD00021DCB /* UIScreen+Extension.swift in Sources */,
 				E853CAB129EC163500021DCB /* FavourTextFieldWithImage.swift in Sources */,
@@ -475,10 +530,13 @@
 				E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */,
 				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
 				E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */,
+				E8E57A662A08D907000F452F /* HomeView.swift in Sources */,
 				E8A5E18029F95E180077E2F0 /* CongratulationView.swift in Sources */,
 				E8BAA30A29FB8AB700D6B5A0 /* E-ReceiptView.swift in Sources */,
 				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
 				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
+				E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */,
+				E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */,
 				E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */,
 				E8A5E17429F939FA0077E2F0 /* DocumentButton.swift in Sources */,
 				E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */,
@@ -489,7 +547,9 @@
 				E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */,
 				E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */,
 				E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */,
+				E8A2B0A52A052CA400D7F524 /* DistanceSliderView.swift in Sources */,
 				E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */,
+				E8E57A622A08D077000F452F /* SearchBarView.swift in Sources */,
 				E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */,
 				E8BF4AAB29EC410F005A56BB /* SignupView.swift in Sources */,
 				E853CAAD29EC147300021DCB /* View+Extension.swift in Sources */,
@@ -629,11 +689,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Favour-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "The Favor";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -642,9 +703,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Favour";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -660,11 +724,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Favour-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "The Favor";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,9 +738,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.The-Favour";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -711,6 +779,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quassummanus/SwiftUI-Tooltip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Datt1994/DPOTPView.git";
@@ -726,6 +802,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */;
 			productName = HalfASheet;
+		};
+		E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */;
+			productName = SwiftUITooltip;
 		};
 		E8A5E18629F966CC0077E2F0 /* DPOTPView */ = {
 			isa = XCSwiftPackageProductDependency;

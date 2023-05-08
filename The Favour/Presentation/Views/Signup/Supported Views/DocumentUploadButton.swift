@@ -36,7 +36,6 @@ struct DocumentUploadButton: View {
                 
             }
         }
-        .padding(.horizontal, 16)
     }
 }
 

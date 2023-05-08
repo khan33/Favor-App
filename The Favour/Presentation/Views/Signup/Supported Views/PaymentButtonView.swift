@@ -15,7 +15,7 @@ struct PaymentButtonView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
                 .fill(.white)
-                .shadow(color: Color(hex: "#F8F8F8"), radius: 10, x: 1, y: 1)
+                .shadow(color: Color.appLightGrey, radius: 10, x: 1, y: 1)
                 .frame(width: .infinity, height: 88)
             
             HStack {
@@ -34,7 +34,6 @@ struct PaymentButtonView: View {
                 
             }
         }
-        .padding(.horizontal, 16)
     }
 }
 

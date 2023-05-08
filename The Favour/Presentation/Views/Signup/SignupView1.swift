@@ -15,12 +15,15 @@ struct SignupView1: View {
     @State var dateOfBirth: String = ""
     @State var address: String = ""
     @State var phoneNumber: String = ""
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @State private var isNext = false
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            
+            NavigationLink(destination: SignupAddPhoto(), isActive: $isNext) { EmptyView() }
+
             FavorTextField(placeholder: "Full Name", leftImage: nil, rightImage: nil, text: $fullName)
-            
+                .padding(.top, 24)
             
             FavorTextField(placeholder: "Nick Name", leftImage: nil, rightImage: nil, text: $nickName)
             
@@ -35,15 +38,26 @@ struct SignupView1: View {
             FavorTextField(placeholder: "Address", leftImage: nil, rightImage: "location", text: $address)
             
             
-            FavorButton(text: "Sign in with Password", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+            FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                isNext = true
             }
-                
-               
-         
-            
-            
+            .padding(.top, 24)
+            Spacer()
         }
+        .padding()
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
+        .navigationTitle("Fill Your Profile")
     }
+    var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image("ic_back") // set image here
+                    .aspectRatio(contentMode: .fit)
+                }
+            }
+        }
 }
 
 struct SignupView1_Previews: PreviewProvider {
