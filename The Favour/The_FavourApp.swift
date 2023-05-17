@@ -11,7 +11,7 @@ import SwiftUI
 struct The_FavourApp: App {
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            NeedFavorDetailView()
         }
     }
 }

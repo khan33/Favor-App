@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct CustomNavigationBarView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     var body: some View {
         HStack(spacing: 12) {
             Button(action: {
                 // Action for left button
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image("ic_back")
                     .resizable()
@@ -23,6 +26,7 @@ struct CustomNavigationBarView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 48, height: 48)
+                .padding(.leading, 8)
             VStack {
                 FavorText(text: "Good Morning 👋", textColor: Color(#colorLiteral(red: 0.46, green: 0.46, blue: 0.46, alpha: 1)), fontType: .medium, fontSize: 16, alignment: .leading, lineSpace: 0)
                 FavorText(text: "Andrew Ainsley", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 20, alignment: .leading, lineSpace: 0)

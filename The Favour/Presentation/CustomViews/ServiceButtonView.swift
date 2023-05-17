@@ -13,7 +13,9 @@ struct ServiceButtonView: View {
     var fontType: DefaultFontFamily = .bold
     var fontSize: CGFloat = 14
     var bgColor: Color = .appPrimaryColor
+    var cornerRadius: CGFloat = 20
     var action: (() -> Void)? = nil
+    
     var body: some View {
         
         Button(action: {
@@ -28,19 +30,12 @@ struct ServiceButtonView: View {
                 }
             }
             .background(bgColor)
-            .cornerRadius(20)
+            .cornerRadius(cornerRadius)
             .overlay(
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(textColor, lineWidth: 1)
             )
         }
-        
-
-
-
-
-
-
     }
 }
 

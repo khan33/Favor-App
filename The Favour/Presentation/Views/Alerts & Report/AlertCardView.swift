@@ -21,7 +21,7 @@ struct AlertCardView: View {
                 .padding([.leading, .vertical])
                 VStack(alignment: .leading, spacing: 4) {
                     FavorText(text: title, textColor: image != "favor_reject" ? Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)) : Color(#colorLiteral(red: 0.87, green: 0.07, blue: 0.07, alpha: 1)), fontType: .bold, fontSize: 16, alignment: .center, lineSpace: 0)
-                    FavorText(text: timeStr, textColor: Color(#colorLiteral(red: 0.62, green: 0.62, blue: 0.62, alpha: 1)), fontType: .regular, fontSize: 10, alignment: .center, lineSpace: 0)
+                    FavorText(text: timeStr, textColor: .appLightGrey, fontType: .regular, fontSize: 10, alignment: .center, lineSpace: 0)
                         .padding(.bottom, 8)
                     FavorText(text: desc, textColor: Color(#colorLiteral(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)), fontType: .medium, fontSize: 14, alignment: .leading, lineSpace: 0)
                     

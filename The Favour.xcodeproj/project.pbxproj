@@ -16,7 +16,12 @@
 		E809305D29DDCB92003BFEFE /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305C29DDCB92003BFEFE /* PageView.swift */; };
 		E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */; };
 		E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809306029DE841C003BFEFE /* AllServicesView.swift */; };
+		E84A0EB22A13F90300C7F8FD /* DoFavorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A0EB12A13F90300C7F8FD /* DoFavorListView.swift */; };
+		E84A0EB42A13FA2600C7F8FD /* DoFavorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A0EB32A13FA2600C7F8FD /* DoFavorView.swift */; };
 		E84BB30229E01B7F002D94A6 /* favourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BB30129E01B7F002D94A6 /* favourView.swift */; };
+		E8503F942A0B68B900451ABE /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = E8503F932A0B68B900451ABE /* SwiftUIX */; };
+		E8503F972A0BB28800451ABE /* PopularServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8503F962A0BB28800451ABE /* PopularServicesView.swift */; };
+		E8503F992A0BB3B800451ABE /* FavorServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8503F982A0BB3B800451ABE /* FavorServicesView.swift */; };
 		E853CAA029EC0DD400021DCB /* FavorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CA9F29EC0DD400021DCB /* FavorText.swift */; };
 		E853CAA329EC0E3400021DCB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAA229EC0E3400021DCB /* Color+Extension.swift */; };
 		E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E853CAA429EC0EAE00021DCB /* Font+Extension.swift */; };
@@ -29,6 +34,17 @@
 		E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595A4429FA4C8200CF9302 /* SecurityView.swift */; };
 		E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */; };
 		E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8595A4929FAAC2100CF9302 /* HalfASheet */; };
+		E866B26E2A0E2B3E0084E6E1 /* FavorByService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866B26D2A0E2B3E0084E6E1 /* FavorByService.swift */; };
+		E866B2712A0E44EC0084E6E1 /* FavorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866B2702A0E44EC0084E6E1 /* FavorDetailView.swift */; };
+		E866B2732A0E4A460084E6E1 /* FavorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866B2722A0E4A460084E6E1 /* FavorInfoView.swift */; };
+		E866B2752A0E51CA0084E6E1 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866B2742A0E51CA0084E6E1 /* AddressView.swift */; };
+		E866B2772A0E62BA0084E6E1 /* RatingStarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866B2762A0E62BA0084E6E1 /* RatingStarButtonView.swift */; };
+		E866B27A2A0E6C350084E6E1 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866B2792A0E6C350084E6E1 /* RatingView.swift */; };
+		E87532372A13A570007E3089 /* BookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87532362A13A570007E3089 /* BookingDetailView.swift */; };
+		E87532392A13A9FD007E3089 /* BookingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87532382A13A9FD007E3089 /* BookingInfoView.swift */; };
+		E875323B2A13B4B5007E3089 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E875323A2A13B4B5007E3089 /* BottomButtonView.swift */; };
+		E875323E2A13B76C007E3089 /* MyRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E875323D2A13B76C007E3089 /* MyRequestView.swift */; };
+		E87532422A13B7F1007E3089 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87532412A13B7F1007E3089 /* RequestView.swift */; };
 		E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B0982A050A2600D7F524 /* ServicesView.swift */; };
 		E8A2B09B2A05168400D7F524 /* SeeAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B09A2A05168400D7F524 /* SeeAllView.swift */; };
 		E8A2B0A12A05191600D7F524 /* FavorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2B0A02A05191600D7F524 /* FavorListView.swift */; };
@@ -52,6 +68,12 @@
 		E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */; };
 		E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = E8A5E18629F966CC0077E2F0 /* DPOTPView */; };
 		E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5E18829F969500077E2F0 /* OTPTextView.swift */; };
+		E8A7A2302A149CC3006E6CCD /* NeedFavorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7A22F2A149CC3006E6CCD /* NeedFavorView.swift */; };
+		E8A7A2322A149D62006E6CCD /* NeedFavorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7A2312A149D62006E6CCD /* NeedFavorCellView.swift */; };
+		E8A7A2342A14A03F006E6CCD /* NeedFavorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7A2332A14A03F006E6CCD /* NeedFavorDetailView.swift */; };
+		E8A7A2362A14A0E3006E6CCD /* PriceQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7A2352A14A0E3006E6CCD /* PriceQuoteView.swift */; };
+		E8A7A2382A14A349006E6CCD /* VerticalTwoLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7A2372A14A349006E6CCD /* VerticalTwoLabelView.swift */; };
+		E8A7A23C2A14B606006E6CCD /* PostFavorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7A23B2A14B606006E6CCD /* PostFavorView.swift */; };
 		E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30729FB876500D6B5A0 /* PaymentView.swift */; };
 		E8BAA30A29FB8AB700D6B5A0 /* E-ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30929FB8AB700D6B5A0 /* E-ReceiptView.swift */; };
 		E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */; };
@@ -68,6 +90,8 @@
 		E8E57A622A08D077000F452F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A612A08D077000F452F /* SearchBarView.swift */; };
 		E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */; };
 		E8E57A662A08D907000F452F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A652A08D907000F452F /* HomeView.swift */; };
+		E8EDC60B2A0A6F5C00E20378 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EDC60A2A0A6F5C00E20378 /* NavigationBarView.swift */; };
+		E8EDC60D2A0A822600E20378 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EDC60C2A0A822600E20378 /* BottomSheetView.swift */; };
 		E8F9ED9229E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */; };
 		E8F9ED9329E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
@@ -83,7 +107,11 @@
 		E809305C29DDCB92003BFEFE /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E809306029DE841C003BFEFE /* AllServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesView.swift; sourceTree = "<group>"; };
+		E84A0EB12A13F90300C7F8FD /* DoFavorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFavorListView.swift; sourceTree = "<group>"; };
+		E84A0EB32A13FA2600C7F8FD /* DoFavorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFavorView.swift; sourceTree = "<group>"; };
 		E84BB30129E01B7F002D94A6 /* favourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favourView.swift; sourceTree = "<group>"; };
+		E8503F962A0BB28800451ABE /* PopularServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularServicesView.swift; sourceTree = "<group>"; };
+		E8503F982A0BB3B800451ABE /* FavorServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorServicesView.swift; sourceTree = "<group>"; };
 		E853CA9F29EC0DD400021DCB /* FavorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorText.swift; sourceTree = "<group>"; };
 		E853CAA229EC0E3400021DCB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E853CAA429EC0EAE00021DCB /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
@@ -95,6 +123,17 @@
 		E853CAB029EC163500021DCB /* FavourTextFieldWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavourTextFieldWithImage.swift; sourceTree = "<group>"; };
 		E8595A4429FA4C8200CF9302 /* SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityView.swift; sourceTree = "<group>"; };
 		E8595A4629FA4C9200CF9302 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		E866B26D2A0E2B3E0084E6E1 /* FavorByService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorByService.swift; sourceTree = "<group>"; };
+		E866B2702A0E44EC0084E6E1 /* FavorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorDetailView.swift; sourceTree = "<group>"; };
+		E866B2722A0E4A460084E6E1 /* FavorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorInfoView.swift; sourceTree = "<group>"; };
+		E866B2742A0E51CA0084E6E1 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		E866B2762A0E62BA0084E6E1 /* RatingStarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarButtonView.swift; sourceTree = "<group>"; };
+		E866B2792A0E6C350084E6E1 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		E87532362A13A570007E3089 /* BookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailView.swift; sourceTree = "<group>"; };
+		E87532382A13A9FD007E3089 /* BookingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInfoView.swift; sourceTree = "<group>"; };
+		E875323A2A13B4B5007E3089 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		E875323D2A13B76C007E3089 /* MyRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestView.swift; sourceTree = "<group>"; };
+		E87532412A13B7F1007E3089 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		E8A2B0982A050A2600D7F524 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		E8A2B09A2A05168400D7F524 /* SeeAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllView.swift; sourceTree = "<group>"; };
 		E8A2B0A02A05191600D7F524 /* FavorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorListView.swift; sourceTree = "<group>"; };
@@ -116,6 +155,12 @@
 		E8A5E18129F961A70077E2F0 /* CreateNewPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPinView.swift; sourceTree = "<group>"; };
 		E8A5E18329F961BC0077E2F0 /* FigureprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureprintView.swift; sourceTree = "<group>"; };
 		E8A5E18829F969500077E2F0 /* OTPTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextView.swift; sourceTree = "<group>"; };
+		E8A7A22F2A149CC3006E6CCD /* NeedFavorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedFavorView.swift; sourceTree = "<group>"; };
+		E8A7A2312A149D62006E6CCD /* NeedFavorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedFavorCellView.swift; sourceTree = "<group>"; };
+		E8A7A2332A14A03F006E6CCD /* NeedFavorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedFavorDetailView.swift; sourceTree = "<group>"; };
+		E8A7A2352A14A0E3006E6CCD /* PriceQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceQuoteView.swift; sourceTree = "<group>"; };
+		E8A7A2372A14A349006E6CCD /* VerticalTwoLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTwoLabelView.swift; sourceTree = "<group>"; };
+		E8A7A23B2A14B606006E6CCD /* PostFavorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFavorView.swift; sourceTree = "<group>"; };
 		E8BAA30729FB876500D6B5A0 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		E8BAA30929FB8AB700D6B5A0 /* E-ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-ReceiptView.swift"; sourceTree = "<group>"; };
 		E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTwoLabelView.swift; sourceTree = "<group>"; };
@@ -132,6 +177,8 @@
 		E8E57A612A08D077000F452F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		E8E57A652A08D907000F452F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E8EDC60A2A0A6F5C00E20378 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		E8EDC60C2A0A822600E20378 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Favour-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -145,6 +192,7 @@
 				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
 				E8A2B0A82A056C4500D7F524 /* SwiftUITooltip in Frameworks */,
 				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
+				E8503F942A0B68B900451ABE /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +202,9 @@
 		E8064FD929F9A23C000A3D3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E8A7A2392A14B5EA006E6CCD /* Favor */,
+				E875323C2A13B75E007E3089 /* Request */,
+				E87532352A13A561007E3089 /* Booking */,
 				E8A2B09C2A05188500D7F524 /* Home */,
 				E866E54B29FC35A30042F01F /* Services */,
 				E8BAA30D29FB949D00D6B5A0 /* Alerts & Report */,
@@ -219,6 +270,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E84A0EB02A13F77000C7F8FD /* Can do Favor */ = {
+			isa = PBXGroup;
+			children = (
+				E84A0EB12A13F90300C7F8FD /* DoFavorListView.swift */,
+				E84A0EB32A13FA2600C7F8FD /* DoFavorView.swift */,
+			);
+			path = "Can do Favor";
+			sourceTree = "<group>";
+		};
+		E8503F952A0BB26E00451ABE /* Popular Services */ = {
+			isa = PBXGroup;
+			children = (
+				E8503F962A0BB28800451ABE /* PopularServicesView.swift */,
+				E8503F982A0BB3B800451ABE /* FavorServicesView.swift */,
+			);
+			path = "Popular Services";
+			sourceTree = "<group>";
+		};
 		E853CA9E29EC0DB500021DCB /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,11 +301,18 @@
 				E8A5E16629F900190077E2F0 /* FavorCardView.swift */,
 				E8A5E16C29F9241A0077E2F0 /* AvatarView.swift */,
 				E8BAA30B29FB936700D6B5A0 /* HorizontalTwoLabelView.swift */,
+				E8A7A2372A14A349006E6CCD /* VerticalTwoLabelView.swift */,
 				E8A2B09A2A05168400D7F524 /* SeeAllView.swift */,
 				E8A2B0A22A051FCE00D7F524 /* ServiceButtonView.swift */,
 				E8A2B0A42A052CA400D7F524 /* DistanceSliderView.swift */,
 				E8E57A612A08D077000F452F /* SearchBarView.swift */,
 				E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */,
+				E8EDC60A2A0A6F5C00E20378 /* NavigationBarView.swift */,
+				E8EDC60C2A0A822600E20378 /* BottomSheetView.swift */,
+				E866B2722A0E4A460084E6E1 /* FavorInfoView.swift */,
+				E866B2742A0E51CA0084E6E1 /* AddressView.swift */,
+				E866B2762A0E62BA0084E6E1 /* RatingStarButtonView.swift */,
+				E875323A2A13B4B5007E3089 /* BottomButtonView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -261,13 +337,59 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
+		E866B26C2A0E2B270084E6E1 /* Favor By Service */ = {
+			isa = PBXGroup;
+			children = (
+				E866B26D2A0E2B3E0084E6E1 /* FavorByService.swift */,
+			);
+			path = "Favor By Service";
+			sourceTree = "<group>";
+		};
+		E866B26F2A0E44DD0084E6E1 /* Favor Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E866B2782A0E6C1D0084E6E1 /* Views */,
+				E866B2702A0E44EC0084E6E1 /* FavorDetailView.swift */,
+			);
+			path = "Favor Detail";
+			sourceTree = "<group>";
+		};
+		E866B2782A0E6C1D0084E6E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E866B2792A0E6C350084E6E1 /* RatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E866E54B29FC35A30042F01F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E866B26F2A0E44DD0084E6E1 /* Favor Detail */,
+				E866B26C2A0E2B270084E6E1 /* Favor By Service */,
+				E8503F952A0BB26E00451ABE /* Popular Services */,
 				E809306029DE841C003BFEFE /* AllServicesView.swift */,
 				E8A2B0982A050A2600D7F524 /* ServicesView.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E87532352A13A561007E3089 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				E87532362A13A570007E3089 /* BookingDetailView.swift */,
+				E87532382A13A9FD007E3089 /* BookingInfoView.swift */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		E875323C2A13B75E007E3089 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E875323D2A13B76C007E3089 /* MyRequestView.swift */,
+				E87532412A13B7F1007E3089 /* RequestView.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		E894EE8B29E0252500837AFD /* App */ = {
@@ -399,6 +521,35 @@
 			path = "Supported Views";
 			sourceTree = "<group>";
 		};
+		E8A7A22E2A149CB3006E6CCD /* Need Favor */ = {
+			isa = PBXGroup;
+			children = (
+				E8A7A22F2A149CC3006E6CCD /* NeedFavorView.swift */,
+				E8A7A2312A149D62006E6CCD /* NeedFavorCellView.swift */,
+				E8A7A2332A14A03F006E6CCD /* NeedFavorDetailView.swift */,
+				E8A7A2352A14A0E3006E6CCD /* PriceQuoteView.swift */,
+			);
+			path = "Need Favor";
+			sourceTree = "<group>";
+		};
+		E8A7A2392A14B5EA006E6CCD /* Favor */ = {
+			isa = PBXGroup;
+			children = (
+				E8A7A23A2A14B5F8006E6CCD /* Post Favor */,
+				E8A7A22E2A149CB3006E6CCD /* Need Favor */,
+				E84A0EB02A13F77000C7F8FD /* Can do Favor */,
+			);
+			path = Favor;
+			sourceTree = "<group>";
+		};
+		E8A7A23A2A14B5F8006E6CCD /* Post Favor */ = {
+			isa = PBXGroup;
+			children = (
+				E8A7A23B2A14B606006E6CCD /* PostFavorView.swift */,
+			);
+			path = "Post Favor";
+			sourceTree = "<group>";
+		};
 		E8BAA30629FB875100D6B5A0 /* Payments */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +590,7 @@
 				E8A5E18629F966CC0077E2F0 /* DPOTPView */,
 				E8595A4929FAAC2100CF9302 /* HalfASheet */,
 				E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */,
+				E8503F932A0B68B900451ABE /* SwiftUIX */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -472,6 +624,7 @@
 				E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */,
 				E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */,
 				E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
+				E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -502,23 +655,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAA31529FB9FB700D6B5A0 /* ReportCellView.swift in Sources */,
+				E866B2732A0E4A460084E6E1 /* FavorInfoView.swift in Sources */,
 				E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */,
 				E8BAA31329FB9FA400D6B5A0 /* ReportView.swift in Sources */,
 				E853CAA929EC137100021DCB /* FavorSocialButton.swift in Sources */,
 				E8BF4AB529EC5CB4005A56BB /* MainView.swift in Sources */,
 				E809305129DDC21C003BFEFE /* ContentView.swift in Sources */,
+				E866B26E2A0E2B3E0084E6E1 /* FavorByService.swift in Sources */,
+				E84A0EB22A13F90300C7F8FD /* DoFavorListView.swift in Sources */,
 				E809305D29DDCB92003BFEFE /* PageView.swift in Sources */,
+				E866B2712A0E44EC0084E6E1 /* FavorDetailView.swift in Sources */,
 				E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */,
 				E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */,
 				E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */,
+				E866B2752A0E51CA0084E6E1 /* AddressView.swift in Sources */,
 				E8A2B09B2A05168400D7F524 /* SeeAllView.swift in Sources */,
 				E8A5E17C29F949BA0077E2F0 /* PaymentButtonView.swift in Sources */,
 				E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */,
+				E8A7A2362A14A0E3006E6CCD /* PriceQuoteView.swift in Sources */,
 				E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */,
 				E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */,
 				E8A2B0A12A05191600D7F524 /* FavorListView.swift in Sources */,
 				E8A5E16D29F9241A0077E2F0 /* AvatarView.swift in Sources */,
+				E8EDC60D2A0A822600E20378 /* BottomSheetView.swift in Sources */,
 				E8A5E18229F961A70077E2F0 /* CreateNewPinView.swift in Sources */,
+				E866B2772A0E62BA0084E6E1 /* RatingStarButtonView.swift in Sources */,
+				E875323E2A13B76C007E3089 /* MyRequestView.swift in Sources */,
 				E8A2B0A32A051FCE00D7F524 /* ServiceButtonView.swift in Sources */,
 				E84BB30229E01B7F002D94A6 /* favourView.swift in Sources */,
 				E853CAAB29EC13FD00021DCB /* UIScreen+Extension.swift in Sources */,
@@ -526,17 +688,24 @@
 				E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */,
 				E8064FDC29F9A261000A3D3F /* ProfileView.swift in Sources */,
 				E8A5E17129F9383C0077E2F0 /* SignupView2.swift in Sources */,
+				E8A7A2382A14A349006E6CCD /* VerticalTwoLabelView.swift in Sources */,
 				E8BAA30F29FB94B800D6B5A0 /* AlertView.swift in Sources */,
 				E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */,
+				E866B27A2A0E6C350084E6E1 /* RatingView.swift in Sources */,
 				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
 				E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */,
+				E87532392A13A9FD007E3089 /* BookingInfoView.swift in Sources */,
 				E8E57A662A08D907000F452F /* HomeView.swift in Sources */,
+				E8A7A2342A14A03F006E6CCD /* NeedFavorDetailView.swift in Sources */,
+				E87532422A13B7F1007E3089 /* RequestView.swift in Sources */,
 				E8A5E18029F95E180077E2F0 /* CongratulationView.swift in Sources */,
 				E8BAA30A29FB8AB700D6B5A0 /* E-ReceiptView.swift in Sources */,
+				E8EDC60B2A0A6F5C00E20378 /* NavigationBarView.swift in Sources */,
 				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
 				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
 				E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */,
 				E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */,
+				E875323B2A13B4B5007E3089 /* BottomButtonView.swift in Sources */,
 				E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */,
 				E8A5E17429F939FA0077E2F0 /* DocumentButton.swift in Sources */,
 				E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */,
@@ -546,6 +715,7 @@
 				E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */,
 				E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */,
 				E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */,
+				E8503F992A0BB3B800451ABE /* FavorServicesView.swift in Sources */,
 				E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */,
 				E8A2B0A52A052CA400D7F524 /* DistanceSliderView.swift in Sources */,
 				E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */,
@@ -553,9 +723,15 @@
 				E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */,
 				E8BF4AAB29EC410F005A56BB /* SignupView.swift in Sources */,
 				E853CAAD29EC147300021DCB /* View+Extension.swift in Sources */,
+				E84A0EB42A13FA2600C7F8FD /* DoFavorView.swift in Sources */,
 				E853CAA029EC0DD400021DCB /* FavorText.swift in Sources */,
+				E8A7A23C2A14B606006E6CCD /* PostFavorView.swift in Sources */,
 				E8BF4AB329EC5B7E005A56BB /* ForgotPasswordView.swift in Sources */,
+				E87532372A13A570007E3089 /* BookingDetailView.swift in Sources */,
 				E8064FDE29F9A939000A3D3F /* SettingMenuItem.swift in Sources */,
+				E8A7A2322A149D62006E6CCD /* NeedFavorCellView.swift in Sources */,
+				E8A7A2302A149CC3006E6CCD /* NeedFavorView.swift in Sources */,
+				E8503F972A0BB28800451ABE /* PopularServicesView.swift in Sources */,
 				E853CAA329EC0E3400021DCB /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,6 +947,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 		E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/franklynw/HalfASheet";
@@ -798,6 +982,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E8503F932A0B68B900451ABE /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
 		E8595A4929FAAC2100CF9302 /* HalfASheet */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */;

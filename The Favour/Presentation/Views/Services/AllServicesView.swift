@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllServicesView: View {
     
-    var count: Int = 7
+    var count: Int = 12
     
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     //Color(red: 0.447, green: 0.063, blue: 1, alpha: 0.08).cgColor
@@ -36,17 +36,23 @@ struct AllServicesView: View {
     
     
     var body: some View {
-        
-        ScrollView(.vertical) {
-            LazyVGrid(columns: gridItemLayout, spacing: 20){
-                ForEach((0...count), id: \.self) {
-                    ServicesView(image: images[$0 % images.count],
-                                 name: titles[$0 % titles.count],
-                                 color: colors[$0 % colors.count]
-                    )
-                }
+        VStack {
+            NavigationBarView(text: "All Services")
+            ScrollView(.vertical) {
+                LazyVGrid(columns: gridItemLayout, spacing: 20) {
+                    ForEach((0...count), id: \.self) {
+                        ServicesView(image: images[$0 % images.count],
+                                     name: titles[$0 % titles.count],
+                                     color: colors[$0 % colors.count]
+                        )
+                    }
                 }
             }
+            .padding(.top, 20)
+        }
+        .padding(24)
+        .navigationBarHidden(true)
+        .navigationTitle("")
     }
 }
 

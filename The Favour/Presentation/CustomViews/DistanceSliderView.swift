@@ -30,15 +30,16 @@ struct DistanceSliderView: View {
                        showTooltip = true
                    }
                }
+               .tint(.appPrimaryColor)
                
                
                Text("\(Int(maxValue))")
                    
                    
            }
-           Text("\(Int(sliderValue))")
-               .foregroundColor(.gray)
-               .font(.subheadline)
+//           Text("\(Int(sliderValue))")
+//               .foregroundColor(.gray)
+//               .font(.subheadline)
        }
        .padding(.horizontal)
 
@@ -49,7 +50,7 @@ struct DistanceSliderView: View {
 struct DistanceSliderView_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 24) {
-            DistanceSliderView(minValue: 5, maxValue: 100, step: 5, title: "Distance")
+            DistanceSliderView(minValue: 0, maxValue: 100, step: 1, title: "Location")
             
         }
     }

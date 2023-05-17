@@ -16,6 +16,7 @@ struct FavorDividerView: View {
             Rectangle()
                 .foregroundColor(bgColor)
                 .frame(width: width, height: height)
+                .padding(.vertical, 16)
         }
     
 }

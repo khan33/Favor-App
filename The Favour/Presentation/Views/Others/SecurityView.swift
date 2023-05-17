@@ -13,7 +13,10 @@ struct SecurityView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
+            NavigationBarView(text: "Security")
+            
             Toggle("Face Id", isOn: $isOnFaceId)
+                .padding(.top, 24)
                 
             Toggle("Biometric Id", isOn: $isOnBiometricId)
                 
@@ -23,8 +26,12 @@ struct SecurityView: View {
             
             FavorButton(text: "Change Password", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
             }
+            
+            Spacer()
         }
-        .padding()
+        .padding(24)
+        .navigationBarHidden(true)
+        .navigationTitle("")
     }
 }
 

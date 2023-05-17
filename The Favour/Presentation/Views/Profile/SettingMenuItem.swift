@@ -19,7 +19,6 @@ struct SettingMenuItem: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 28, height: 28)
-                .padding(.leading, 20)
 
             FavorText(text: title,
                       textColor: !isLogout ? Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)) : Color(#colorLiteral(red: 0.97, green: 0.33, blue: 0.33, alpha: 1)) , fontType: .semiBold, fontSize: 18, alignment: .center, lineSpace: 0)

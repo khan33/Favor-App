@@ -14,7 +14,7 @@ struct AddPaymentMethods: View {
     var body: some View {
         VStack (spacing: 24){
             NavigationLink(destination: AddNewCard(), isActive: $isNext) { EmptyView() }
-
+            NavigationBarView(text: "Add Payment Methods")
             FavorText(text: "Steps 3 of 3", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
                 .padding(.vertical, 18)
             
@@ -39,19 +39,12 @@ struct AddPaymentMethods: View {
             Spacer()
         }
         .padding()
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
-        .navigationTitle("Add Payment Methods")
+        .navigationBarHidden(true)
+        .navigationTitle("")
+        .navigationTitle("")
+        .navigationTitle("")
     }
-    var btnBack : some View { Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                Image("ic_back") // set image here
-                    .aspectRatio(contentMode: .fit)
-                }
-            }
-        }
+    
 }
 
 struct AddPaymentMethods_Previews: PreviewProvider {

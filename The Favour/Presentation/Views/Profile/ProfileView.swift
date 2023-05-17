@@ -14,12 +14,31 @@ struct ProfileView: View {
 
     
     @State private var isShowHome = false
-
+    @State private var isEditProfile = false
+    @State private var isPaymentScreen = false
+    @State private var isSecurityScreen = false
+    @State private var isPrivacy = false
+    @State private var isReport = false
+    @State private var isAlert = false
     var body: some View {
-        NavigationView {
-            NavigationLink(destination: HomeView(), isActive: $isShowHome) { EmptyView() }
-            ZStack {
+        ZStack {
+            ScrollView {
                 VStack(alignment: .center) {
+                    Group {
+                        NavigationLink(destination: HomeView(), isActive: $isShowHome) { EmptyView() }
+                        NavigationLink(destination: SignupView1(), isActive: $isEditProfile) { EmptyView() }
+                        NavigationLink(destination: AddPaymentMethods(), isActive: $isPaymentScreen) { EmptyView() }
+                        NavigationLink(destination: SecurityView(), isActive: $isSecurityScreen) { EmptyView() }
+                        NavigationLink(destination: PrivacyPolicyView(), isActive: $isPrivacy) { EmptyView() }
+                        NavigationLink(destination: ReportView(), isActive: $isReport) { EmptyView() }
+                        NavigationLink(destination: AlertView(), isActive: $isAlert) { EmptyView() }
+                        
+                    }
+                    
+                    
+                    
+                    
+                    topBar
                     avatarImage
                     personalInfo
                     if isOn == false {
@@ -29,37 +48,50 @@ struct ProfileView: View {
                         }
                     }
                     switchAccount
-                    FavorDividerView(width: .infinity, height: 1)
-                        .padding(.vertical, 8)
+                    FavorDividerView(width: UIScreen.screenWidth - 24 , height: 1)
+                        .padding( .trailing, 24)
                     menuItems
                     Spacer()
                 }
-                .padding(.top, 24)
-                
-                // MARK: - HALF SHEET FOR LOGOUT
-                HalfASheet(isPresented: $showLogoutSheet, title: "Logout") {
-                    VStack(spacing: 16) {
-                        FavorDividerView(width: .infinity, height: 1)
-                        FavorText(text: "Are you sure you want to log out?",
-                                  textColor: Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)) , fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
-                        .padding(.vertical, 24)
-                        HStack {
-                            FavorButton(text: "Cancel", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
-                            }
-                            FavorButton(text: "Yes, Logout", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
-                                
-                            }
+                .padding([.top, .leading], 24)
+            }
+            
+            // MARK: - HALF SHEET FOR LOGOUT
+            HalfASheet(isPresented: $showLogoutSheet, title: "Logout") {
+                VStack(spacing: 16) {
+                    FavorDividerView(width: .infinity, height: 1)
+                    FavorText(text: "Are you sure you want to log out?",
+                              textColor: Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)) , fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
+                    .padding(.vertical, 24)
+                    HStack {
+                        FavorButton(text: "Cancel", width: .infinity, height: 44, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
+                        }
+                        FavorButton(text: "Yes, Logout", width: .infinity, height: 44, bgColor: .appPrimaryColor) {
                             
                         }
                     }
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 16)
                 }
-                
-                .height(.proportional(0.3))
-                .backgroundColor(.white)
-                .contentInsets(EdgeInsets(top: 50, leading: 10, bottom: 5, trailing: 10))
             }
+            
+            .height(.proportional(0.3))
+            .backgroundColor(.white)
+            .contentInsets(EdgeInsets(top: 50, leading: 10, bottom: 5, trailing: 10))
         }
+        .navigationBarHidden(true)
+        .navigationTitle("")
+    }
         
+    private var topBar: some View {
+        HStack(spacing: 16) {
+            Image("hear_logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 32, height: 32)
+            FavorText(text: "Profile", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .bold, fontSize: 24, alignment: .center, lineSpace: 0)
+            Spacer()
+        }
     }
     
     private var avatarImage: some View {
@@ -78,7 +110,7 @@ struct ProfileView: View {
         VStack(spacing: 4) {
             FavorText(text: "Andrew Ainsley", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .bold, fontSize: 24, alignment: .center, lineSpace: 0)
             
-            FavorText(text: "andrew_ainsley@yourdomain.com", textColor: Color(#colorLiteral(red: 0.62, green: 0.62, blue: 0.62, alpha: 1)), fontType: .semiBold, fontSize: 14, alignment: .center, lineSpace: 0)
+            FavorText(text: "andrew_ainsley@yourdomain.com", textColor: .appLightGrey, fontType: .semiBold, fontSize: 14, alignment: .center, lineSpace: 0)
             
         }
     }
@@ -101,20 +133,29 @@ struct ProfileView: View {
     
     private var menuItems: some View {
         VStack(spacing: 24) {
-                SettingMenuItem(title: "Home", image: "Home", isLogout: false) {
-                    isShowHome = true
-                }
-            
-            
+            SettingMenuItem(title: "Home", image: "Home", isLogout: false) {
+                isShowHome = true
+            }
+            SettingMenuItem(title: "Edit Profile", image: "Profile", isLogout: false){
+                isEditProfile = true
+            }
 
-            SettingMenuItem(title: "Edit Profile", image: "Profile", isLogout: false)
+            SettingMenuItem(title: "Payment", image: "Wallet", isLogout: false){
+                isPaymentScreen = true
+            }
 
-            SettingMenuItem(title: "Payment", image: "Wallet", isLogout: false)
-
-            SettingMenuItem(title: "Security", image: "Shield Done", isLogout: false)
+            SettingMenuItem(title: "Security", image: "Shield Done", isLogout: false){
+                isSecurityScreen = true
+            }
 
             SettingMenuItem(title: "Privacy Policy", image: "Lock", isLogout: false) {
-                print("privacy policy")
+               isPrivacy = true
+            }
+//            SettingMenuItem(title: "Report", image: "Lock", isLogout: false) {
+//               isReport = true
+//            }
+            SettingMenuItem(title: "Alerts", image: "Lock", isLogout: false) {
+               isAlert = true
             }
             
             SettingMenuItem(title: "Logout", image: "Logout", isLogout: true) {

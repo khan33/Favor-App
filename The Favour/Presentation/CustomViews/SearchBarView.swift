@@ -9,23 +9,27 @@ import SwiftUI
 
 struct SearchBarView: View {
     @Binding var searchText: String
-
-        var body: some View {
-            HStack {
-                Image("Search")
-                
-                TextField("Search", text: $searchText)
-                    .textFieldStyle(PlainTextFieldStyle())
-                
-                Image("fliter")
-                
-            }
-            .padding(.vertical, 16)
-            .padding(.horizontal, 16)
-            .background(Color.init(hex: "#F5F5F5"))
-            .cornerRadius(8)
+    var filterAction: (() -> Void)?
+    
+    var body: some View {
+        HStack {
+            Image("Search")
+            
+            TextField("Search", text: $searchText)
+                .textFieldStyle(PlainTextFieldStyle())
+            
+            Image("fliter")
+                .onTapGesture {
+                    filterAction?()
+                }
             
         }
+        .padding(.vertical, 16)
+        .padding(.horizontal, 16)
+        .background(Color.init(hex: "#F5F5F5"))
+        .cornerRadius(8)
+        
+    }
 }
 
 struct SearchBarView_Previews: PreviewProvider {

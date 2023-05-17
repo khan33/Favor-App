@@ -14,7 +14,9 @@ struct Page: Identifiable, Equatable {
     var imageUrl: String
     var tag: Int
     
-    static var samplePage = Page(name: "", description: "The best results and your satisfaction is our top priority", imageUrl: "screen1", tag: 0)
+    static var samplePage1 = Page(name: "", description: "The best results and your satisfaction is our top priority", imageUrl: "screen1", tag: 0)
+    static var samplePage2 = Page(name: "", description: "The best results and your satisfaction is our top priority", imageUrl: "screen2", tag: 0)
+    static var samplePage3 = Page(name: "", description: "The best results and your satisfaction is our top priority", imageUrl: "screen3", tag: 0)
     
     static var samplePages: [Page] = [
         Page(name: "", description: "The best results and your satisfaction is our top priority", imageUrl: "screen1", tag: 0),
@@ -26,11 +28,12 @@ struct Page: Identifiable, Equatable {
     
 }
 
+
 struct ContentView: View {
     @State private var pageIndex = 0
     private let dotAppearance = UIPageControl.appearance()
     private let pages: [Page] = Page.samplePages
-    
+
     @State private var isShowingDetailView = false
 
     init(){
@@ -42,20 +45,18 @@ struct ContentView: View {
              }
         }
     }
-    
-    var body: some View {
-        
 
+    var body: some View {
         NavigationView {
 
             VStack {
-                NavigationLink(destination: SignupView(), isActive: $isShowingDetailView) { EmptyView() }
+                NavigationLink(destination: ProfileView(), isActive: $isShowingDetailView) { EmptyView() }
                 TabView(selection: $pageIndex) {
                     ForEach(pages) { page in
                         VStack {
                             PageView(page: page)
                             Spacer()
-                            
+
                         }
                         .tag(page.tag)
                     }
@@ -74,10 +75,9 @@ struct ContentView: View {
                     FavorButton(text: "Next", width: .infinity, height: 58) {
                         incrementPage()
                     }
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 48)
                 }
                 Spacer()
-                
                     .onAppear{
                         dotAppearance.currentPageIndicatorTintColor = UIColor(red: 0.647, green: 0.29, blue: 1, alpha: 1)
                         //UIColor(red: 0.647, green: 0.29, blue: 1, alpha: 1).cgColor
@@ -85,6 +85,7 @@ struct ContentView: View {
                     }
             }
         }
+
     }
     func incrementPage() {
         pageIndex += 1
@@ -99,3 +100,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+

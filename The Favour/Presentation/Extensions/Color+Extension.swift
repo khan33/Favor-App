@@ -34,34 +34,15 @@ extension Color {
     }
     
     
-    
-    /// #18A94A
     static let appPrimaryColor = Color(hex: "#A54AFF")
-    
     static let appTitleColor = Color(#colorLiteral(red: 0.65, green: 0.29, blue: 1, alpha: 1))
-    /// #18A94A with alpha
-    static let appGreenWithAlpha = Color(red: 0.196, green: 0.392, blue: 0.239)
-    /// #172327
-    static let appBlack = Color(red: 0.129, green: 0.129, blue: 0.129)
-    /// #FFFFFF
+    static let appBlack = Color(red: 0.13, green: 0.13, blue: 0.13)
     static let appWhite = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-    /// #F7D8D4
-    static let appPink = Color(red: 0.969, green: 0.847, blue: 0.831)
-    /// #F2F2F2
-    static let appLightGrey = Color(red: 0.949, green: 0.949, blue: 0.949)
-    /// #979797
-    static let appLightBlack = Color(red: 0.592, green: 0.592, blue: 0.592)
-    /// #
+    static let appLightGrey = Color(red: 0.62, green: 0.62, blue: 0.62)
+    static let appLightBlack = Color(red: 0.46, green: 0.46, blue: 0.46)
+    static let appTitleBlack = Color(red: 0.26, green: 0.26, blue: 0.26)
     static let appIconBackground = Color(red: 0.858, green: 0.854, blue: 0.854)
-    /// #5FD8C9
-    static let appGreenIconColor = Color(red: 0.373, green: 0.847, blue: 0.788)
-    /// #EA4335
-    static let appRed = Color(red: 0.917, green: 0.262, blue: 0.207)
-    /// #FBBC04
-    static let appYellow = Color(red: 0.984, green: 0.737, blue: 0.015)
-    
     static let appBorderColor = Color(red: 0.933, green: 0.933, blue: 0.933)
-    
     static let appTextFieldColor = Color(red: 0.98, green: 0.98, blue: 0.98)
     
 }

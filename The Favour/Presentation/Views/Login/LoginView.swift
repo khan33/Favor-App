@@ -87,15 +87,16 @@ struct LoginView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
     }
-    var btnBack : some View { Button(action: {
+    var btnBack : some View {
+        Button(action: {
             self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                Image("ic_back") // set image here
-                    .aspectRatio(contentMode: .fit)
-                }
+        }) {
+            HStack {
+            Image("ic_back") // set image here
+                .aspectRatio(contentMode: .fit)
             }
         }
+    }
 }
 
 struct LoginView_Previews: PreviewProvider {
