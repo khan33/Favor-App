@@ -50,7 +50,7 @@ struct ContentView: View {
         NavigationView {
 
             VStack {
-                NavigationLink(destination: ProfileView(), isActive: $isShowingDetailView) { EmptyView() }
+                NavigationLink(destination: SignupView(), isActive: $isShowingDetailView) { EmptyView() }
                 TabView(selection: $pageIndex) {
                     ForEach(pages) { page in
                         VStack {

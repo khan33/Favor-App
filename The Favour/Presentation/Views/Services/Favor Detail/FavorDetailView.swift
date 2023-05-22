@@ -11,9 +11,12 @@ struct FavorDetailView: View {
     @State private var searchText = ""
     private var ratings = ["All", "5", "4", "3", "2", "1", "0"]
     @State private var isExpanded = false
+    @State private var isNext = false
 
     var body: some View {
         VStack(alignment: .leading) {
+            NavigationLink(destination: BookingDetailView(), isActive: $isNext) { EmptyView() }
+
             VStack(spacing: 16) {
                 NavigationBarView(text: "Detail")
                 
@@ -53,7 +56,7 @@ struct FavorDetailView: View {
                     FavorButton(text: "Message", width: .infinity, height: 55, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
                     }
                     FavorButton(text: "Book Favor", width: .infinity, height: 55, bgColor: .appPrimaryColor) {
-                        
+                        isNext = true
                     }
                 }
                 .padding(.horizontal, 24)

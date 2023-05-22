@@ -19,7 +19,7 @@ struct DistanceSliderView: View {
 
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 24) {
            Text(title)
                .font(.headline)
            HStack {
@@ -41,7 +41,6 @@ struct DistanceSliderView: View {
 //               .foregroundColor(.gray)
 //               .font(.subheadline)
        }
-       .padding(.horizontal)
 
     }
     

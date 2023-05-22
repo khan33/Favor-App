@@ -9,8 +9,11 @@ import SwiftUI
 
 struct CongratulationView: View {
     @Binding var show: Bool
+    @State private var isNext = false
+
     var body: some View {
         ZStack {
+            NavigationLink(destination: MainTabView(), isActive: $isNext) { EmptyView() }
             if show {
                 Color.black.opacity(show ? 0.3 : 0).edgesIgnoringSafeArea(.all)
                 
@@ -26,11 +29,12 @@ struct CongratulationView: View {
                     
                     FavorText(text: "Congratulations", textColor: .appTitleColor, fontType: .bold, fontSize: 24, alignment: .center)
                     
-                    FavorText(text: "*Your card has been added successfully.", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .regular, fontSize: 16, alignment: .center)
+                    FavorText(text: "Your account is ready to use. You will be redirected to the Home page in a few seconds.", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .regular, fontSize: 16, alignment: .center)
                     
                     FavorButton(text: "OK", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                         withAnimation(.linear(duration: 0.3)) {
                             show.toggle()
+                            isNext = true
                         }
                     }
                     

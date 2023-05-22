@@ -10,11 +10,11 @@ import SwiftUI
 struct SignupView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var isShowingLoginView = false
-
+    @State private var isShowingSignupView = false
     var body: some View {
         VStack {
             NavigationLink(destination: LoginView(), isActive: $isShowingLoginView) { EmptyView() }
-
+            NavigationLink(destination: MainView(), isActive: $isShowingSignupView) { EmptyView() }
             Image("Signup")
                 .resizable()
                 .scaledToFit()
@@ -52,7 +52,9 @@ struct SignupView: View {
             HStack(spacing: 0) {
                 FavorText(text:"Don’t have an account?")
                 
-                FavorButton(text: "Sign up", width: 60, height: 60, textColor: .appPrimaryColor, bgColor: .white )
+                FavorButton(text: "Sign up", width: 60, height: 60, textColor: .appPrimaryColor, bgColor: .white ) {
+                    self.isShowingSignupView = true
+                }
 
             }
             Spacer()

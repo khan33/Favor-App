@@ -22,9 +22,9 @@ struct RatingStarButtonView: View {
             HStack(alignment: .center, spacing: 8) {
                 Image(systemName: "star.fill")
                     .foregroundColor(bgColor == .white ? .appPrimaryColor : .white)
-                    .frame(width: 16, height: 16)
-                    .padding(.vertical, 11)
-                    .padding(.leading, 20)
+                    .frame(width: 14, height: 14)
+                    .padding(.vertical, 9)
+                    .padding(.leading, 18)
                 
                
                 if let text = text {
@@ -32,7 +32,6 @@ struct RatingStarButtonView: View {
                         .padding(.trailing, 20)
                 }
             }
-            .frame(width: 83, height: 38)
             .background(bgColor)
             .cornerRadius(cornerRadius)
             .overlay(

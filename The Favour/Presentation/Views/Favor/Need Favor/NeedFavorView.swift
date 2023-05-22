@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct NeedFavorView: View {
+    @State private var isNext = false
     var body: some View {
         VStack() {
+            
+            NavigationLink(destination: MyRequestView(), isActive: $isNext) { EmptyView() }
             topBarView
             ScrollView {
                 NeedFavorCellView()
@@ -35,7 +38,9 @@ extension NeedFavorView {
             
             FavorText(text: "I need a favor", textColor: Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)), fontType: .bold, fontSize: 24, alignment: .leading, lineSpace: 0)
             Spacer()
-            FavorButton(text: "My Requests", width: 110, height: 30)
+            FavorButton(text: "My Requests", width: 110, height: 30) {
+                isNext = true
+            }
 
         }
     }

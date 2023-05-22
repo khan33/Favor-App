@@ -20,7 +20,6 @@ struct BookingDetailView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20, height: 20)
-                    
                 }
                 .padding(.top, 20)
                 HStack {

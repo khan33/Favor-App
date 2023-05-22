@@ -17,7 +17,7 @@ struct SignupAddPhoto: View {
             VStack(alignment: .center, spacing: 24) {
                 NavigationLink(destination: SignupView2(), isActive: $isNext) { EmptyView() }
 
-                FavorText(text: "Steps 1 of 3", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
+                FavorText(text: "Steps 1 of 2", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
                     .padding(.top, 36)
                     .padding(.bottom, 16)
                 
@@ -51,6 +51,8 @@ struct SignupAddPhoto: View {
             }
             .padding()
             ProfilePicModal(show: $showModally)
+                .transition(.move(edge: .bottom))
+            
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)

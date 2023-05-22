@@ -21,6 +21,7 @@ struct MainView: View {
                 .init(color: Color(#colorLiteral(red: 0.6165271997451782, green: 0.3500000238418579, blue: 1, alpha: 1)), location: 1)])) {
                     isMainView = true
                 }
+                .padding(.top, 24)
             
             
             FavorCardView(title: "I CAN DO YOU A FAVOR", subTitle: "Get discount for every order, only valid for today", imageName: "do_favor", gradientColor: Gradient(stops: [
@@ -28,6 +29,8 @@ struct MainView: View {
                 .init(color: Color(#colorLiteral(red: 0.20682293176651, green: 0.8708333373069763, blue: 0.7362953424453735, alpha: 1)), location: 1)])) {
                     isMainView = true
                 }
+            
+            Spacer()
         }
         
         .background(Color.white)

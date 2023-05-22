@@ -15,7 +15,7 @@ struct SignupView2: View {
         VStack (spacing: 16){
             NavigationLink(destination: DocumentUploadView(), isActive: $isNext) { EmptyView() }
 
-            FavorText(text: "Steps 2 of 3", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
+            FavorText(text: "Steps 2 of 2", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
                 .padding(.horizontal, 8)
                 .padding(.top, 30)
             
@@ -26,12 +26,13 @@ struct SignupView2: View {
             DocumentButton(title: "ID Card / Driving License") {
                 isNext = true
             }
-            DocumentButton(title: "Passport"){
-                isNext = true
-            }
-            DocumentButton(title: "Tax ID Number"){
-                isNext = true
-            }
+            .padding(.top, 24)
+//            DocumentButton(title: "Passport"){
+//                isNext = true
+//            }
+//            DocumentButton(title: "Tax ID Number"){
+//                isNext = true
+//            }
             
             Spacer()
             

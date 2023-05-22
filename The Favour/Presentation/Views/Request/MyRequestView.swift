@@ -11,6 +11,7 @@ struct MyRequestView: View {
     var body: some View {
         VStack {
             NavigationBarView(text: "My Request")
+            
             ScrollView {
                 RequestView()
                 RequestView()

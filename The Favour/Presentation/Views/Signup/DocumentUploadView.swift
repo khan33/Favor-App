@@ -10,29 +10,33 @@ import SwiftUI
 struct DocumentUploadView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var isNext = false
-
+    @State private var showModally = false
     var body: some View {
-        VStack (spacing: 16){
-            NavigationLink(destination: AddPaymentMethods(), isActive: $isNext) { EmptyView() }
-
-            FavorText(text: "Steps 2 of 3", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
-                .padding(.vertical, 18)
-            
-            FavorText(text: "Upload a jpg, png or pdf, max size 1mb", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
-                .padding(.bottom, 18)
-
-            DocumentUploadButton(title: "Upload Id Front")
-            
-            DocumentUploadButton(title: "Upload Id Back")
-            
-            
-            FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
-                isNext = true
-
+        ZStack {
+            VStack (spacing: 16){
+                //            NavigationLink(destination: AddPaymentMethods(), isActive: $isNext) { EmptyView() }
+                
+                FavorText(text: "Steps 2 of 2", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
+                    .padding(.vertical, 18)
+                
+                FavorText(text: "Upload a jpg, png or pdf, max size 1mb", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
+                    .padding(.bottom, 18)
+                
+                DocumentUploadButton(title: "Upload Id Front")
+                
+                DocumentUploadButton(title: "Upload Id Back")
+                
+                
+                FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                    showModally = true
+                    
+                }
+                Spacer()
             }
-            Spacer()
+            .padding()
+            
+            CongratulationView(show: $showModally)
         }
-        .padding()
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         .navigationTitle("Fill Your Profile")

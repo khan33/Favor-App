@@ -18,17 +18,15 @@ struct ForgotPasswordView: View {
                 .padding(.horizontal, 24)
                 .padding(.top, 40)
                 .padding(.bottom, 12)
-                .lineLimit(2)
             
             FavorTextField(placeholder: "Email", leftImage: "Message", rightImage: nil, text: $email)
             
-            FavorTextField(placeholder: "Email", leftImage: "Message", rightImage: nil, text: $email)
-                .padding(.horizontal,8)
+            
 
             
             FavorButton(text: "Submit", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
             }
-            .padding(.horizontal,24)
+            
                         
             HStack(spacing: 0) {
                 FavorText(text:"Don’t have an account?")
@@ -36,12 +34,14 @@ struct ForgotPasswordView: View {
                 FavorButton(text: "Sign up", width: 60, height: 60, textColor: .appPrimaryColor, bgColor: .white )
                 
             }
+            
             .frame(maxWidth: .infinity, alignment: .center)
 
             Spacer()
             
             
         }
+        .padding(.horizontal,24)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         

@@ -13,7 +13,7 @@ struct HomeView: View {
     @State private var isSheetShown = false
     @State var cardDismissal = false
     @State private var isServices = false
-    private var service_titles = ["All", "Cleaning", "Repairing", "Painting", "Laundry", "Appliance", "Plumbing", "Movers", "Beauty", "AC Repa..", "Vehicle", "Electronics", "Massage", "Men’s Sal.."]
+    @State var service_titles = ["All", "Cleaning", "Repairing", "Painting", "Laundry", "Appliance", "Plumbing", "Movers", "Beauty", "AC Repa..", "Vehicle", "Electronics", "Massage", "Men’s Sal.."]
     private var colors: [Color] = [
                                 Color(red: 0.447, green: 0.063, blue: 1),
                                 Color(red: 1, green: 0.596, blue: 0),
@@ -53,7 +53,6 @@ struct HomeView: View {
                     
                     SearchBarView(searchText: $searchText) {
                         isSheetShown = true
-                        cardDismissal.toggle()
                     }
                     
                     
@@ -94,6 +93,7 @@ struct HomeView: View {
             .navigationBarHidden(true)
             .navigationTitle("")
             
+            FilterModalView(isShowing: $isSheetShown, services: $service_titles)
             
             
         }
