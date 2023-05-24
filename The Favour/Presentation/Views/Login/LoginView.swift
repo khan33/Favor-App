@@ -9,6 +9,10 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    
+    @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
+
     @State var email: String = ""
     @State var password: String = ""
     @State private var isChecked = false
@@ -49,6 +53,7 @@ struct LoginView: View {
                 .padding(.vertical, 16)
                 
                 FavorButton(text: "Login", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                    viewModel.performLogin()
                 }
                 
                 FavorButton(text: "Forgot the password?", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: .white) {

@@ -98,6 +98,16 @@
 		E8EDC60D2A0A822600E20378 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EDC60C2A0A822600E20378 /* BottomSheetView.swift */; };
 		E8F9ED9229E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */; };
 		E8F9ED9329E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */; };
+		E8FB17BF2A1E37C60013C18E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17BE2A1E37C60013C18E /* NetworkManager.swift */; };
+		E8FB17C12A1E38430013C18E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17C02A1E38430013C18E /* HTTPMethod.swift */; };
+		E8FB17C32A1E39070013C18E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17C22A1E39070013C18E /* NetworkConstants.swift */; };
+		E8FB17C52A1E39370013C18E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17C42A1E39370013C18E /* Endpoint.swift */; };
+		E8FB17C72A1E398C0013C18E /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17C62A1E398C0013C18E /* KeychainManager.swift */; };
+		E8FB17CA2A1E3A610013C18E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E8FB17C92A1E3A610013C18E /* KeychainSwift */; };
+		E8FB17CC2A1E3ABA0013C18E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17CB2A1E3ABA0013C18E /* NetworkError.swift */; };
+		E8FB17D02A1E3B2B0013C18E /* AthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17CF2A1E3B2B0013C18E /* AthenticationManager.swift */; };
+		E8FB17D32A1E3B6E0013C18E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17D22A1E3B6E0013C18E /* LoginModel.swift */; };
+		E8FB17D52A1E3BF80013C18E /* AthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17D42A1E3BF80013C18E /* AthenticationViewModel.swift */; };
 		E8FDB83C2A1B435D00E727D4 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB83B2A1B435D00E727D4 /* Investment.swift */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +201,15 @@
 		E8F9ED9029E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E8F9ED9129E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Favour-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E8FB17BE2A1E37C60013C18E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E8FB17C02A1E38430013C18E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E8FB17C22A1E39070013C18E /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		E8FB17C42A1E39370013C18E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E8FB17C62A1E398C0013C18E /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		E8FB17CB2A1E3ABA0013C18E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E8FB17CF2A1E3B2B0013C18E /* AthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthenticationManager.swift; sourceTree = "<group>"; };
+		E8FB17D22A1E3B6E0013C18E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		E8FB17D42A1E3BF80013C18E /* AthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthenticationViewModel.swift; sourceTree = "<group>"; };
 		E8FDB83B2A1B435D00E727D4 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +220,7 @@
 			files = (
 				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
 				E8A2B0A82A056C4500D7F524 /* SwiftUITooltip in Frameworks */,
+				E8FB17CA2A1E3A610013C18E /* KeychainSwift in Frameworks */,
 				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
 				E8503F942A0B68B900451ABE /* SwiftUIX in Frameworks */,
 			);
@@ -443,9 +463,9 @@
 		E894EE8F29E0254C00837AFD /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
-				E894EE9629E025A600837AFD /* Models */,
+				E894EE9629E025A600837AFD /* View Models */,
 				E894EE9529E0259F00837AFD /* Services */,
-				E894EE9729E025AE00837AFD /* Endpoints */,
+				E894EE9729E025AE00837AFD /* Models */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -453,7 +473,8 @@
 		E894EE9029E0255800837AFD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E894EE9429E0259600837AFD /* Networking */,
+				E894EE9429E0259600837AFD /* Network Manager */,
+				E8FB17C62A1E398C0013C18E /* KeychainManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -494,32 +515,40 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
-		E894EE9429E0259600837AFD /* Networking */ = {
+		E894EE9429E0259600837AFD /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E8FB17BE2A1E37C60013C18E /* NetworkManager.swift */,
+				E8FB17C02A1E38430013C18E /* HTTPMethod.swift */,
+				E8FB17C22A1E39070013C18E /* NetworkConstants.swift */,
+				E8FB17C42A1E39370013C18E /* Endpoint.swift */,
+				E8FB17CB2A1E3ABA0013C18E /* NetworkError.swift */,
 			);
-			path = Networking;
+			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 		E894EE9529E0259F00837AFD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E8FB17CE2A1E3B150013C18E /* Auth Manager */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		E894EE9629E025A600837AFD /* Models */ = {
+		E894EE9629E025A600837AFD /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				E8FB17CD2A1E3AF70013C18E /* Auth */,
 			);
-			path = Models;
+			path = "View Models";
 			sourceTree = "<group>";
 		};
-		E894EE9729E025AE00837AFD /* Endpoints */ = {
+		E894EE9729E025AE00837AFD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E8FB17D12A1E3B640013C18E /* Auth */,
 			);
-			path = Endpoints;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E8A2B09C2A05188500D7F524 /* Home */ = {
@@ -601,6 +630,30 @@
 			path = "Alerts & Report";
 			sourceTree = "<group>";
 		};
+		E8FB17CD2A1E3AF70013C18E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E8FB17D42A1E3BF80013C18E /* AthenticationViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E8FB17CE2A1E3B150013C18E /* Auth Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E8FB17CF2A1E3B2B0013C18E /* AthenticationManager.swift */,
+			);
+			path = "Auth Manager";
+			sourceTree = "<group>";
+		};
+		E8FB17D12A1E3B640013C18E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E8FB17D22A1E3B6E0013C18E /* LoginModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -622,6 +675,7 @@
 				E8595A4929FAAC2100CF9302 /* HalfASheet */,
 				E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */,
 				E8503F932A0B68B900451ABE /* SwiftUIX */,
+				E8FB17C92A1E3A610013C18E /* KeychainSwift */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -656,6 +710,7 @@
 				E8595A4829FAAC2100CF9302 /* XCRemoteSwiftPackageReference "HalfASheet" */,
 				E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
 				E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				E8FB17C82A1E3A610013C18E /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -685,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8FB17C32A1E39070013C18E /* NetworkConstants.swift in Sources */,
 				E8BAA31529FB9FB700D6B5A0 /* ReportCellView.swift in Sources */,
 				E866B2732A0E4A460084E6E1 /* FavorInfoView.swift in Sources */,
 				E8A5E16B29F922B50077E2F0 /* SignupAddPhoto.swift in Sources */,
@@ -697,21 +753,25 @@
 				E809305D29DDCB92003BFEFE /* PageView.swift in Sources */,
 				E866B2712A0E44EC0084E6E1 /* FavorDetailView.swift in Sources */,
 				E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */,
+				E8FB17D32A1E3B6E0013C18E /* LoginModel.swift in Sources */,
 				E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */,
 				E85EB4092A1B8D8800C1740F /* ChatView.swift in Sources */,
 				E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */,
 				E866B2752A0E51CA0084E6E1 /* AddressView.swift in Sources */,
 				E8A2B09B2A05168400D7F524 /* SeeAllView.swift in Sources */,
 				E8A5E17C29F949BA0077E2F0 /* PaymentButtonView.swift in Sources */,
+				E8FB17C12A1E38430013C18E /* HTTPMethod.swift in Sources */,
 				E8595A4529FA4C8200CF9302 /* SecurityView.swift in Sources */,
 				E8A7A2362A14A0E3006E6CCD /* PriceQuoteView.swift in Sources */,
 				E8BF4AAF29EC4C17005A56BB /* FavorDividerView.swift in Sources */,
 				E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */,
 				E8A2B0A12A05191600D7F524 /* FavorListView.swift in Sources */,
+				E8FB17D02A1E3B2B0013C18E /* AthenticationManager.swift in Sources */,
 				E8A5E16D29F9241A0077E2F0 /* AvatarView.swift in Sources */,
 				E8EDC60D2A0A822600E20378 /* BottomSheetView.swift in Sources */,
 				E8A5E18229F961A70077E2F0 /* CreateNewPinView.swift in Sources */,
 				E85EB40B2A1B8DF200C1740F /* MessageBubbleView.swift in Sources */,
+				E8FB17BF2A1E37C60013C18E /* NetworkManager.swift in Sources */,
 				E866B2772A0E62BA0084E6E1 /* RatingStarButtonView.swift in Sources */,
 				E875323E2A13B76C007E3089 /* MyRequestView.swift in Sources */,
 				E8A2B0A32A051FCE00D7F524 /* ServiceButtonView.swift in Sources */,
@@ -724,6 +784,8 @@
 				E8A7A2382A14A349006E6CCD /* VerticalTwoLabelView.swift in Sources */,
 				E8BAA30F29FB94B800D6B5A0 /* AlertView.swift in Sources */,
 				E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */,
+				E8FB17C52A1E39370013C18E /* Endpoint.swift in Sources */,
+				E8FB17D52A1E3BF80013C18E /* AthenticationViewModel.swift in Sources */,
 				E866B27A2A0E6C350084E6E1 /* RatingView.swift in Sources */,
 				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
 				E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */,
@@ -737,6 +799,7 @@
 				E8EDC60B2A0A6F5C00E20378 /* NavigationBarView.swift in Sources */,
 				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
 				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
+				E8FB17C72A1E398C0013C18E /* KeychainManager.swift in Sources */,
 				E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */,
 				E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */,
 				E875323B2A13B4B5007E3089 /* BottomButtonView.swift in Sources */,
@@ -749,6 +812,7 @@
 				E8A5E16F29F9314D0077E2F0 /* ProfilePicModal.swift in Sources */,
 				E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */,
 				E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */,
+				E8FB17CC2A1E3ABA0013C18E /* NetworkError.swift in Sources */,
 				E8595A4729FA4C9200CF9302 /* PrivacyPolicyView.swift in Sources */,
 				E8503F992A0BB3B800451ABE /* FavorServicesView.swift in Sources */,
 				E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */,
@@ -1015,6 +1079,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E8FB17C82A1E3A610013C18E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1037,6 +1109,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8A5E18529F966CC0077E2F0 /* XCRemoteSwiftPackageReference "DPOTPView" */;
 			productName = DPOTPView;
+		};
+		E8FB17C92A1E3A610013C18E /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8FB17C82A1E3A610013C18E /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
