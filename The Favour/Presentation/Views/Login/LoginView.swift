@@ -13,8 +13,8 @@ struct LoginView: View {
     
     @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
 
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var email: String = "atta@gmail.com"
+    @State var password: String = "2323232"
     @State private var isChecked = false
 
     @State private var isShowingForgotPasswordView = false
@@ -32,9 +32,9 @@ struct LoginView: View {
             
             Group {
                 
-                FavorTextField(placeholder: "Email", leftImage: "Message", rightImage: nil, text: $email)
+                FavorTextField(placeholder: "Email", leftImage: "Message", rightImage: nil, text: $viewModel.email)
                 
-                FavorTextField(placeholder: "password", leftImage: "Lock", rightImage: nil, isPassword: true, text: $password)
+                FavorTextField(placeholder: "password", leftImage: "Lock", rightImage: nil, isPassword: true, text: $viewModel.password)
                 
                 Button(action: {
                            isChecked.toggle()
@@ -55,6 +55,8 @@ struct LoginView: View {
                 FavorButton(text: "Login", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                     viewModel.performLogin()
                 }
+                .opacity(buttonOpacity)
+                .disabled(!viewModel.loginIsValid)
                 
                 FavorButton(text: "Forgot the password?", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: .white) {
                     self.isShowingForgotPasswordView = true
@@ -96,6 +98,11 @@ struct LoginView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
     }
+    
+    var buttonOpacity: Double {
+        return viewModel.loginIsValid ? 1 : 0.5
+      }
+    
     var btnBack : some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()

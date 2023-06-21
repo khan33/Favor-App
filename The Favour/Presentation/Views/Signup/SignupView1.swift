@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignupView1: View {
+    
     @State var fullName: String = ""
     @State var nickName: String = ""
     @State var email: String = ""
@@ -26,13 +27,14 @@ struct SignupView1: View {
             FavorTextField(placeholder: "Full Name", leftImage: nil, rightImage: nil, text: $fullName)
                 .padding(.top, 24)
             
-            FavorTextField(placeholder: "Nick Name", leftImage: nil, rightImage: nil, text: $nickName)
+            FavorTextField(placeholder: "Email", leftImage: nil, rightImage: "email", text: $email)
+
+            FavorTextField(placeholder: "Password", leftImage: nil, rightImage: "Lock", text: $nickName)
             
 
             
             FavorTextField(placeholder: "Date of Birth", leftImage: nil, rightImage: "calander", text: $dateOfBirth)
                
-            FavorTextField(placeholder: "Email", leftImage: nil, rightImage: "email", text: $email)
             
             FavorTextField(placeholder: "Phone Number", leftImage: nil, rightImage: nil, text: $phoneNumber)
             
