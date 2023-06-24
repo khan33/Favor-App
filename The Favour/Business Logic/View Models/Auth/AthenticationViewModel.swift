@@ -22,7 +22,7 @@ final class AthenticationViewModel: ObservableObject {
     var moveToNextScreen: ((Int) -> Void)?
     
     @Published var loginIsValid = false
-    
+    var token: String?
     init() {
         isLoginFormValidPublisher
           .receive(on: RunLoop.main)

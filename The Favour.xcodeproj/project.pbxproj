@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F8A9E922A435CBC00C43534 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F8A9E912A435CBC00C43534 /* IQKeyboardManagerSwift */; };
+		1F8A9E942A43714600C43534 /* FavorDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A9E932A43714600C43534 /* FavorDateTextField.swift */; };
+		1F8A9E962A4375BF00C43534 /* FavorPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A9E952A4375BF00C43534 /* FavorPopoverView.swift */; };
 		E8064FDC29F9A261000A3D3F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8064FDB29F9A261000A3D3F /* ProfileView.swift */; };
 		E8064FDE29F9A939000A3D3F /* SettingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */; };
 		E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809304E29DDC21C003BFEFE /* The_FavourApp.swift */; };
@@ -112,6 +115,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F8A9E932A43714600C43534 /* FavorDateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorDateTextField.swift; sourceTree = "<group>"; };
+		1F8A9E952A4375BF00C43534 /* FavorPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorPopoverView.swift; sourceTree = "<group>"; };
+		1F8A9E972A44139A00C43534 /* The Favour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Favour.entitlements"; sourceTree = "<group>"; };
 		E8064FDB29F9A261000A3D3F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuItem.swift; sourceTree = "<group>"; };
 		E809304B29DDC21C003BFEFE /* The Favour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Favour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +229,7 @@
 				E8FB17CA2A1E3A610013C18E /* KeychainSwift in Frameworks */,
 				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
 				E8503F942A0B68B900451ABE /* SwiftUIX in Frameworks */,
+				1F8A9E922A435CBC00C43534 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +286,7 @@
 		E809304D29DDC21C003BFEFE /* The Favour */ = {
 			isa = PBXGroup;
 			children = (
+				1F8A9E972A44139A00C43534 /* The Favour.entitlements */,
 				E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */,
 				E894EE8B29E0252500837AFD /* App */,
 				E894EE8C29E0252B00837AFD /* Presentation */,
@@ -347,6 +355,8 @@
 				E866B2762A0E62BA0084E6E1 /* RatingStarButtonView.swift */,
 				E875323A2A13B4B5007E3089 /* BottomButtonView.swift */,
 				E8ECA3312A1A12070098D5AD /* FilterModalView.swift */,
+				1F8A9E932A43714600C43534 /* FavorDateTextField.swift */,
+				1F8A9E952A4375BF00C43534 /* FavorPopoverView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -676,6 +686,7 @@
 				E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */,
 				E8503F932A0B68B900451ABE /* SwiftUIX */,
 				E8FB17C92A1E3A610013C18E /* KeychainSwift */,
+				1F8A9E912A435CBC00C43534 /* IQKeyboardManagerSwift */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -711,6 +722,7 @@
 				E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
 				E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				E8FB17C82A1E3A610013C18E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				1F8A9E902A435CBC00C43534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -803,6 +815,7 @@
 				E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */,
 				E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */,
 				E875323B2A13B4B5007E3089 /* BottomButtonView.swift in Sources */,
+				1F8A9E962A4375BF00C43534 /* FavorPopoverView.swift in Sources */,
 				E8BF4AAD29EC4119005A56BB /* LoginView.swift in Sources */,
 				E8A5E17429F939FA0077E2F0 /* DocumentButton.swift in Sources */,
 				E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */,
@@ -810,6 +823,7 @@
 				E85EB4062A1B880E00C1740F /* MainTabView.swift in Sources */,
 				E8A5E17A29F949670077E2F0 /* AddPaymentMethods.swift in Sources */,
 				E8A5E16F29F9314D0077E2F0 /* ProfilePicModal.swift in Sources */,
+				1F8A9E942A43714600C43534 /* FavorDateTextField.swift in Sources */,
 				E8A5E16729F900190077E2F0 /* FavorCardView.swift in Sources */,
 				E8BAA30829FB876500D6B5A0 /* PaymentView.swift in Sources */,
 				E8FB17CC2A1E3ABA0013C18E /* NetworkError.swift in Sources */,
@@ -958,6 +972,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
@@ -993,6 +1008,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
@@ -1047,6 +1063,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1F8A9E902A435CBC00C43534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
@@ -1090,6 +1114,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1F8A9E912A435CBC00C43534 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F8A9E902A435CBC00C43534 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		E8503F932A0B68B900451ABE /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */;

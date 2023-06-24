@@ -13,6 +13,7 @@ struct FavorTextField: View {
     let rightImage: String?
     var isPassword: Bool = false
     @Binding var text: String
+    var action: (() -> Void)? = nil
 
     var body: some View {
         ZStack {
@@ -35,6 +36,9 @@ struct FavorTextField: View {
                 }
                 if let right_image = rightImage {
                     Image(right_image)
+                        .onTapGesture {
+                            action?()
+                        }
                 }
                 
             }.padding(.horizontal)
