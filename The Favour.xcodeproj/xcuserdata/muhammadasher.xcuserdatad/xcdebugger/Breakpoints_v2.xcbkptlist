@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7C160B99-3850-4DA0-BE1C-F8C0E61A91A3"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1A98867-E548-4DD7-9951-4595762A1052"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Favour/Core/Network Manager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "request(type:url:httpMethod:headers:parameters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2618CE7D-72D0-4FA6-9327-E94DBF2EB958"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Favour/Core/Network Manager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "request(type:url:httpMethod:headers:parameters:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2618CE7D-72D0-4FA6-9327-E94DBF2EB958 - ae54eda00d023030"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in The_Favour.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, url: Foundation.URL, httpMethod: The_Favour.HTTPMethod, headers: Swift.Dictionary&lt;Swift.String, Any&gt;, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "The Favour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muhammadasher/Documents/iOS%20WorkSpace/Favor-App/The%20Favour/Core/Network%20Manager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  uuid = "2618CE7D-72D0-4FA6-9327-E94DBF2EB958 - ae54eda00d023030"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in The_Favour.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, url: Foundation.URL, httpMethod: The_Favour.HTTPMethod, headers: Swift.Dictionary&lt;Swift.String, Any&gt;, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "The Favour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muhammadasher/Documents/iOS%20WorkSpace/Favor-App/The%20Favour/Core/Network%20Manager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "880">
+               </Location>
+               <Location
+                  uuid = "2618CE7D-72D0-4FA6-9327-E94DBF2EB958 - ae54eda00d023030"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in The_Favour.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, url: Foundation.URL, httpMethod: The_Favour.HTTPMethod, headers: Swift.Dictionary&lt;Swift.String, Any&gt;, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "The Favour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muhammadasher/Documents/iOS%20WorkSpace/Favor-App/The%20Favour/Core/Network%20Manager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "2618CE7D-72D0-4FA6-9327-E94DBF2EB958 - ae54eda00d023030"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in The_Favour.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, url: Foundation.URL, httpMethod: The_Favour.HTTPMethod, headers: Swift.Dictionary&lt;Swift.String, Any&gt;, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Swift.Error&gt;"
+                  moduleName = "The Favour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muhammadasher/Documents/iOS%20WorkSpace/Favor-App/The%20Favour/Core/Network%20Manager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34A5A0A6-C136-4068-87C1-EC8033456A87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Favour/Presentation/Views/Signup/SignupView1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "34A5A0A6-C136-4068-87C1-EC8033456A87 - a7c170ee0ce6da77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0 in The_Favour.SignupView1.body.getter : some"
+                  moduleName = "The Favour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muhammadasher/Documents/iOS%20WorkSpace/Favor-App/The%20Favour/Presentation/Views/Signup/SignupView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "34A5A0A6-C136-4068-87C1-EC8033456A87 - 8b0cc92e2cd2ecb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in The_Favour.SignupView1.body.getter : some"
+                  moduleName = "The Favour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muhammadasher/Documents/iOS%20WorkSpace/Favor-App/The%20Favour/Presentation/Views/Signup/SignupView1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -29,9 +29,8 @@ extension Endpoint {
     }
     
     var headers: [String: String] {
-        var headers: [String: String] = [ "Content-Type": "application/json",
-                                          "lang": "en",
-                                          "device": "2" ]
+        var headers: [String: String] = [ "Content-Type": "application/json"
+                                        ]
         if let token = KeychainManager.getAuthToken() {
             headers["Authorization"] = "Bearer \(token)"
         }
@@ -42,6 +41,10 @@ extension Endpoint {
 extension Endpoint {
     static var login: Self {
         return Endpoint(path: NetworkConstants.loginService)
+    }
+    
+    static var register: Self {
+        return Endpoint(path: NetworkConstants.register)
     }
    
     

@@ -8,17 +8,36 @@
 import Foundation
 
 struct LoginModel: Decodable {
-    let status: String
+    let message: String
+    let error: Bool
+    let code: Int
     let data: Login
 }
 
 
 struct Login: Decodable {
-    let firstTime: Int?
-    let code: Int?
+    let token: String?
+    let user: User?
     
     private enum CodingKeys: String, CodingKey {
-        case firstTime = "first_time"
-        case code
+        case token = "token"
+        case user = "user_details"
     }
+}
+
+struct User: Decodable {
+    let id: Int?
+    let first_name: String?
+    let last_name: String?
+    let contact_number: String?
+    let email: String?
+    let name: String?
+    let user_type: String?
+    let address: String?
+    let dob: String?
+    let id_card: String?
+    let user_types: String?
+    let user_selected_type: String?
+    let lat: String?
+    let lng: String?
 }
