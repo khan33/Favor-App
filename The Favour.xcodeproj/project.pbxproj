@@ -16,6 +16,19 @@
 		E809305D29DDCB92003BFEFE /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305C29DDCB92003BFEFE /* PageView.swift */; };
 		E809305F29DE7FD5003BFEFE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */; };
 		E809306129DE841C003BFEFE /* AllServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809306029DE841C003BFEFE /* AllServicesView.swift */; };
+		E83131B32A47F6D2005D80C0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E83131B22A47F6D2005D80C0 /* IQKeyboardManagerSwift */; };
+		E83131B72A47FF80005D80C0 /* FavorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83131B62A47FF80005D80C0 /* FavorManager.swift */; };
+		E83131BA2A480523005D80C0 /* FavorBookingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83131B92A480523005D80C0 /* FavorBookingManager.swift */; };
+		E83131BD2A4846C2005D80C0 /* FavorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83131BC2A4846C2005D80C0 /* FavorModel.swift */; };
+		E83131BF2A49F0AC005D80C0 /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83131BE2A49F0AC005D80C0 /* PrefsManager.swift */; };
+		E83131C12A49F5BF005D80C0 /* FavorSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83131C02A49F5BF005D80C0 /* FavorSpinnerView.swift */; };
+		E83131C32A49FDED005D80C0 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83131C22A49FDED005D80C0 /* ServiceModel.swift */; };
+		E83131C72A4A048B005D80C0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E83131C62A4A048B005D80C0 /* FirebaseAnalytics */; };
+		E83131C92A4A048B005D80C0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E83131C82A4A048B005D80C0 /* FirebaseAuth */; };
+		E83131CB2A4A048B005D80C0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E83131CA2A4A048B005D80C0 /* FirebaseCrashlytics */; };
+		E83131CD2A4A048B005D80C0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E83131CC2A4A048B005D80C0 /* FirebaseFirestore */; };
+		E83131CF2A4A048B005D80C0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E83131CE2A4A048B005D80C0 /* FirebaseMessaging */; };
+		E83131D12A4A0FCE005D80C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E83131D02A4A0FCD005D80C0 /* GoogleService-Info.plist */; };
 		E84A0EB22A13F90300C7F8FD /* DoFavorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A0EB12A13F90300C7F8FD /* DoFavorListView.swift */; };
 		E84A0EB42A13FA2600C7F8FD /* DoFavorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A0EB32A13FA2600C7F8FD /* DoFavorView.swift */; };
 		E84BB30229E01B7F002D94A6 /* favourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BB30129E01B7F002D94A6 /* favourView.swift */; };
@@ -122,6 +135,14 @@
 		E809305C29DDCB92003BFEFE /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		E809305E29DE7FD5003BFEFE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E809306029DE841C003BFEFE /* AllServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServicesView.swift; sourceTree = "<group>"; };
+		E83131B62A47FF80005D80C0 /* FavorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorManager.swift; sourceTree = "<group>"; };
+		E83131B92A480523005D80C0 /* FavorBookingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorBookingManager.swift; sourceTree = "<group>"; };
+		E83131BC2A4846C2005D80C0 /* FavorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorModel.swift; sourceTree = "<group>"; };
+		E83131BE2A49F0AC005D80C0 /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
+		E83131C02A49F5BF005D80C0 /* FavorSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorSpinnerView.swift; sourceTree = "<group>"; };
+		E83131C22A49FDED005D80C0 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		E83131C42A4A0346005D80C0 /* The Favour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Favour.entitlements"; sourceTree = "<group>"; };
+		E83131D02A4A0FCD005D80C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E84A0EB12A13F90300C7F8FD /* DoFavorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFavorListView.swift; sourceTree = "<group>"; };
 		E84A0EB32A13FA2600C7F8FD /* DoFavorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFavorView.swift; sourceTree = "<group>"; };
 		E84BB30129E01B7F002D94A6 /* favourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favourView.swift; sourceTree = "<group>"; };
@@ -218,11 +239,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E83131C72A4A048B005D80C0 /* FirebaseAnalytics in Frameworks */,
 				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
 				E8A2B0A82A056C4500D7F524 /* SwiftUITooltip in Frameworks */,
+				E83131CD2A4A048B005D80C0 /* FirebaseFirestore in Frameworks */,
 				E8FB17CA2A1E3A610013C18E /* KeychainSwift in Frameworks */,
 				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
 				E8503F942A0B68B900451ABE /* SwiftUIX in Frameworks */,
+				E83131CB2A4A048B005D80C0 /* FirebaseCrashlytics in Frameworks */,
+				E83131B32A47F6D2005D80C0 /* IQKeyboardManagerSwift in Frameworks */,
+				E83131CF2A4A048B005D80C0 /* FirebaseMessaging in Frameworks */,
+				E83131C92A4A048B005D80C0 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +306,8 @@
 		E809304D29DDC21C003BFEFE /* The Favour */ = {
 			isa = PBXGroup;
 			children = (
+				E83131D02A4A0FCD005D80C0 /* GoogleService-Info.plist */,
+				E83131C42A4A0346005D80C0 /* The Favour.entitlements */,
 				E8F9ED9429E9B701006717C4 /* The-Favour-Info.plist */,
 				E894EE8B29E0252500837AFD /* App */,
 				E894EE8C29E0252B00837AFD /* Presentation */,
@@ -301,6 +330,38 @@
 				E809305529DDC21D003BFEFE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E83131B42A47FD4D005D80C0 /* Favor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favor;
+			sourceTree = "<group>";
+		};
+		E83131B52A47FF6A005D80C0 /* Favor Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E83131B62A47FF80005D80C0 /* FavorManager.swift */,
+			);
+			path = "Favor Manager";
+			sourceTree = "<group>";
+		};
+		E83131B82A480507005D80C0 /* Favor Booking Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E83131B92A480523005D80C0 /* FavorBookingManager.swift */,
+			);
+			path = "Favor Booking Manager";
+			sourceTree = "<group>";
+		};
+		E83131BB2A4846B2005D80C0 /* Favor */ = {
+			isa = PBXGroup;
+			children = (
+				E83131BC2A4846C2005D80C0 /* FavorModel.swift */,
+				E83131C22A49FDED005D80C0 /* ServiceModel.swift */,
+			);
+			path = Favor;
 			sourceTree = "<group>";
 		};
 		E84A0EB02A13F77000C7F8FD /* Can do Favor */ = {
@@ -347,6 +408,7 @@
 				E866B2762A0E62BA0084E6E1 /* RatingStarButtonView.swift */,
 				E875323A2A13B4B5007E3089 /* BottomButtonView.swift */,
 				E8ECA3312A1A12070098D5AD /* FilterModalView.swift */,
+				E83131C02A49F5BF005D80C0 /* FavorSpinnerView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -475,6 +537,7 @@
 			children = (
 				E894EE9429E0259600837AFD /* Network Manager */,
 				E8FB17C62A1E398C0013C18E /* KeychainManager.swift */,
+				E83131BE2A49F0AC005D80C0 /* PrefsManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -530,6 +593,8 @@
 		E894EE9529E0259F00837AFD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E83131B82A480507005D80C0 /* Favor Booking Manager */,
+				E83131B52A47FF6A005D80C0 /* Favor Manager */,
 				E8FB17CE2A1E3B150013C18E /* Auth Manager */,
 			);
 			path = Services;
@@ -538,6 +603,7 @@
 		E894EE9629E025A600837AFD /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				E83131B42A47FD4D005D80C0 /* Favor */,
 				E8FB17CD2A1E3AF70013C18E /* Auth */,
 			);
 			path = "View Models";
@@ -546,6 +612,7 @@
 		E894EE9729E025AE00837AFD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E83131BB2A4846B2005D80C0 /* Favor */,
 				E8FB17D12A1E3B640013C18E /* Auth */,
 			);
 			path = Models;
@@ -676,6 +743,12 @@
 				E8A2B0A72A056C4500D7F524 /* SwiftUITooltip */,
 				E8503F932A0B68B900451ABE /* SwiftUIX */,
 				E8FB17C92A1E3A610013C18E /* KeychainSwift */,
+				E83131B22A47F6D2005D80C0 /* IQKeyboardManagerSwift */,
+				E83131C62A4A048B005D80C0 /* FirebaseAnalytics */,
+				E83131C82A4A048B005D80C0 /* FirebaseAuth */,
+				E83131CA2A4A048B005D80C0 /* FirebaseCrashlytics */,
+				E83131CC2A4A048B005D80C0 /* FirebaseFirestore */,
+				E83131CE2A4A048B005D80C0 /* FirebaseMessaging */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -711,6 +784,8 @@
 				E8A2B0A62A056C4500D7F524 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
 				E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				E8FB17C82A1E3A610013C18E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				E83131B12A47F6D2005D80C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -728,6 +803,7 @@
 			files = (
 				E809305629DDC21D003BFEFE /* Preview Assets.xcassets in Resources */,
 				E809305329DDC21D003BFEFE /* Assets.xcassets in Resources */,
+				E83131D12A4A0FCE005D80C0 /* GoogleService-Info.plist in Resources */,
 				E8F9ED9229E9B68A006717C4 /* Urbanist-VariableFont_wght.ttf in Resources */,
 				E8F9ED9329E9B68A006717C4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */,
 			);
@@ -754,6 +830,8 @@
 				E866B2712A0E44EC0084E6E1 /* FavorDetailView.swift in Sources */,
 				E8A5E17629F93D1D0077E2F0 /* DocumentUploadView.swift in Sources */,
 				E8FB17D32A1E3B6E0013C18E /* LoginModel.swift in Sources */,
+				E83131B72A47FF80005D80C0 /* FavorManager.swift in Sources */,
+				E83131BA2A480523005D80C0 /* FavorBookingManager.swift in Sources */,
 				E8BAA30C29FB936700D6B5A0 /* HorizontalTwoLabelView.swift in Sources */,
 				E85EB4092A1B8D8800C1740F /* ChatView.swift in Sources */,
 				E8A5E16929F912820077E2F0 /* SignupView1.swift in Sources */,
@@ -785,6 +863,7 @@
 				E8BAA30F29FB94B800D6B5A0 /* AlertView.swift in Sources */,
 				E8A5E18929F969500077E2F0 /* OTPTextView.swift in Sources */,
 				E8FB17C52A1E39370013C18E /* Endpoint.swift in Sources */,
+				E83131C12A49F5BF005D80C0 /* FavorSpinnerView.swift in Sources */,
 				E8FB17D52A1E3BF80013C18E /* AthenticationViewModel.swift in Sources */,
 				E866B27A2A0E6C350084E6E1 /* RatingView.swift in Sources */,
 				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
@@ -794,8 +873,10 @@
 				E8E57A662A08D907000F452F /* HomeView.swift in Sources */,
 				E8A7A2342A14A03F006E6CCD /* NeedFavorDetailView.swift in Sources */,
 				E87532422A13B7F1007E3089 /* RequestView.swift in Sources */,
+				E83131BF2A49F0AC005D80C0 /* PrefsManager.swift in Sources */,
 				E8A5E18029F95E180077E2F0 /* CongratulationView.swift in Sources */,
 				E8BAA30A29FB8AB700D6B5A0 /* E-ReceiptView.swift in Sources */,
+				E83131BD2A4846C2005D80C0 /* FavorModel.swift in Sources */,
 				E8EDC60B2A0A6F5C00E20378 /* NavigationBarView.swift in Sources */,
 				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
 				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
@@ -817,6 +898,7 @@
 				E8503F992A0BB3B800451ABE /* FavorServicesView.swift in Sources */,
 				E8A5E17829F93D7F0077E2F0 /* DocumentUploadButton.swift in Sources */,
 				E8A2B0A52A052CA400D7F524 /* DistanceSliderView.swift in Sources */,
+				E83131C32A49FDED005D80C0 /* ServiceModel.swift in Sources */,
 				E853CAAF29EC157A00021DCB /* FavorTextField.swift in Sources */,
 				E8E57A622A08D077000F452F /* SearchBarView.swift in Sources */,
 				E8A5E18429F961BC0077E2F0 /* FigureprintView.swift in Sources */,
@@ -958,12 +1040,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H98W7T82D5;
+				DEVELOPMENT_TEAM = H98W7T82D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Favour-Info.plist";
@@ -983,7 +1065,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.the.app.favor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = production;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -998,12 +1079,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H98W7T82D5;
+				DEVELOPMENT_TEAM = H98W7T82D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Favour-Info.plist";
@@ -1023,7 +1104,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.the.app.favor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = production;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1057,6 +1137,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E83131B12A47F6D2005D80C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
@@ -1100,6 +1196,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E83131B22A47F6D2005D80C0 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83131B12A47F6D2005D80C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		E83131C62A4A048B005D80C0 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E83131C82A4A048B005D80C0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E83131CA2A4A048B005D80C0 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		E83131CC2A4A048B005D80C0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E83131CE2A4A048B005D80C0 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		E8503F932A0B68B900451ABE /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8503F922A0B68B900451ABE /* XCRemoteSwiftPackageReference "SwiftUIX" */;

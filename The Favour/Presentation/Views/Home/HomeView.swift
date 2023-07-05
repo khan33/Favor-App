@@ -49,13 +49,10 @@ struct HomeView: View {
                 
                 
                 CustomNavigationBarView()
+                SearchBarView(searchText: $searchText) {
+                    isSheetShown = true
+                }
                 ScrollView(.vertical, showsIndicators: false) {
-                    
-                    SearchBarView(searchText: $searchText) {
-                        isSheetShown = true
-                    }
-                    
-                    
                     SeeAllView(label1: "Services", label2: "See All") {
                         isServices = true
                     }

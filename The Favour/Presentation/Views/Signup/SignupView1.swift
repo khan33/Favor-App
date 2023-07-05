@@ -9,18 +9,12 @@ import SwiftUI
 
 struct SignupView1: View {
     
-    @State var fullName: String = ""
-    @State var nickName: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var dateOfBirth: String = ""
-    @State var address: String = ""
-    @State var phoneNumber: String = ""
-
+    
     @State private var isNext = false
     @State private var birthDate = Date()
     @State private var textEditorText:String = "Write down your thoughts"
     @State var calendarId: UUID = UUID()
+    @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
 
     @State var show: Bool = false
     var body: some View {
@@ -30,29 +24,30 @@ struct SignupView1: View {
             
             
             ScrollView(.vertical, showsIndicators: false) {
-                FavorTextField(placeholder: "Full Name", leftImage: nil, rightImage: nil, text: $fullName)
+                FavorTextField(placeholder: "Full Name", leftImage: nil, rightImage: nil, text: $viewModel.fullName)
                     .padding(.top, 24)
                 
-                FavorTextField(placeholder: "Email", leftImage: nil, rightImage: "email", text: $email)
+                FavorTextField(placeholder: "Email", leftImage: nil, rightImage: "email", text: $viewModel.email)
                 
-                FavorTextField(placeholder: "Password", leftImage: nil, rightImage: "Lock", text: $nickName)
+                FavorTextField(placeholder: "Password", leftImage: nil, rightImage: "Lock", text: $viewModel.password)
                 
                 
                 
-                FavorTextField(placeholder: "Date of Birth", leftImage: nil, rightImage: "calander", text: $dateOfBirth) {
+                FavorTextField(placeholder: "Date of Birth", leftImage: nil, rightImage: "calander", text: $viewModel.dateOfBirth) {
                     withAnimation {
                         show.toggle()
                     }
                 }
                 
                 
-                FavorTextField(placeholder: "Phone Number", leftImage: nil, rightImage: nil, text: $phoneNumber)
+                FavorTextField(placeholder: "Phone Number", leftImage: nil, rightImage: nil, text: $viewModel.phoneNumber)
                 
-                FavorTextField(placeholder: "Address", leftImage: nil, rightImage: "location", text: $address)
+                FavorTextField(placeholder: "Address", leftImage: nil, rightImage: "location", text: $viewModel.address)
                 
                 
                 FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
-                    isNext = true
+//                    isNext = true
+                    viewModel.performSignup()
                 }
                 .padding(.top, 24)
                 Spacer()
@@ -61,19 +56,21 @@ struct SignupView1: View {
         .padding()
         .navigationBarHidden(true)
         .navigationTitle("")
-        .toolBarPopover(show: $show) {
-            DatePicker("", selection: .constant(Date()), displayedComponents: [.date])
-                .datePickerStyle(.graphical)
-                .labelsHidden()
-                .id(calendarId)
-                .onChange(of: dateOfBirth) { _ in
-                    calendarId = UUID()
-                }
-                .onTapGesture {
-                    show.toggle()
+        .spinner(isShowing: $viewModel.shouldShowLoader)
 
-                }
-        }
+//        .toolBarPopover(show: $show) {
+//            DatePicker("", selection: .constant(Date()), displayedComponents: [.date])
+//                .datePickerStyle(.graphical)
+//                .labelsHidden()
+//                .id(calendarId)
+//                .onChange(of: dateOfBirth) { _ in
+//                    calendarId = UUID()
+//                }
+//                .onTapGesture {
+//                    show.toggle()
+//
+//                }
+//        }
     }
     
     

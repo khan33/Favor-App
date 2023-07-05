@@ -13,10 +13,16 @@ struct SignupView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var isShowingLoginView = false
     @State private var isShowingSignupView = false
+    
+    @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
+
     var body: some View {
         VStack {
             NavigationLink(destination: LoginView(), isActive: $isShowingLoginView) { EmptyView() }
             NavigationLink(destination: MainView(), isActive: $isShowingSignupView) { EmptyView() }
+            
+//            NavigationBarView(text: "")
+
             Image("Signup")
                 .resizable()
                 .scaledToFit()
@@ -37,7 +43,37 @@ struct SignupView: View {
                 
                 FavorSocialButton(text: "Continue with Apple", image: "apple", width: .infinity, height: 60, fontType: .semiBold, fontSize: 16, action: {
                     
+                    
                 })
+                .overlay {
+                    SignInWithAppleButton { (request) in
+                        // requesting param for apple login....
+                        viewModel.nonce = randomNonceString()
+                        request.requestedScopes = [.email, .fullName]
+                        request.nonce = sha256(viewModel.nonce)
+                    } onCompletion: { (result) in
+                        // getting error or success....
+                        switch result {
+                        case .success(let user):
+                            print(user)
+                            
+                            guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
+                                return 
+                            }
+                            viewModel.appleAuthentication(credential: credential)
+
+
+                            // do login with firebase
+
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
+                    .signInWithAppleButtonStyle(.white)
+                    .frame(height: 55)
+                    .clipShape(Capsule())
+                    .padding(0)
+                }
             }
             HStack(spacing: 24) {
                 FavorDividerView(width: (UIScreen.screenWidth / 3), height: 1, bgColor: .appBorderColor)
@@ -64,7 +100,6 @@ struct SignupView: View {
         }
         .padding(.horizontal, 24)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
     }
     
     var btnBack : some View { Button(action: {
@@ -82,35 +117,5 @@ struct SignupView: View {
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
         SignupView()
-    }
-}
-
-
-extension AthenticationViewModel: ASAuthorizationControllerDelegate {
-    func authorizationController(controller: ASAuthorizationController,
-                                 didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            guard let token = appleIdCredential.identityToken?.base64EncodedString()  else {
-                return
-            }
-            
-            // MARK: TODO
-            /// 1. Set token here
-            /// 2. Perform tasks to do after login
-            self.token = token
-        }
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print(error)
-    }
-    
-    private func performAppleSignIn() {
-        let provider = ASAuthorizationAppleIDProvider()
-        let request = provider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-        let controller = ASAuthorizationController(authorizationRequests: [request])
-        controller.delegate = self
-        controller.performRequests()
     }
 }

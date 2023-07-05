@@ -11,4 +11,8 @@ extension View {
     func border(_ color: Color, width: CGFloat, cornerRadius: CGFloat) -> some View {
         overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(color, lineWidth: width))
     }
+    func spinner(isShowing: Binding<Bool>) -> some View {
+        self.modifier( FavorSpinnerView(isShowing: isShowing) )
+    }
+
 }

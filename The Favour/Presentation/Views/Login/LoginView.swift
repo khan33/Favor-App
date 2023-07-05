@@ -21,23 +21,12 @@ struct LoginView: View {
     @State private var isShowingSignupView = false
 
     
-//    init() {
-//        let appearance = UINavigationBarAppearance()
-//        appearance.configureWithTransparentBackground()
-//        appearance.backgroundColor = UIColor.lightGray
-//        
-//        UINavigationBar.appearance().standardAppearance = appearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-//
-//    }
-
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Group {
                 NavigationLink(destination: ForgotPasswordView(), isActive: $isShowingForgotPasswordView) { EmptyView() }
                 
-                NavigationLink(destination: MainView(), isActive: $isShowingSignupView) { EmptyView() }
+//                NavigationLink(destination: MainView(), isActive: $viewModel.showMainTabView) { EmptyView() }
             }
             NavigationBarView(text: "")
             FavorText(text: "Login to your Account", textColor: .appBlack, fontType: .bold, fontSize: 48, alignment:.leading , lineSpace: 0)
@@ -114,6 +103,10 @@ struct LoginView: View {
         .padding(.horizontal, 24)
         .navigationBarHidden(true)
         .navigationTitle("")
+        .spinner(isShowing: $viewModel.shouldShowLoader)
+        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
+            MainTabView()
+        }
     }
     
     var buttonOpacity: Double {

@@ -40,7 +40,8 @@ final class NetworkManager: NetworkManagerProtocol {
             //.map(\.data)
             .tryMap { element -> Data in
                 let status = element.response as? HTTPURLResponse
-                guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                //httpResponse.statusCode == 200
+                guard let httpResponse = element.response as? HTTPURLResponse else {
                     throw URLError(.badServerResponse)
                 }
                 if let dataString = String(data: element.data, encoding: .utf8) {

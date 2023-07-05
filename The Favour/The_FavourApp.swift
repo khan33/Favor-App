@@ -7,6 +7,7 @@
 
 import SwiftUI
 import IQKeyboardManagerSwift
+import Firebase
 
 @main
 struct The_FavourApp: App {
@@ -14,8 +15,27 @@ struct The_FavourApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SignupView()
+            
+            if PrefsManager.shared.isWalkThrough {
+                if KeychainManager.getAuthToken() != nil {
+                    MainTabView()
+//                        .preferredColorScheme(.light) // Set preferred color scheme to light
+
+                } else {
+                    NavigationView {
+                        SignupView()
+//                            .preferredColorScheme(.light) // Set preferred color scheme to light
+
+                    }
+                }
+            } else {
+                SplashScreenView()
+//                    .preferredColorScheme(.light) // Set preferred color scheme to light
+
+            }
+            
         }
+
     }
 }
 
@@ -23,6 +43,7 @@ struct The_FavourApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
         return true
     }
 }

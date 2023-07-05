@@ -20,6 +20,8 @@ struct ProfileView: View {
     @State private var isPrivacy = false
     @State private var isReport = false
     @State private var isAlert = false
+    @State var shouldPerformLogout: Bool = false
+
     var body: some View {
         ZStack {
             ScrollView {
@@ -81,6 +83,12 @@ struct ProfileView: View {
         }
         .navigationBarHidden(true)
         .navigationTitle("")
+        .fullScreenCover(isPresented: $shouldPerformLogout) {
+            NavigationView {
+                SignupView()
+            }
+        }
+
     }
         
     private var topBar: some View {
@@ -160,6 +168,8 @@ struct ProfileView: View {
             
             SettingMenuItem(title: "Logout", image: "Logout", isLogout: true) {
                 showLogoutSheet = true
+                shouldPerformLogout = true
+                KeychainManager.performLogout()
             }
 
         }

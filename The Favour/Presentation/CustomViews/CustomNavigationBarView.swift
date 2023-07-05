@@ -12,15 +12,15 @@ struct CustomNavigationBarView: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Button(action: {
-                // Action for left button
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Image("ic_back")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
-            }
+//            Button(action: {
+//                // Action for left button
+//                self.presentationMode.wrappedValue.dismiss()
+//            }) {
+//                Image("ic_back")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 24, height: 24)
+//            }
             
             Image("user_profile")
                 .resizable()

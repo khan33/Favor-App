@@ -7,19 +7,28 @@
 
 import SwiftUI
 
+
+enum FavorType: String{
+    case needFavor = "favor_buyer" //"Need a favor"
+    case canDoFavor = "favor_seller" //"can do you a favor"
+}
+
 struct MainView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var isMainView = false
 
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             NavigationLink(destination: SignupView1(), isActive: $isMainView) { EmptyView() }
+            NavigationBarView(text: "Select Favor Type")
+                .padding()
 
             //Elements/Promo & Discount
             FavorCardView(title: "I NEED A FAVOR", subTitle: "Get you work done in a quick way. We are here for your help.", imageName: "Group 253", gradientColor: Gradient(stops: [
                 .init(color: Color(#colorLiteral(red: 0.6509804129600525, green: 0.3176470696926117, blue: 0.8196078538894653, alpha: 1)), location: 0),
                 .init(color: Color(#colorLiteral(red: 0.6165271997451782, green: 0.3500000238418579, blue: 1, alpha: 1)), location: 1)])) {
                     isMainView = true
+                    PrefsManager.shared.favorType = FavorType.needFavor.rawValue
                 }
                 .padding(.top, 24)
             
@@ -28,6 +37,7 @@ struct MainView: View {
                 .init(color: Color(#colorLiteral(red: 0.13333334028720856, green: 0.7333333492279053, blue: 0.6117647290229797, alpha: 1)), location: 0),
                 .init(color: Color(#colorLiteral(red: 0.20682293176651, green: 0.8708333373069763, blue: 0.7362953424453735, alpha: 1)), location: 1)])) {
                     isMainView = true
+                    PrefsManager.shared.favorType = FavorType.canDoFavor.rawValue
                 }
             
             Spacer()
@@ -35,8 +45,8 @@ struct MainView: View {
         
         .background(Color.white)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
-        .navigationTitle("Select Favor Type")
+//        .navigationBarItems(leading: btnBack)
+//        .navigationTitle("Select Favor Type")
 
     }
     var btnBack : some View { Button(action: {

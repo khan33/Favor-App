@@ -46,11 +46,57 @@ extension Endpoint {
     static var register: Self {
         return Endpoint(path: NetworkConstants.register)
     }
-   
+    static var logout: Self {
+        return Endpoint(path: NetworkConstants.logout)
+    }
     
-//    static func generateVIPAddress(cityId: String) -> Self {
-//        return Endpoint(path: NetworkConstants.generateVIPAddressService, queryItems: [URLQueryItem(name: "city_id", value: cityId)])
-//    }
-
+    static var resetPassword: Self {
+        return Endpoint(path: NetworkConstants.resetPassword)
+    }
+    
+    static var forgoPassword: Self {
+        return Endpoint(path: NetworkConstants.forgotPassword)
+    }
+    
+    static var updateProfile: Self {
+        return Endpoint(path: NetworkConstants.updateUserProfile)
+    }
+    
+    static func getUser(Id: String) -> Self {
+        return Endpoint(path: NetworkConstants.getUserDetail, queryItems: [URLQueryItem(name: "id", value: Id)])
+    }
+    static var getUserFavor: Self {
+        return Endpoint(path: NetworkConstants.getUserFavor)
+    }
+    static var userPostFavor: Self {
+        return Endpoint(path: NetworkConstants.favorPost)
+    }
+    
+    static var userUpdateFavor: Self {
+        return Endpoint(path: NetworkConstants.favorUpdate)
+    }
+    
+    static var getFavor: Self {
+        return Endpoint(path: NetworkConstants.getFavor)
+    }
+    
+    
+    static func getFavorById(Id: String) -> Self {
+        return Endpoint(path: NetworkConstants.getFavorDetailById, queryItems: [URLQueryItem(name: "id", value: Id)])
+    }
+    
+    
+    static var getService: Self {
+        return Endpoint(path: NetworkConstants.getServices)
+    }
+    
+    
+    static var getUserFavorbookingList: Self {
+        return Endpoint(path: NetworkConstants.favorBookingByUser)
+    }
+    static var bookingFavor: Self {
+        return Endpoint(path: NetworkConstants.favorBooking)
+    }
+    
     
 }
