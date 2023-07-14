@@ -8,22 +8,40 @@
 import SwiftUI
 
 struct DoFavorListView: View {
+    @State private var addPost = false
+    @ObservedObject private var viewModel: FavorViewModel = FavorViewModel()
+
     var body: some View {
-        VStack {
-            topBarView
-            
-            
-            ScrollView {
-                DoFavorView()
-                DoFavorView()
-                DoFavorView()
+        NavigationView {
+            VStack {
+                NavigationLink(destination: PostFavorView(), isActive: $addPost) { EmptyView() }
+
+                topBarView
+                if viewModel.favors?.count == 0 {
+                    Spacer()
+                    FavorText(text: "No Favor found!", textColor: Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)), fontType: .bold, fontSize: 24, alignment: .leading, lineSpace: 0)
+                    Spacer()
+
+                } else {
+                    
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        if let favor = viewModel.favors {
+                            ForEach(favor.indices, id: \.self) { index in
+                                DoFavorView(favor: favor[index])
+                            }
+                        }
+                    }
+                }
             }
-            .padding(.top, 36)
+            .padding(24)
+            .navigationBarHidden(true)
+            .navigationTitle("")
+            .background( Color(#colorLiteral(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)))
         }
-        .padding(24)
-        .navigationBarHidden(true)
-        .navigationTitle("")
-        .background( Color(#colorLiteral(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)))
+        .onAppear {
+            viewModel.getUserFavor()
+        }
 
     }
     
@@ -43,6 +61,9 @@ struct DoFavorListView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 28, height: 28)
+                .onTapGesture {
+                    addPost = true
+                }
         }
     }
     

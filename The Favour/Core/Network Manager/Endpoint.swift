@@ -76,8 +76,13 @@ extension Endpoint {
         return Endpoint(path: NetworkConstants.favorUpdate)
     }
     
-    static var getFavor: Self {
-        return Endpoint(path: NetworkConstants.getFavor)
+    static func getFavor(servicesPageSize: String, page: String, pageSize: String, isServices: String) -> Self {
+        return Endpoint(path: NetworkConstants.getFavor, queryItems: [
+            URLQueryItem(name: "services_page_size", value: servicesPageSize),
+            URLQueryItem(name: "page", value: page),
+            URLQueryItem(name: "page_size", value: pageSize),
+            URLQueryItem(name: "is_services", value: isServices),
+        ])
     }
     
     

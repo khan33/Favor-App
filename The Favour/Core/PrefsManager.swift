@@ -22,6 +22,7 @@ class PrefsManager: NSObject {
     private let defaults = UserDefaults.standard
     private let keyIsWalkThrough = "isWalkThrough"
     private let keyFavorType = "favorType"
+    private let keyUsername = "username"
       
     var isWalkThrough : Bool {
         set {
@@ -42,6 +43,17 @@ class PrefsManager: NSObject {
             return defaults.string(forKey: keyFavorType) ?? ""
         }
     }
+    
+    var username: String {
+        set {
+            defaults.setValue(newValue, forKey: keyUsername)
+        }
+        get {
+            return defaults.string(forKey: keyUsername) ?? ""
+        }
+    }
+    
+    
     
     
 

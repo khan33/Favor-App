@@ -10,12 +10,12 @@ import Combine
 
 protocol FavorManagerProtocol: AnyObject {
     var networkManager: NetworkManagerProtocol { get }
-    func userFavor() -> AnyPublisher<LoginModel, Error>
-    func favorPost(favor: Favor ) -> AnyPublisher<LoginModel, Error>
+    func userFavors() -> AnyPublisher<FavorModel, Error>
+    func favorPost(favor: Favor ) -> AnyPublisher<FavorModel, Error>
     func favorUpdate(favor: Favor ) -> AnyPublisher<LoginModel, Error>
-    func getFavor() -> AnyPublisher<LoginModel, Error>
+    func getFavor() -> AnyPublisher<FavorModel, Error>
     func getFavorById(id: String) -> AnyPublisher<LoginModel, Error>
-    func getService() -> AnyPublisher<LoginModel, Error>
+    func getService() -> AnyPublisher<ServiceModel, Error>
 
 }
 
@@ -27,12 +27,12 @@ final class FavorManager: FavorManagerProtocol {
         networkManager = NetworkManager()
     }
     
-    func userFavor() -> AnyPublisher<LoginModel, Error> {
+    func userFavors() -> AnyPublisher<FavorModel, Error> {
         let endPoint = Endpoint.getUserFavor
-        return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
+        return networkManager.request(type: FavorModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
     }
     
-    func favorPost(favor: Favor ) -> AnyPublisher<LoginModel, Error> {
+    func favorPost(favor: Favor ) -> AnyPublisher<FavorModel, Error> {
         let endPoint = Endpoint.userPostFavor
         let params = [
             "title": favor.title,
@@ -48,7 +48,7 @@ final class FavorManager: FavorManagerProtocol {
             "address" : favor.address,
             "search_tags": favor.search_tags
         ]
-        return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .POST, headers: endPoint.headers, parameters: params)
+        return networkManager.request(type: FavorModel.self, url: endPoint.url, httpMethod: .POST, headers: endPoint.headers, parameters: params)
     }
 
     func favorUpdate(favor: Favor ) -> AnyPublisher<LoginModel, Error> {
@@ -71,18 +71,18 @@ final class FavorManager: FavorManagerProtocol {
         return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .POST, headers: endPoint.headers, parameters: params)
     }
     
-    func getFavor() -> AnyPublisher<LoginModel, Error> {
-        let endPoint = Endpoint.getFavor
-        return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
+    func getFavor() -> AnyPublisher<FavorModel, Error> {
+        let endPoint = Endpoint.getFavor(servicesPageSize: "0", page: "1", pageSize: "5", isServices: "true")
+        return networkManager.request(type: FavorModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
     }
     func getFavorById(id: String) -> AnyPublisher<LoginModel, Error> {
         let endPoint = Endpoint.getFavorById(Id: id)
         return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
     }
     
-    func getService() -> AnyPublisher<LoginModel, Error> {
+    func getService() -> AnyPublisher<ServiceModel, Error> {
         let endPoint = Endpoint.getService
-        return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
+        return networkManager.request(type: ServiceModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
 
     }
 
@@ -93,19 +93,20 @@ final class FavorManager: FavorManagerProtocol {
 
 
 struct Favor {
-    let title: String
-    let tags: String
-    let category_id: String
-    let revisions: String
-    let total_price: String
-    let status: String
-    let description: String
-    let meta_data: String
-    let lat: String
-    let lng: String
-    let address: String
-    let search_tags: String
-    let favor_id: String
+    let title: String?
+    let tags: String?
+    let category_id: String?
+    let revisions: String?
+    let total_price: String?
+    let status: String?
+    let description: String?
+    let meta_data: String?
+    let lat: String?
+    let lng: String?
+    let address: String?
+    let search_tags: String?
+    let favor_id: String?
+    let icon: String?
 }
 
 struct BookingFavor {

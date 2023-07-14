@@ -31,11 +31,14 @@ final class NetworkManager: NetworkManagerProtocol {
         if let params = parameters {
             urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         }
+        
         print("===================Request Body & URL ===================")
         print(urlRequest)
         print(headers)
         print(parameters)
         print("======================================")
+        
+        
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             //.map(\.data)
             .tryMap { element -> Data in

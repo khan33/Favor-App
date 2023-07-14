@@ -7,6 +7,9 @@
 
 import SwiftUI
 import AuthenticationServices
+import FirebaseAuth
+import GoogleSignIn
+import Firebase
 
 
 struct SignupView: View {
@@ -38,6 +41,11 @@ struct SignupView: View {
                 })
                 
                 FavorSocialButton(text: "Continue with Google", image: "google", width: .infinity, height: 60, fontType: .semiBold, fontSize: 16, action: {
+                    
+                    FirebaseAuth.shared.signInWithGoogle(presenting: getRootViewController()) { error in
+                        print(error)
+                    }
+                    
                     
                 })
                 

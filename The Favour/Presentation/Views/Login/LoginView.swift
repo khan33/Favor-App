@@ -13,8 +13,8 @@ struct LoginView: View {
     
     @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
 
-    @State var email: String = "atta@gmail.com"
-    @State var password: String = "2323232"
+    @State var email: String = ""
+    @State var password: String = ""
     @State private var isChecked = false
 
     @State private var isShowingForgotPasswordView = false

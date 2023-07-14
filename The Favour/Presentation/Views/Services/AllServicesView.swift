@@ -9,8 +9,13 @@ import SwiftUI
 
 struct AllServicesView: View {
     
-    var count: Int = 12
+    var services: [ServiceModelData]?
     
+    init(services: [ServiceModelData]?) {
+        self.services = services
+    }
+    
+
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     //Color(red: 0.447, green: 0.063, blue: 1, alpha: 0.08).cgColor
     private var colors: [Color] = [
@@ -40,12 +45,19 @@ struct AllServicesView: View {
             NavigationBarView(text: "All Services")
             ScrollView(.vertical) {
                 LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                    ForEach((0...count), id: \.self) {
-                        ServicesView(image: images[$0 % images.count],
-                                     name: titles[$0 % titles.count],
-                                     color: colors[$0 % colors.count]
-                        )
+                    if let result = services {
+                        
+                        ForEach(result.indices, id: \.self) { index in
+                            ServicesView(image: images[index],
+                                         name: result[index].name ?? "",
+                                         color: colors[index]
+                            )
+                        }
+                        
                     }
+                    
+                    
+                    
                 }
             }
             .padding(.top, 20)
@@ -58,6 +70,7 @@ struct AllServicesView: View {
 
 struct AllServicesView_Previews: PreviewProvider {
     static var previews: some View {
-        AllServicesView()
+        let service: [ServiceModelData] = []
+        AllServicesView(services: service)
     }
 }

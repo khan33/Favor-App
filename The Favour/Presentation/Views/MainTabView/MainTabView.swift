@@ -12,7 +12,7 @@ struct MainTabView: View {
     @State var showingDetail = false
 
     @State private var home = UUID()
-    @State private var share = UUID()
+    @State private var favor = UUID()
     @State private var dashboard = UUID()
     @State private var help = UUID()
     @State private var profile = UUID()
@@ -31,36 +31,47 @@ struct MainTabView: View {
     var body: some View {
             TabView(selection: handler) {
                 
-                HomeView()
-                    .onChange(of: tappedTwice, perform: { newValue in
-                        guard newValue else { return }
-                        home = UUID()
-                        tappedTwice = false
-                    })
-                    .tabItem {
-                        CustomTabItemView(imageName: "house.fill", title: "Home", isSelected: selection == 0)
-                    }
-                    .id(home)
-                    .tag(0)
-                
-                
-                
-                
-                
+                if PrefsManager.shared.favorType == "favor_seller" {
+                    DoFavorListView()
+                        .onChange(of: tappedTwice, perform: { newValue in
+                            guard newValue else { return }
+                            favor = UUID()
+                            tappedTwice = false
+                        })
+                        .tabItem {
+                            CustomTabItemView(imageName: "suit.heart", title: "Favors", isSelected: selection == 0)
+                        }
+                        .id(favor)
+                        .tag(0)
+
+                    
+                } else {
+                    HomeView()
+                        .onChange(of: tappedTwice, perform: { newValue in
+                            guard newValue else { return }
+                            home = UUID()
+                            tappedTwice = false
+                        })
+                        .tabItem {
+                            CustomTabItemView(imageName: "house.fill", title: "Home", isSelected: selection == 0)
+                        }
+                        .id(home)
+                        .tag(0)
+                    
                     NeedFavorView()
                         .onChange(of: tappedTwice, perform: { newValue in
                             guard newValue else { return }
-                            share = UUID()
+                            favor = UUID()
                             tappedTwice = false
                         })
                         .tabItem {
                             CustomTabItemView(imageName: "suit.heart", title: "Favors", isSelected: selection == 1)
 
                         }
-                        .id(share)
+                        .id(favor)
                         .tag(1)
-                
-                
+                }
+
                 
                 
                 ProfileView()

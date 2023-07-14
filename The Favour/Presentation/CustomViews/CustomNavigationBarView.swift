@@ -27,9 +27,9 @@ struct CustomNavigationBarView: View {
                 .scaledToFit()
                 .frame(width: 48, height: 48)
                 .padding(.leading, 8)
-            VStack {
+            VStack(alignment: .leading) {
                 FavorText(text: "Good Morning 👋", textColor: Color(#colorLiteral(red: 0.46, green: 0.46, blue: 0.46, alpha: 1)), fontType: .medium, fontSize: 16, alignment: .leading, lineSpace: 0)
-                FavorText(text: "Andrew Ainsley", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 20, alignment: .leading, lineSpace: 0)
+                FavorText(text: PrefsManager.shared.username, textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 20, alignment: .leading, lineSpace: 0)
             }
             Spacer()
             Image("notification")

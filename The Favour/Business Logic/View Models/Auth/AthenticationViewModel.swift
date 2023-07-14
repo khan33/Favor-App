@@ -19,11 +19,11 @@ final class AthenticationViewModel: ObservableObject {
     @Published var showMainTabView: Bool = false
     @Published var nonce = ""
 
-    @Published var email: String = "awais@mal.comm"
+    @Published var email: String = "atta123@gmail.com"
     @Published var password: String = "admin123"
     @Published var confirmPassord: String = ""
     @Published var fullName: String = ""
-    @Published var address: String = ""
+    @Published var address: String = "Lahore"
     @Published var dateOfBirth: String = ""
     @Published var phoneNumber: String = ""
     
@@ -55,19 +55,26 @@ final class AthenticationViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] model in
-                if let token = model.data.token {
-                    KeychainManager.saveAuthToken(token)
-                    self?.moveToMainTabView()
+                if let data = model.data {
+                    if let token = data.token, let type = data.user?.user_type {
+                        KeychainManager.saveAuthToken(token)
+                        
+                        self?.userType = type
+                        self?.saveUserType(type)
+                        self?.moveToMainTabView()
+                    }
                 }
-                print(model)
             }
             .store(in: &cancellables)
     }
     
+    func saveUserType(_ type: String) {
+        PrefsManager.shared.favorType = type
+    }
     
     func performSignup() {
         shouldShowLoader = true
-        authenticationManager.signup(email: email, password: password, name: fullName, user_type: userType!, contact_number: phoneNumber, address: address, dob: dateOfBirth, id_card: "3241", lat: "", lng: "")
+        authenticationManager.signup(email: email, password: password, name: fullName, user_type: userType!, contact_number: phoneNumber, address: address, dob: dateOfBirth, id_card: "3241", lat: "30.417947", lng: "74.257103")
             .sink { [weak self] completion in
                 switch completion {
                 case let .failure(error):
@@ -79,13 +86,17 @@ final class AthenticationViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] model in
-//                self?.moveToNextScreen?(model.data.firstTime ?? 0)
-                if let token = model.data.token {
-                    KeychainManager.saveAuthToken(token)
-                    self?.moveToMainTabView()
-                }
+                
+                if let data = model.data {
+                    if let token = data.token, let type = data.user?.user_type {
+                        KeychainManager.saveAuthToken(token)
+                        PrefsManager.shared.username = data.user?.name ?? "Test User"
 
-                print(model)
+                        self?.userType = type
+                        self?.saveUserType(type)
+                        self?.moveToMainTabView()
+                    }
+                }
             }
             .store(in: &cancellables)
     }

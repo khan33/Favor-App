@@ -8,15 +8,15 @@
 import Foundation
 
 struct ServiceModel: Decodable {
-    let message: String
-    let data: ServiceModelData
+    let message: String?
+    let data: [ServiceModelData]?
 }
 
 struct ServiceModelData: Decodable {
-    let id: Int
-    let name: String
-    let color: String
-    let icon: String
-    let active: String
+    let id: Int?
+    let name: String?
+    let color: String?
+    let icon: String?
+    let active: String?
 
 }

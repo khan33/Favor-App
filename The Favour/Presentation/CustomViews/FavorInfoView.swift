@@ -17,14 +17,25 @@ struct FavorInfoView: View {
     
     var body: some View {
         HStack {
-            Image(image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 88, height: 88)
-                .padding([.leading, .vertical])
+            
+            AsyncImage(url: URL(string: image)) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 88, height: 88)
+                        .padding([.leading, .vertical])
+
+                } placeholder: {
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 88, height: 88)
+                        .padding([.leading, .vertical])
+
+                }
             VStack(alignment: .leading, spacing: 4) {
-                FavorText(text: name, textColor: .appBlack, fontType: .bold, fontSize: 16, alignment: .center, lineSpace: 0)
-                FavorText(text: favTitle, textColor: .appLightGrey, fontType: .regular, fontSize: 10, alignment: .center, lineSpace: 0)
+                FavorText(text: favTitle, textColor: .appBlack, fontType: .bold, fontSize: 16, alignment: .leading, lineSpace: 0)
+                FavorText(text: name, textColor: .appLightGrey, fontType: .regular, fontSize: 10, alignment: .leading, lineSpace: 0)
                     .padding(.bottom, 8)
                 HStack {
                     

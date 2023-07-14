@@ -11,7 +11,7 @@ struct LoginModel: Decodable {
     let message: String
     let error: Bool
     let code: Int
-    let data: Login
+    let data: Login?
 }
 
 

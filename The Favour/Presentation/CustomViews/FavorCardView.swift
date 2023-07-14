@@ -37,7 +37,7 @@ struct FavorCardView: View {
                     FavorText(text: subTitle, textColor: .appWhite, fontType: .regular, fontSize: 14)
                 }
                 .padding(.top, 20)
-                .padding(.leading, 30)
+                .padding(.leading, 20)
                 Image(imageName)
                     .resizable()
                     .scaledToFill()

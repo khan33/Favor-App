@@ -33,7 +33,7 @@ struct SignupView1: View {
                 
                 
                 
-                FavorTextField(placeholder: "Date of Birth", leftImage: nil, rightImage: "calander", text: $viewModel.dateOfBirth) {
+                FavorTextField(placeholder: "12-01-2005", leftImage: nil, rightImage: "calander", text: $viewModel.dateOfBirth) {
                     withAnimation {
                         show.toggle()
                     }
@@ -42,7 +42,7 @@ struct SignupView1: View {
                 
                 FavorTextField(placeholder: "Phone Number", leftImage: nil, rightImage: nil, text: $viewModel.phoneNumber)
                 
-                FavorTextField(placeholder: "Address", leftImage: nil, rightImage: "location", text: $viewModel.address)
+//                FavorTextField(placeholder: "Address", leftImage: nil, rightImage: "location", text: $viewModel.address)
                 
                 
                 FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
@@ -57,7 +57,9 @@ struct SignupView1: View {
         .navigationBarHidden(true)
         .navigationTitle("")
         .spinner(isShowing: $viewModel.shouldShowLoader)
-
+        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
+            MainTabView()
+        }
 //        .toolBarPopover(show: $show) {
 //            DatePicker("", selection: .constant(Date()), displayedComponents: [.date])
 //                .datePickerStyle(.graphical)
