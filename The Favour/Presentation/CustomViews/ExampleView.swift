@@ -6,51 +6,37 @@
 //
 
 import SwiftUI
+import Combine
+import CoreLocation
 
 struct ExampleView: View {
-    let items = ["Item 1", "Item 2", "Item 3"]
-    @State private var selectedItem: String?
-    @State private var isMenuVisible = false
+
+    @StateObject private var locationManager = LocationManager()
 
     var body: some View {
         VStack {
-                    List(items, id: \.self) { item in
-                        Text(item)
-                            .onTapGesture {
-                                selectedItem = item
-                            }
-                            .contextMenu {
-                                Button(action: {
-                                    // Perform delete action
-                                    deleteItem(selectedItem)
-                                }) {
-                                    Label("Delete", systemImage: "trash")
-                                }
-
-                                Button(action: {
-                                    // Perform edit action
-                                    editItem(selectedItem)
-                                }) {
-                                    Label("Edit", systemImage: "pencil")
-                                }
-                            }
+                    Text("Current Location:")
+                        .font(.headline)
+                    
+                    if let location = locationManager.currentLocation {
+                        Text("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
+                            .padding()
+                        Text("Current Address: \(locationManager.currentAddress)")
+                    } else {
+                        Text("Location data not available")
+                            .padding()
                     }
+                }
+                .onAppear {
+                    locationManager.startUpdatingLocation()
+                }
+                .onDisappear {
+                    locationManager.stopUpdatingLocation()
                 }
     }
     
-    func placeOrder() { }
-    func adjustOrder() { }
-    func cancelOrder() { }
-
-    func deleteItem(_ item: String?) {
-        // Delete logic goes here
-        print("Delete: \(item)")
-    }
+   
     
-    func editItem(_ item: String?) {
-        // Edit logic goes here
-        print("Edit: \(item)")
-    }
 }
 
 struct ExampleView_Previews: PreviewProvider {
@@ -58,3 +44,6 @@ struct ExampleView_Previews: PreviewProvider {
         ExampleView()
     }
 }
+
+
+

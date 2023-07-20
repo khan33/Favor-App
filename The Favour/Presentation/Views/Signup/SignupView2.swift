@@ -14,6 +14,8 @@ struct SignupView2: View {
     var body: some View {
         VStack (spacing: 16){
             NavigationLink(destination: DocumentUploadView(), isActive: $isNext) { EmptyView() }
+            NavigationBarView(text: "Fill Your Profile")
+                .padding()
 
             FavorText(text: "Steps 2 of 2", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
                 .padding(.horizontal, 8)
@@ -38,8 +40,6 @@ struct SignupView2: View {
             
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
-        .navigationTitle("Fill Your Profile")
         
        
     }

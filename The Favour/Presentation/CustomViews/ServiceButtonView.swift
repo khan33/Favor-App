@@ -11,9 +11,9 @@ struct ServiceButtonView: View {
     let text: String?
     var textColor: Color = .appWhite
     var fontType: DefaultFontFamily = .bold
-    var fontSize: CGFloat = 14
+    var fontSize: CGFloat = 12
     var bgColor: Color = .appPrimaryColor
-    var cornerRadius: CGFloat = 20
+    var cornerRadius: CGFloat = 16
     var action: (() -> Void)? = nil
     
     var body: some View {
@@ -22,19 +22,23 @@ struct ServiceButtonView: View {
             action?()
         }) {
             VStack(alignment: .center) {
+                
                 if let text = text {
                     Text(text)
                         .font(.localizedFont(fontType: fontType, fontSize: fontSize))
                         .foregroundColor(textColor)
-                        .padding(8)
+                        .frame(minWidth: 44)
+                        .padding(12)
+                        .background(bgColor)
+                        .cornerRadius(cornerRadius)
                 }
             }
-            .background(bgColor)
-            .cornerRadius(cornerRadius)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(textColor, lineWidth: 1)
             )
+            
+            
         }
     }
 }
@@ -48,10 +52,11 @@ struct ServiceButtonView_Previews: PreviewProvider {
 //            ServiceButtonView(text: "Repairing", textColor: .white, fontType: .regular, fontSize: 12,
 //                              bgColor: .appPrimaryColor)
             
+            var titles = ["All", "Cleaning", "Cooking/Baking", "Childcare"]
             ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(0..<20) { index in
-                            ServiceButtonView(text: "All New", textColor: index == 0 ? .appWhite : .appPrimaryColor , bgColor: index == 0 ? .appPrimaryColor : .appWhite)
+                        ForEach(0..<3) { index in
+                            ServiceButtonView(text: titles[index], textColor: index == 0 ? .appWhite : .appPrimaryColor , bgColor: index == 0 ? .appPrimaryColor : .appWhite)
                             
                             //ServiceButtonView(text: "All is well Cleaning", textColor: .white, bgColor: .appPrimaryColor)
                         }

@@ -16,25 +16,19 @@ struct The_FavourApp: App {
 
     var body: some Scene {
         WindowGroup {
+//            ExampleView()
             
             if PrefsManager.shared.isWalkThrough {
-                if KeychainManager.getAuthToken() != nil {
+                if KeychainManager.getAuthToken() != nil  && PrefsManager.shared.favorType != "" {
                     MainTabView()
-//                        .preferredColorScheme(.light) // Set preferred color scheme to light
-
                 } else {
                     NavigationView {
                         SignupView()
-//                            .preferredColorScheme(.light) // Set preferred color scheme to light
-
                     }
                 }
             } else {
                 SplashScreenView()
-//                    .preferredColorScheme(.light) // Set preferred color scheme to light
-
             }
-            
         }
 
     }

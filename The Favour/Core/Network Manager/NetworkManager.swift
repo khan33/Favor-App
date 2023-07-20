@@ -12,6 +12,9 @@ protocol NetworkManagerProtocol: AnyObject {
     typealias Headers = [String: Any]
     typealias Parameters = [String: Any]
     func request<T>(type: T.Type, url: URL, httpMethod: HTTPMethod, headers: Headers, parameters: Parameters?) -> AnyPublisher<T, Error> where T: Decodable
+    
+    func mutlipartResuest<T>(type: T.Type, url: URL, headers: Headers, parameters: Parameters?, media: [Media]?) -> AnyPublisher<T, Error> where T: Decodable
+
 }
 
 final class NetworkManager: NetworkManagerProtocol {
@@ -59,5 +62,56 @@ final class NetworkManager: NetworkManagerProtocol {
         
     }
     
+    
+    func mutlipartResuest<T>(type: T.Type, url: URL, headers: Headers, parameters: Parameters?, media: [Media]?) -> AnyPublisher<T, Error> where T: Decodable {
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        //create boundary
+        let boundary = generateBoundary()
+        //set content type
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+         if let token = KeychainManager.getAuthToken() {
+             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+         }
+        //call createDataBody method
+        let dataBody = createDataBody(withParameters: parameters, media: media, boundary: boundary)
+        request.httpBody = dataBody
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map { $0.data }
+            .decode(type: T.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+
+    }
+    
+    func generateBoundary() -> String {
+       return "Boundary-\(NSUUID().uuidString)"
+    }
+    
+    func createDataBody(withParameters params: [String: Any]?, media: [Media]?, boundary: String) -> Data {
+       let lineBreak = "\r\n"
+       var body = Data()
+       if let parameters = params {
+          for (key, value) in parameters {
+             body.append("--\(boundary + lineBreak)")
+             body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
+             body.append("\(value as! String + lineBreak)")
+          }
+       }
+       if let media = media {
+          for photo in media {
+             body.append("--\(boundary + lineBreak)")
+             body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; filename=\"\(photo.filename)\"\(lineBreak)")
+             body.append("Content-Type: \(photo.mimeType + lineBreak + lineBreak)")
+             body.append(photo.data)
+             body.append(lineBreak)
+          }
+       }
+       body.append("--\(boundary)--\(lineBreak)")
+       return body
+    }
     
 }

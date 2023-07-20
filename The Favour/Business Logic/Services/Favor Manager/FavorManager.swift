@@ -11,7 +11,7 @@ import Combine
 protocol FavorManagerProtocol: AnyObject {
     var networkManager: NetworkManagerProtocol { get }
     func userFavors() -> AnyPublisher<FavorModel, Error>
-    func favorPost(favor: Favor ) -> AnyPublisher<FavorModel, Error>
+    func favorPost(favor: Favor, media: [Media]? ) -> AnyPublisher<FavorModel, Error>
     func favorUpdate(favor: Favor ) -> AnyPublisher<LoginModel, Error>
     func getFavor() -> AnyPublisher<FavorModel, Error>
     func getFavorById(id: String) -> AnyPublisher<LoginModel, Error>
@@ -32,8 +32,14 @@ final class FavorManager: FavorManagerProtocol {
         return networkManager.request(type: FavorModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
     }
     
-    func favorPost(favor: Favor ) -> AnyPublisher<FavorModel, Error> {
+    
+
+    
+    
+    func favorPost(favor: Favor, media: [Media]?) -> AnyPublisher<FavorModel, Error> {
         let endPoint = Endpoint.userPostFavor
+        
+        
         let params = [
             "title": favor.title,
             "tags": favor.tags,
@@ -48,7 +54,8 @@ final class FavorManager: FavorManagerProtocol {
             "address" : favor.address,
             "search_tags": favor.search_tags
         ]
-        return networkManager.request(type: FavorModel.self, url: endPoint.url, httpMethod: .POST, headers: endPoint.headers, parameters: params)
+        
+        return networkManager.mutlipartResuest(type: FavorModel.self, url: endPoint.url, headers: endPoint.headers, parameters: params, media: media)
     }
 
     func favorUpdate(favor: Favor ) -> AnyPublisher<LoginModel, Error> {
@@ -72,7 +79,7 @@ final class FavorManager: FavorManagerProtocol {
     }
     
     func getFavor() -> AnyPublisher<FavorModel, Error> {
-        let endPoint = Endpoint.getFavor(servicesPageSize: "0", page: "1", pageSize: "5", isServices: "true")
+        let endPoint = Endpoint.getFavor(servicesPageSize: "20", page: "1", pageSize: "5", isServices: "true")
         return networkManager.request(type: FavorModel.self, url: endPoint.url, httpMethod: .GET, headers: endPoint.headers, parameters: nil)
     }
     func getFavorById(id: String) -> AnyPublisher<LoginModel, Error> {

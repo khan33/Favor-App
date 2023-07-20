@@ -18,5 +18,11 @@
 		<string>Urbanist-VariableFont_wght.ttf</string>
 		<string>Urbanist-Italic-VariableFont_wght.ttf</string>
 	</array>
+    
+    
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to your location to provide you with accurate and personalized service. We use your location to find nearby service providers, track their arrival, and ensure efficient and reliable service delivery.</string>
+
+    
 </dict>
 </plist>

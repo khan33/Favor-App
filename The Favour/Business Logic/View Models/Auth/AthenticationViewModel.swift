@@ -10,36 +10,85 @@ import Combine
 import AuthenticationServices
 import Firebase
 import CryptoKit
+import CoreLocation
 
-final class AthenticationViewModel: ObservableObject {
-    private let authenticationManager: AthenticationManager = AthenticationManager()
+class AthenticationViewModel: ObservableObject {
     
+    
+   
+
+    @Published var alertType: AlertType?
+
+    private let authenticationManager: AthenticationManager = AthenticationManager()
+    let phoneRegexPattern = #"^\d{10}$"#
+    let dateRegexPattern = #"^(0[1-9]|1[0-2])/(0[1-9]|1\d|2\d|3[01])/\d{4}$"#
+
     private var cancellables = Set<AnyCancellable>()
     @Published var loginIsValid = false
+    @Published var signupIsValid = false
     @Published var showMainTabView: Bool = false
     @Published var nonce = ""
+    @Published var code: String = "NApi1OJE"
 
     @Published var email: String = "atta123@gmail.com"
     @Published var password: String = "admin123"
-    @Published var confirmPassord: String = ""
-    @Published var fullName: String = ""
-    @Published var address: String = "Lahore"
-    @Published var dateOfBirth: String = ""
-    @Published var phoneNumber: String = ""
-    
+    @Published var confirmPassord: String = "admin123"
+    @Published var fullName: String = "Atta khan"
+    @Published var dateOfBirth: String = "12/12/2009"
+    @Published var phoneNumber: String = "1234567890"
+    @Published var showUserRoleView: Bool = false
+    @Published private(set) var isEmailValid: Bool = false
+    @Published private(set) var isResetPasswordFormValid: Bool = false
+
     @Published var shouldShowLoader: Bool = false
     @Published var errorMessage: String = ""
+    @Published var showMessage: Bool = false
     
+    private var toastTimer: AnyCancellable?
+
     var moveToNextScreen: ((Int) -> Void)?
     var token: String?
     var userType: String?
     init() {
+       
         isLoginFormValidPublisher
           .receive(on: RunLoop.main)
           .assign(to: \.loginIsValid, on: self)
           .store(in: &cancellables)
+        
+        
+        
+        isSignupFormValidPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.signupIsValid, on: self)
+            .store(in: &cancellables)
+        
         userType = PrefsManager.shared.favorType
+        
+        isUserEmailValidPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.isEmailValid, on: self)
+            .store(in: &cancellables)
+
+        isResetPasswordValidPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.isResetPasswordFormValid, on: self)
+            .store(in: &cancellables)
+        
+
+        
       }
+    
+    func showToast(with message: String, showToas: Bool) {
+        errorMessage = message
+        showMessage = true
+        
+        DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.showMessage = false
+            }
+        }
+    }
     
     func performLogin() {
         shouldShowLoader = true
@@ -48,22 +97,14 @@ final class AthenticationViewModel: ObservableObject {
                 switch completion {
                 case let .failure(error):
                     self?.shouldShowLoader = false
-                    self?.errorMessage = "Provided mobile number is not correct"
+                    self?.errorMessage = "Invalid Email or Password."
                     print("Couldn't login: \(error)")
                 case .finished:
                     self?.shouldShowLoader = false
                     break
                 }
             } receiveValue: { [weak self] model in
-                if let data = model.data {
-                    if let token = data.token, let type = data.user?.user_type {
-                        KeychainManager.saveAuthToken(token)
-                        
-                        self?.userType = type
-                        self?.saveUserType(type)
-                        self?.moveToMainTabView()
-                    }
-                }
+                self?.handleLoignResponse(model)
             }
             .store(in: &cancellables)
     }
@@ -72,31 +113,23 @@ final class AthenticationViewModel: ObservableObject {
         PrefsManager.shared.favorType = type
     }
     
-    func performSignup() {
+    
+
+    func performSignup(address: String, lat: String, lng: String) {
         shouldShowLoader = true
-        authenticationManager.signup(email: email, password: password, name: fullName, user_type: userType!, contact_number: phoneNumber, address: address, dob: dateOfBirth, id_card: "3241", lat: "30.417947", lng: "74.257103")
+        authenticationManager.signup(email: email, password: password, name: fullName, user_type: userType!, contact_number: phoneNumber, address: address, dob: dateOfBirth, id_card: "3241", lat: lat, lng: lng)
             .sink { [weak self] completion in
                 switch completion {
                 case let .failure(error):
                     self?.shouldShowLoader = false
-                    self?.errorMessage = "Provided mobile number is not correct"
+                    self?.errorMessage = "There are some thing missing. please try again!"
                     print("Couldn't login: \(error)")
                 case .finished:
                     self?.shouldShowLoader = false
                     break
                 }
             } receiveValue: { [weak self] model in
-                
-                if let data = model.data {
-                    if let token = data.token, let type = data.user?.user_type {
-                        KeychainManager.saveAuthToken(token)
-                        PrefsManager.shared.username = data.user?.name ?? "Test User"
-
-                        self?.userType = type
-                        self?.saveUserType(type)
-                        self?.moveToMainTabView()
-                    }
-                }
+                self?.handleLoignResponse(model)
             }
             .store(in: &cancellables)
     }
@@ -127,9 +160,9 @@ final class AthenticationViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func resetPassword() {
+    func resetPassword(email: String) {
         shouldShowLoader = true
-        authenticationManager.resetPassword(email: email, password: password, token: "", password_confirmation: confirmPassord)
+        authenticationManager.resetPassword(email: email, password: password, token: code, password_confirmation: confirmPassord)
             .sink { [weak self] completion in
                 switch completion {
                 case let .failure(error):
@@ -141,8 +174,12 @@ final class AthenticationViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] model in
-//                self?.moveToNextScreen?(model.data.firstTime ?? 0)
-                print(model)
+                if model.error == false {
+                    self?.showMainTabView = true
+                } else {
+                    self?.alertType = .error
+                    self?.errorMessage = model.error_messages ?? "There are something went worng please try again."
+                }
             }
             .store(in: &cancellables)
     }
@@ -162,8 +199,13 @@ final class AthenticationViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] model in
 //                self?.moveToNextScreen?(model.data.firstTime ?? 0)
-                print(model)
-                
+                print(model.error)
+                if model.error == false {
+                    self?.showMainTabView = true
+                } else {
+                    self?.alertType = .error
+                    self?.errorMessage = "Failed to send password reset email"
+                }
 
                 
                 
@@ -194,9 +236,9 @@ final class AthenticationViewModel: ObservableObject {
     
     
     
-    func updateProfile() {
+    func updateProfile(_ user: User) {
         shouldShowLoader = true
-        authenticationManager.forgotPassword(email: email)
+        authenticationManager.updateProfile(user: user)
             .sink { [weak self] completion in
                 switch completion {
                 case let .failure(error):
@@ -208,13 +250,102 @@ final class AthenticationViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] model in
-//                self?.moveToNextScreen?(model.data.firstTime ?? 0)
                 print(model)
+                self?.handleLoignResponse(model)
             }
             .store(in: &cancellables)
     }
+    
+    
+    func updateUserProfileAttachment(_ params: [String: String]?,  _ media: [Media]) {
+        shouldShowLoader = true
+        authenticationManager.updateAttachmentFiles(params: params, files: media)
+            .sink { [weak self] completion in
+                switch completion {
+                case let .failure(error):
+                    self?.shouldShowLoader = false
+                    self?.errorMessage = "Provided mobile number is not correct"
+                    print("Couldn't login: \(error)")
+                case .finished:
+                    self?.shouldShowLoader = false
+                    break
+                }
+            } receiveValue: { [weak self] model in
+                print(model)
+                self?.handleLoignResponse(model)
+            }
+            .store(in: &cancellables)
+    }
+    
+    
+    
+    func handleLoignResponse(_ model: LoginModel) {
+        if let error = model.error, error == true {
+            self.showToast(with: model.error_messages ?? "", showToas: error)
+        } else {
+            if let data = model.data {
+                if let token = data.token {
+                    KeychainManager.saveAuthToken(token)
+                }
+                
+                if let type = data.user?.user_selected_type {
+                    self.userType = type
+                    self.saveUserType(type)
+                    self.moveToMainTabView()
+                } else {
+                    shouldShowLoader = false
+                    showUserRoleView = true
+                }
+                
+                PrefsManager.shared.username = data.user?.name ?? "Test User"
+
+            }
+        }
+    }
+    
    
 }
+
+//MARK: LOGIN WITH SOCIAL
+
+extension AthenticationViewModel {
+    func performSocialLogin(name: String, email: String, token: String, login_type: String) {
+        shouldShowLoader = true
+        authenticationManager.loginWithSocial(email: email, token: token, name: name, login_type: login_type)
+            .sink { [weak self] completion in
+                switch completion {
+                case let .failure(error):
+                    self?.shouldShowLoader = false
+                    self?.errorMessage = "Provided mobile number is not correct"
+                    print("Couldn't login: \(error)")
+                case .finished:
+                    self?.shouldShowLoader = false
+                    break
+                }
+            } receiveValue: { [weak self] model in
+                print(model)
+                self?.handleLoignResponse(model)
+            }
+            .store(in: &cancellables)
+    }
+    
+    enum AlertType: Identifiable {
+        case success
+        case error
+        
+        var id: String {
+            // Provide a unique identifier for each case
+            switch self {
+            case .success:
+                return "success"
+            case .error:
+                return "error"
+            }
+        }
+    }
+
+}
+
 
 private extension AthenticationViewModel {
     
@@ -230,10 +361,62 @@ private extension AthenticationViewModel {
     var isPasswordValidPublisher: AnyPublisher<Bool, Never> {
         $password
               .map { password in
-                  return password.count >= 8
+                  return password.count >= 6
               }
               .eraseToAnyPublisher()
       }
+    
+
+    var isConfirmPasswordValidPublisher: AnyPublisher<Bool, Never> {
+        Publishers
+            .CombineLatest($password, $confirmPassord)
+            .map { pass, confirmPass in
+                pass == confirmPass
+            }
+            .eraseToAnyPublisher()
+      }
+    
+    var isTokenValidPublisher: AnyPublisher<Bool, Never> {
+        $code
+              .map { code in
+                  return code.count >= 6
+              }
+              .eraseToAnyPublisher()
+      }
+    
+    var isfullNameValidPublisher: AnyPublisher<Bool, Never> {
+        $fullName
+            .map { name in
+                return name.count >= 4
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    var isValidMobile: AnyPublisher<Bool, Never> {
+        $phoneNumber
+            .map { phoneNumber in
+                let range = NSRange(location: 0, length: phoneNumber.utf16.count)
+                let regex = try! NSRegularExpression(pattern: self.phoneRegexPattern)
+                let matches = regex.numberOfMatches(in: phoneNumber, options: [], range: range)
+                return matches == 1
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    var dateValidationPublisher: AnyPublisher<Bool, Never> {
+        $dateOfBirth
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { dateOfBirth in
+                let range = NSRange(location: 0, length: dateOfBirth.utf16.count)
+                let regex = try! NSRegularExpression(pattern: self.dateRegexPattern)
+                let matches = regex.numberOfMatches(in: dateOfBirth, options: [], range: range)
+                return matches == 1
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    
     
     var isLoginFormValidPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(
@@ -244,6 +427,38 @@ private extension AthenticationViewModel {
           }
           .eraseToAnyPublisher()
       }
+    
+    
+    var isSignupFormValidPublisher: AnyPublisher<Bool, Never> {
+        
+        
+        Publishers.CombineLatest4(
+          isUserEmailValidPublisher,
+          isPasswordValidPublisher,
+          isfullNameValidPublisher,
+          isValidMobile
+          )
+        .combineLatest(dateValidationPublisher)
+          .map { response, response1  in
+              return response.0 && response.1 && response.2 && response.3 && response1
+          }
+          .eraseToAnyPublisher()
+      }
+    
+    
+    
+    var isResetPasswordValidPublisher: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest3(
+          isPasswordValidPublisher,
+          isConfirmPasswordValidPublisher,
+          isTokenValidPublisher
+          )
+        .map { isPasswordValid, isConfirmPasswordValid ,isTokenValid in
+            return isPasswordValid && isTokenValid && isConfirmPasswordValid
+        }
+        .eraseToAnyPublisher()
+      }
+
 }
 
 extension AthenticationViewModel {
@@ -267,7 +482,12 @@ extension AthenticationViewModel {
                 print(error.localizedDescription)
                 return
             }
-            print("successfull login....")
+            print(authResult?.user.uid)
+            
+            if let data = authResult?.user {
+                self.performSocialLogin(name: data.displayName ?? "", email: data.email ?? "", token: data.uid ?? "", login_type: "google")
+            }
+
         }
     }
 }

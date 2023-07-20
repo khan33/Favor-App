@@ -8,9 +8,10 @@
 import Foundation
 
 struct LoginModel: Decodable {
-    let message: String
-    let error: Bool
+    let message: String?
+    let error: Bool?
     let code: Int
+    let error_messages: String?
     let data: Login?
 }
 
@@ -18,14 +19,16 @@ struct LoginModel: Decodable {
 struct Login: Decodable {
     let token: String?
     let user: User?
+    let new_register: Bool? = false
     
     private enum CodingKeys: String, CodingKey {
         case token = "token"
         case user = "user_details"
+        case new_register = "new_register"
     }
 }
 
-struct User: Decodable {
+struct User: Codable {
     let id: Int?
     let first_name: String?
     let last_name: String?
@@ -40,4 +43,27 @@ struct User: Decodable {
     let user_selected_type: String?
     let lat: String?
     let lng: String?
+    let profile_photo: String?
+    let user_status: String?
+    let file_back_url: String?
+    let file_front_url: String?
+    let file_type: String?
+    let login_type: String?
+    let token: String?
+}
+
+
+struct ForgotPasswordModel: Decodable {
+    let message: String?
+    let error: Bool?
+    let code: Int
+    let error_messages: String?
+    let data: String?
+}
+
+struct ResetPasswordModel: Decodable {
+    let message: String?
+    let error: Bool?
+    let code: Int
+    let error_messages: String?
 }

@@ -35,6 +35,7 @@ struct FavorList: Decodable {
     let lng: Double?
     let address: String?
     let media: [FavorMedia]?
+    let meta_details: FavorMetaDetail?
 }
 
 struct FavorMedia: Decodable {
@@ -46,7 +47,7 @@ struct FavorMedia: Decodable {
     let media_description: String?
 }
 
-struct FavorMediaDetail: Decodable {
+struct FavorMetaDetail: Decodable {
     let id: Int?
     let favor_id: String?
     let description: String?

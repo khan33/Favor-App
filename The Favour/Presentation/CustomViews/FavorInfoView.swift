@@ -21,10 +21,9 @@ struct FavorInfoView: View {
             AsyncImage(url: URL(string: image)) { image in
                     image
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 88, height: 88)
                         .padding([.leading, .vertical])
-
                 } placeholder: {
                     Image(image)
                         .resizable()

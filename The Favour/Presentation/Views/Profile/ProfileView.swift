@@ -169,6 +169,7 @@ struct ProfileView: View {
             SettingMenuItem(title: "Logout", image: "Logout", isLogout: true) {
                 showLogoutSheet = true
                 shouldPerformLogout = true
+                PrefsManager.shared.favorType = ""
                 KeychainManager.performLogout()
             }
 

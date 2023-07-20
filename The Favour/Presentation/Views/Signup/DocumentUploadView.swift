@@ -7,28 +7,58 @@
 
 import SwiftUI
 
+enum ImageSideType {
+    case front
+    case back
+}
+
 struct DocumentUploadView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var isNext = false
     @State private var showModally = false
+    
+    @State private var selectedFrontImage: UIImage? = nil
+    @State private var selectedBackImage: UIImage? = nil
+    @State private var showImagePicker: Bool = false
+    @State private var imageType: ImageSideType = .front
+    @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
+
     var body: some View {
         ZStack {
             VStack (spacing: 16){
-                //            NavigationLink(destination: AddPaymentMethods(), isActive: $isNext) { EmptyView() }
-                
+                NavigationBarView(text: "Fill Your Profile")
                 FavorText(text: "Steps 2 of 2", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
                     .padding(.vertical, 18)
                 
                 FavorText(text: "Upload a jpg, png or pdf, max size 1mb", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
                     .padding(.bottom, 18)
                 
-                DocumentUploadButton(title: "Upload Id Front")
+                DocumentUploadButton(title: "Upload Id Front", image: $selectedFrontImage) {
+                    imageType = .front
+                    showImagePicker = true
+                }
                 
-                DocumentUploadButton(title: "Upload Id Back")
+                DocumentUploadButton(title: "Upload Id Back", image: $selectedBackImage ) {
+                    imageType = .back
+                    showImagePicker = true
+                }
                 
                 
                 FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
-                    showModally = true
+                    //showModally = true
+                    
+                    
+                    if let frontImg = selectedFrontImage, let backImg = selectedBackImage {
+                        if let mediaImage = Media(withImage: frontImg, forKey: "file_front_url"),
+                           let mediaImage1 = Media(withImage: backImg, forKey: "file_back_url") {
+                            
+                            let params: [String : String] = ["file_type" : "passport"]
+                            viewModel.updateUserProfileAttachment(params, [mediaImage, mediaImage1])
+                        }
+                        
+                        
+                    }
+                    
                     
                 }
                 Spacer()
@@ -38,8 +68,20 @@ struct DocumentUploadView: View {
             CongratulationView(show: $showModally)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
-        .navigationTitle("Fill Your Profile")
+        .navigationTitle("")
+        .sheet(isPresented: $showImagePicker) {
+            if imageType == .front {
+                ImagePickerView(selectedImage: $selectedFrontImage)
+            } else {
+                ImagePickerView(selectedImage: $selectedBackImage)
+
+            }
+        }
+        .spinner(isShowing: $viewModel.shouldShowLoader)
+        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
+            MainTabView()
+        }
+
     }
     var btnBack : some View { Button(action: {
             self.presentationMode.wrappedValue.dismiss()

@@ -7,9 +7,6 @@
 
 import SwiftUI
 import AuthenticationServices
-import FirebaseAuth
-import GoogleSignIn
-import Firebase
 
 
 struct SignupView: View {
@@ -23,7 +20,8 @@ struct SignupView: View {
         VStack {
             NavigationLink(destination: LoginView(), isActive: $isShowingLoginView) { EmptyView() }
             NavigationLink(destination: MainView(), isActive: $isShowingSignupView) { EmptyView() }
-            
+            NavigationLink(destination: MainView(), isActive: $viewModel.showUserRoleView) { EmptyView() }
+
 //            NavigationBarView(text: "")
 
             Image("Signup")
@@ -41,14 +39,18 @@ struct SignupView: View {
                 })
                 
                 FavorSocialButton(text: "Continue with Google", image: "google", width: .infinity, height: 60, fontType: .semiBold, fontSize: 16, action: {
-                    
-                    FirebaseAuth.shared.signInWithGoogle(presenting: getRootViewController()) { error in
-                        print(error)
+                    FirebaseAuth.shared.signInWithGoogle(presenting: getRootViewController()) { result in
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                        case .success(let data):
+                            if let data = data?.user {
+                                viewModel.performSocialLogin(name: data.displayName ?? "", email: data.email ?? "", token: data.uid ?? "", login_type: "google")
+                            }
+                        }
                     }
                     
-                    
                 })
-                
                 FavorSocialButton(text: "Continue with Apple", image: "apple", width: .infinity, height: 60, fontType: .semiBold, fontSize: 16, action: {
                     
                     
@@ -64,9 +66,33 @@ struct SignupView: View {
                         switch result {
                         case .success(let user):
                             print(user)
-                            
+                            /*
+                            switch user.credential {
+                               case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                                   // Apple ID
+                                   let userIdentifier = appleIDCredential.user
+                                   print("User ID: \(userIdentifier)")
+
+                                   // Full Name
+                                   if let fullName = appleIDCredential.fullName {
+                                       let firstName = fullName.givenName
+                                       let lastName = fullName.familyName
+                                       print("Full Name: \(firstName) \(lastName)")
+                                   }
+
+                                   // Email
+                                   let email = appleIDCredential.email
+                                   print("Email: \(email ?? "")")
+                                   
+                                   // Handle the successful sign-in
+                                   // ...
+
+                               default:
+                                   break
+                               }
+                            */
                             guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
-                                return 
+                                return
                             }
                             viewModel.appleAuthentication(credential: credential)
 
@@ -78,9 +104,8 @@ struct SignupView: View {
                         }
                     }
                     .signInWithAppleButtonStyle(.white)
-                    .frame(height: 55)
-                    .clipShape(Capsule())
-                    .padding(0)
+                    .frame(width: 50, height: 50)
+                    .blendMode(.overlay)
                 }
             }
             HStack(spacing: 24) {
@@ -107,7 +132,13 @@ struct SignupView: View {
             
         }
         .padding(.horizontal, 24)
+        .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .spinner(isShowing: $viewModel.shouldShowLoader)
+        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
+            MainTabView()
+        }
+
     }
     
     var btnBack : some View { Button(action: {

@@ -9,14 +9,15 @@ import SwiftUI
 
 struct FavorByService: View {
     @State private var searchText = ""
-    private var service_titles = ["All", "Cleaning", "Repairing", "Painting", "Laundry", "Appliance", "Plumbing", "Movers", "Beauty", "AC Repa..", "Vehicle", "Electronics", "Massage", "Men’s Sal.."]
     @State private var favorDetail = false
 
+    var service: ServiceModelData
+    
     var body: some View {
         
-        VStack(spacing: 24) {
-            NavigationLink(destination: FavorDetailView(), isActive: $favorDetail) { EmptyView() }
-            NavigationBarView(text: "Cleaning")
+        VStack(spacing: 8) {
+            //NavigationLink(destination: FavorDetailView(), isActive: $favorDetail) { EmptyView() }
+            NavigationBarView(text: service.name ?? "")
             
             SearchBarView(searchText: $searchText) {
             }
@@ -38,15 +39,19 @@ struct FavorByService: View {
             }
             
         }
-        .padding(20)
+        .padding(.horizontal, 20)
         .navigationBarHidden(true)
         .navigationTitle("")
+        .onAppear {
+            
+        }
 
     }
 }
 
 struct FavorByService_Previews: PreviewProvider {
     static var previews: some View {
-        FavorByService()
+        var service: ServiceModelData = ServiceModelData(id: 1, name: "Cleaning", color: nil, icon: nil, active: "", ispopular: true)
+        FavorByService(service: service)
     }
 }

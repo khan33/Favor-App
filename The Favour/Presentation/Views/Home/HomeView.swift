@@ -13,42 +13,31 @@ struct HomeView: View {
     @State private var isSheetShown = false
     @State var cardDismissal = false
     @State private var isServices = false
-    @State var service_titles = ["All", "Cleaning", "Repairing", "Painting", "Laundry", "Appliance", "Plumbing", "Movers", "Beauty", "AC Repa..", "Vehicle", "Electronics", "Massage", "Men’s Sal.."]
-    
-    private var colors: [Color] = [
-                                Color(red: 0.447, green: 0.063, blue: 1),
-                                Color(red: 1, green: 0.596, blue: 0),
-                                Color(red: 0.2, green: 0.369, blue: 0.969),
-                                Color(red: 0.98, green: 0.8, blue: 0.082),
-                                Color(red: 0.969, green: 0.333, blue: 0.333),
-                                Color(red: 0.298, green: 0.686, blue: 0.314),
-                                Color(red: 0, green: 0.737, blue: 0.831),
-                                Color(red: 0.447, green: 0.063, blue: 1),
-                                Color(red: 0.298, green: 0.686, blue: 0.314),
-                                Color(red: 0.2, green: 0.369, blue: 0.969),
-                                Color(red: 1, green: 0.596, blue: 0),
-                                Color(red: 0.969, green: 0.333, blue: 0.333),
-                                Color(red: 0.447, green: 0.063, blue: 1),
-    ]
-
-    private var images = ["cleaning", "Repairing", "painting", "Laundry", "Appliance", "plumbing", "Truck", "beauty", "AC", "vehicle", "electronics", "massage", "Men"]
     
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     @State private var popularFavor = false
     @State private var favorDetail = false
     @State private var favorByService = false
-
+    @State private var selectedIndex: Int = 0
+    @State private var selectedService: ServiceModelData?
+    @State private var favor_detail: FavorList?
     @StateObject var viewModel: FavorViewModel = FavorViewModel()
 
+    
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    NavigationLink(destination: AllServicesView(services: viewModel.services), isActive: $isServices) { EmptyView() }
-                    NavigationLink(destination: PopularServicesView(), isActive: $popularFavor) { EmptyView() }
-                    NavigationLink(destination: FavorByService(), isActive: $favorByService) { EmptyView() }
                     
+                    NavigationLink(destination: AllServicesView(), isActive: $isServices) { EmptyView() }
+                    NavigationLink(destination: PopularServicesView(), isActive: $popularFavor) { EmptyView() }
+                    if let service = selectedService {
+                        NavigationLink(destination: FavorByService(service: service), isActive: $favorByService) { EmptyView() }
+                    }
+                    if let detail = favor_detail {
+                        NavigationLink(destination: FavorDetailView(favor_detail: detail), isActive: $favorDetail) { EmptyView() }
+                    }
                     
                     
                     CustomNavigationBarView()
@@ -70,22 +59,34 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                if let result = viewModel.services {
+                                if let result = viewModel.popularServices {
                                     ForEach(result.indices, id: \.self) { index in
-                                        ServiceButtonView(text: result[index].name, textColor: index == 0 ? .appWhite : .appPrimaryColor , bgColor: index == 0 ? .appPrimaryColor : .appWhite) {
-                                            favorByService.toggle()
+                                        ServiceButtonView(text: result[index].name, textColor: index == selectedIndex ? .appWhite : .appPrimaryColor , bgColor: index == selectedIndex ? .appPrimaryColor : .appWhite) {
+                                            selectedIndex = index
+                                            viewModel.filterFavorbyService(service_id: result[index].id ?? 0)
                                         }
                                     }
                                 }
                             }
                         }
                         .padding(.vertical,  20)
-                        if let favor = viewModel.favors {
-                            ForEach(favor.indices, id: \.self) { index in
-                                FavorListView(image: favor[index].media?[0].media_url ?? "", name: favor[index].category ?? "Cleaning", favTitle: favor[index].title ?? "", rating: "4.8", totalReview: "8.889 reviews") {
-                                    favorByService.toggle()
+                        
+                        
+                        if let favor = viewModel.popularServicFavors {
+                            if favor.isEmpty {
+                                FavorText(text: "No favor available right now!", textColor: .red, fontType: .regular, fontSize: 9, alignment: .center, lineSpace: 0)
+                                    .padding(.horizontal, 8)
+                            } else {
+                                ForEach(favor.indices.prefix(6), id: \.self) { index in
+                                    FavorListView(image: favor[index].media?[0].media_url ?? "", name: favor[index].category ?? "Cleaning", favTitle: favor[index].title ?? "", rating: "4.8", totalReview: "8.889 reviews") {
+                                        favor_detail = favor[index]
+                                        favorDetail.toggle()
+                                    }
                                 }
                             }
+                            
+                            
+                            
                         }
                     }
                 }
@@ -96,8 +97,11 @@ struct HomeView: View {
                 .navigationTitle("")
                 .spinner(isShowing: $viewModel.shouldShowLoader)
                 
-                FilterModalView(isShowing: $isSheetShown, services: $service_titles)
+                //FilterModalView(isShowing: $isSheetShown, services: $service_titles)
             }
+        }
+        .onAppear {
+            viewModel.getFavor()
         }
     }
     
@@ -105,11 +109,11 @@ struct HomeView: View {
     private var HomeServicesView: some View {
         LazyVGrid(columns: gridItemLayout, spacing: 20) {
             if let result = viewModel.services {
-                ForEach(result.indices, id: \.self) { index in
-                    ServicesView(image: images[index],
-                                 name: result[index].name ?? "",
-                                 color: colors[index]
-                    )
+                ForEach(result.indices.prefix(8), id: \.self) { index in
+                    ServicesView(service: result[index]) {
+                        selectedService = result[index]
+                        favorByService.toggle()
+                    }
                 }
             }
         }

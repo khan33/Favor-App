@@ -46,6 +46,11 @@ extension Endpoint {
     static var register: Self {
         return Endpoint(path: NetworkConstants.register)
     }
+    
+    static var socialLogin: Self {
+        return Endpoint(path: NetworkConstants.socialLogin)
+    }
+    
     static var logout: Self {
         return Endpoint(path: NetworkConstants.logout)
     }
@@ -92,7 +97,10 @@ extension Endpoint {
     
     
     static var getService: Self {
-        return Endpoint(path: NetworkConstants.getServices)
+        return Endpoint(path: NetworkConstants.getServices, queryItems: [
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "page_size", value: "50"),
+        ])
     }
     
     

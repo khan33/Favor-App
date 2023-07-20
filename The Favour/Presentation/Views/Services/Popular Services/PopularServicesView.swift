@@ -12,8 +12,8 @@ struct PopularServicesView: View {
     private var service_titles = ["All", "Cleaning", "Repairing", "Painting", "Laundry", "Appliance", "Plumbing", "Movers", "Beauty", "AC Repa..", "Vehicle", "Electronics", "Massage", "Men’s Sal.."]
     @State private var favorDetail = false
     var body: some View {
-        VStack(spacing: 24) {
-            NavigationLink(destination: FavorDetailView(), isActive: $favorDetail) { EmptyView() }
+        VStack(spacing: 16) {
+            //NavigationLink(destination: FavorDetailView(), isActive: $favorDetail) { EmptyView() }
 
             NavigationBarView(text: "Most Popular Services")
             
@@ -39,7 +39,7 @@ struct PopularServicesView: View {
                 }
             }
         }
-        .padding(20)
+        .padding(.horizontal, 20)
         .navigationBarHidden(true)
         .navigationTitle("")
         

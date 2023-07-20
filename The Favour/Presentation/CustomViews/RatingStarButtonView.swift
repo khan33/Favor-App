@@ -19,17 +19,17 @@ struct RatingStarButtonView: View {
         Button(action: {
             action?()
         }) {
-            HStack(alignment: .center, spacing: 8) {
+            HStack(alignment: .center, spacing: 6) {
                 Image(systemName: "star.fill")
                     .foregroundColor(bgColor == .white ? .appPrimaryColor : .white)
                     .frame(width: 14, height: 14)
-                    .padding(.vertical, 9)
-                    .padding(.leading, 18)
+                    .padding(.vertical, 8)
+                    .padding(.leading, 14)
                 
                
                 if let text = text {
                     FavorText(text: text, textColor:  textColor, fontType: fontType, fontSize: fontSize, alignment: .leading, lineSpace: 0)
-                        .padding(.trailing, 20)
+                        .padding(.trailing, 14)
                 }
             }
             .background(bgColor)

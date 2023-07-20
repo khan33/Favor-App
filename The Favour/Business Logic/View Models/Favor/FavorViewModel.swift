@@ -23,7 +23,12 @@ final class FavorViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     @Published var shouldShowLoader: Bool = false
     @Published var favors: [FavorList]?
+    @Published var popularServicFavors: [FavorList]?
+
     @Published var services: [ServiceModelData]?
+    @Published var popularServices: [ServiceModelData]?
+
+    
     @Published var serviceName = [String]()
     @Published var title: String = ""
     @Published var desc: String = ""
@@ -36,8 +41,6 @@ final class FavorViewModel: ObservableObject {
     @Published var selectionIndex = 0
 
     init() {
-        getFavor()
-        getService()
     }
         
     func validateInputs() -> Bool {
@@ -110,13 +113,28 @@ final class FavorViewModel: ObservableObject {
             } receiveValue: { [weak self] model in
                 if let data = model.data {
                     self?.favors = data
+                    self?.favors?.sort{ $0.id ?? 0 < $1.id ?? 0 }
+                    self?.popularServicFavors = self?.favors
                 }
                 if let services = model.services {
                     self?.services = services
+                    self?.services?.sort{ $0.id ?? 0 < $1.id ?? 0 }
+                    
+                    self?.popularServices = self?.services?.filter { $0.ispopular == true }
+                    self?.popularServices?.insert(ServiceModelData(id: 0, name: "All", color: "", icon: "", active: "", ispopular: true), at: 0)
+
                 }
                 print(model)
             }
             .store(in: &cancellables)
+    }
+    
+    func filterFavorbyService(service_id : Int) {
+        if service_id != 0 {
+            self.popularServicFavors = self.favors?.filter { $0.category_id ?? 0 == service_id }
+        } else {
+            self.popularServicFavors = self.favors
+        }
     }
     
     func getService() {
@@ -133,22 +151,29 @@ final class FavorViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] model in
-                if let services = model.data {
-                    for item in services {
-                        if let name = item.name {
-                            self?.serviceName.append(name)
+                if model.error == false {
+                    
+                    
+                    if let services = model.data {
+                        self?.services = services
+                        for item in services {
+                            if let name = item.name {
+                                self?.serviceName.append(name)
+                            }
                         }
                     }
-                    print(self?.serviceName)
                 }
             }
             .store(in: &cancellables)
     }
     
-    func postFavor() {
+    func postFavor(_ image: UIImage) {
         if validateInputs() {
-            let favor = Favor(title: title, tags: tags, category_id: "3", revisions: "3", total_price: "1000", status: "published", description: desc, meta_data: desc, lat: "", lng: "", address: "", search_tags: tags, favor_id: nil, icon: "")
-            favorManager.favorPost(favor: favor)
+            shouldShowLoader = true
+            let category_id = services?[selectionIndex].id ?? 1
+            let favor = Favor(title: title, tags: tags, category_id: String(category_id), revisions: "3", total_price: "1000", status: "published", description: desc, meta_data: desc, lat: "31.417947", lng: "74.257103", address: "Lahore", search_tags: tags, favor_id: nil, icon: "")
+            guard let mediaImage = Media(withImage: image, forKey: "icon") else { return }
+            favorManager.favorPost(favor: favor, media: [mediaImage])
                 .sink { [weak self] completion in
                     switch completion {
                     case let .failure(error):
@@ -174,84 +199,7 @@ final class FavorViewModel: ObservableObject {
     }
     
     
-    func generateBoundary() -> String {
-       return "Boundary-\(NSUUID().uuidString)"
-    }
     
-    
-    func createDataBody(withParameters params: [String: Any]?, media: [Media]?, boundary: String) -> Data {
-       let lineBreak = "\r\n"
-       var body = Data()
-       if let parameters = params {
-          for (key, value) in parameters {
-             body.append("--\(boundary + lineBreak)")
-             body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
-             body.append("\(value as! String + lineBreak)")
-          }
-       }
-       if let media = media {
-          for photo in media {
-             body.append("--\(boundary + lineBreak)")
-             body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; filename=\"\(photo.filename)\"\(lineBreak)")
-             body.append("Content-Type: \(photo.mimeType + lineBreak + lineBreak)")
-             body.append(photo.data)
-             body.append(lineBreak)
-          }
-       }
-       body.append("--\(boundary)--\(lineBreak)")
-       return body
-    }
-    
-    
-    func uploadImageToServer(_ image: UIImage, _ completion: @escaping (Bool) -> Void) {
-        shouldShowLoader = true
-
-        let category_id = services?[selectionIndex].id ?? 1
-        let parameters = [
-             "title": title,
-             "category_id": String(category_id),
-             "revisions": "2",
-             "total_price": "1000",
-             "status": "published",
-             "description": desc,
-             "meta_data": desc,
-             "lat": "31.417947",
-             "lng": "74.257103",
-             "tags": tags,
-             "address": "Lahore",
-             "search_tags": tags,
-       ]
-       guard let mediaImage = Media(withImage: image, forKey: "icon") else { return }
-       guard let url = URL(string: "https://favorapp.mymobilecompare.co.uk/public/api/v1/favors/store") else { return }
-       var request = URLRequest(url: url)
-       request.httpMethod = "POST"
-       //create boundary
-       let boundary = generateBoundary()
-       //set content type
-       request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        if let token = KeychainManager.getAuthToken() {
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-       //call createDataBody method
-       let dataBody = createDataBody(withParameters: parameters, media: [mediaImage], boundary: boundary)
-       request.httpBody = dataBody
-       let session = URLSession.shared
-       session.dataTask(with: request) { (data, response, error) in
-           self.shouldShowLoader = false
-          if let response = response {
-             print(response)
-          }
-          if let data = data {
-             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print(json)
-                completion(true)
-             } catch {
-                print(error)
-             }
-          }
-       }.resume()
-    }
     
 }
 struct Media {

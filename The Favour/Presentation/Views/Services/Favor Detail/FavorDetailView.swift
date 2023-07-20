@@ -13,6 +13,13 @@ struct FavorDetailView: View {
     @State private var isExpanded = false
     @State private var isNext = false
 
+    
+    var favor_detail: FavorList
+    init(favor_detail: FavorList) {
+        self.favor_detail = favor_detail
+    }
+    
+    
     var body: some View {
         VStack(alignment: .leading) {
             NavigationLink(destination: BookingDetailView(), isActive: $isNext) { EmptyView() }
@@ -36,7 +43,7 @@ struct FavorDetailView: View {
                     RatingView()
                 }
             }
-            .padding([.horizontal, .top], 24)
+            .padding([.horizontal, .top], 20)
             .padding(.bottom, 0)
             
             ZStack {
@@ -63,9 +70,12 @@ struct FavorDetailView: View {
             }
             
         }
-        .navigationBarHidden(true)
+        .navigationBarHidden(true) // Hide the navigation bar on this screen
         .navigationTitle("")
         .edgesIgnoringSafeArea(.bottom)
+        .onAppear {
+            print(favor_detail)
+        }
     }
     private func createTopRoundedMask(cornerRadius: CGFloat, height: CGFloat) -> some View {
         Path { path in
@@ -91,9 +101,9 @@ struct FavorDetailView: View {
 extension FavorDetailView {
     @ViewBuilder private var favorPostedInfo: some View {
         HStack(alignment: .top, spacing: 0) {
-            FavorText(text: "Posted 2 min ago", textColor:  Color(red: 0.26, green: 0.26, blue: 0.26), fontType: .medium, fontSize: 14, alignment: .center, lineSpace: 0)
+            FavorText(text: "Posted: \(UtilityManager.shared.getTimeAgoString(from: favor_detail.time_id ?? ""))", textColor:  Color(red: 0.26, green: 0.26, blue: 0.26), fontType: .medium, fontSize: 14, alignment: .center, lineSpace: 0)
             Spacer()
-            AddressView(address: "255 Grand Park Avenue, New York" )
+            AddressView(address: favor_detail.address ?? "" )
         }
     }
     @ViewBuilder private var favorDesc: some View {
@@ -104,7 +114,7 @@ extension FavorDetailView {
         .padding(.vertical, 12)
         
         
-        FavorText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.", textColor:  .appTitleBlack, fontType: .regular, fontSize: 14, alignment: .leading, lineSpace: 0)
+        FavorText(text: favor_detail.meta_details?.description ?? "", textColor:  .appTitleBlack, fontType: .regular, fontSize: 14, alignment: .leading, lineSpace: 0)
             .lineLimit(isExpanded ? nil : 3)
             .animation(.easeInOut)
             .overlay(
@@ -127,7 +137,7 @@ extension FavorDetailView {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(0..<6) { index in
-                    RatingStarButtonView(text: ratings[index], textColor: index == 0 ? .white : .appPrimaryColor, fontType: .semiBold, fontSize: 16, bgColor: index == 0 ? .appPrimaryColor : .white)
+                    RatingStarButtonView(text: ratings[index], textColor: index == 0 ? .white : .appPrimaryColor, fontType: .semiBold, fontSize: 14, bgColor: index == 0 ? .appPrimaryColor : .white)
                 }
             }
         }
@@ -139,24 +149,28 @@ extension FavorDetailView {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 24, height: 24)
-            SeeAllView(label1: "4.8 (4,479 reviews)", label2: "See All")
+            SeeAllView(label1: "4.8 (479 reviews)", label2: "See All")
         }
         .padding(.top, 0)
     }
     
     @ViewBuilder private var favorHeaderInfo: some View {
-        FavorInfoView(image: "fav_cleaning", name: "Kylee Danford", favTitle: "Cleaning", rating: "4.8", totalReview: "| 8.889")
+        FavorInfoView(image: favor_detail.media?[0].media_url ?? "", name: favor_detail.category ?? "", favTitle: favor_detail.title ?? "", rating: "4.8", totalReview: "| 8.889")
         
         HStack {
-            FavorButton(text: "Cleaning", width: 68, height: 24, textColor: .appPrimaryColor, fontType: .regular, fontSize: 10,  bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
+            FavorButton(text: favor_detail.category ?? "", width: 90, height: 24, textColor: .appPrimaryColor, fontType: .regular, fontSize: 10,  bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
             }
-            AddressView(address: "255 Grand Park Avenue, New York" )
+            Spacer()
+            AddressView(address: favor_detail.address ?? "" )
+
         }
     }
 }
 
 struct FavorDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FavorDetailView()
+        var favor_detail: FavorList = FavorList(id: 0, time_id: "", title: "Washing cloths", user_id: nil, user_name: nil, category_id: 5, category: "Cleaning", revisions: nil, total_price: nil, details: nil, lat: nil, lng: nil, address: nil, media: nil, meta_details: nil)
+
+        FavorDetailView(favor_detail: favor_detail)
     }
 }

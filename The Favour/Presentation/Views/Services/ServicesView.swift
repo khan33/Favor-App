@@ -11,22 +11,36 @@ struct ServicesView: View {
     var image: String = "cleaning"
     var name: String = "Cleaning"
     var color: Color = .appPrimaryColor
+    
+    var service: ServiceModelData?
+    var action: (() -> Void)?
+    
     var body: some View {
         VStack {
             VStack {
-                Image(image)
-                    .resizable()
-                    .frame(width: 22, height: 22)
+                AsyncImage(url: URL(string: service?.icon ?? "")) { image in
+                        image
+                        .resizable()
+                        .frame(width: 22, height: 22)
+
+                    } placeholder: {
+                        Image(image)
+                            .resizable()
+                            .frame(width: 22, height: 22)
+                    }
             }
             .overlay(
                 Circle()
-                    .fill(color)
+                    .fill(Color(hex: service?.color ?? "000000"))
                     .opacity(0.1)
                     .frame(width: 60, height: 60)
             )
             .frame(width: 70, height: 70)
             
-            FavorText(text: name, textColor: Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)), fontType: .bold, fontSize: 16, alignment: .center, lineSpace: 0)
+            FavorText(text: service?.name ?? name, textColor: Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)), fontType: .bold, fontSize: 16, alignment: .center, lineSpace: 0)
+        }
+        .onTapGesture {
+            action?()
         }
     }
 }

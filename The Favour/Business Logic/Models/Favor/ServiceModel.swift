@@ -9,6 +9,7 @@ import Foundation
 
 struct ServiceModel: Decodable {
     let message: String?
+    let error: Bool
     let data: [ServiceModelData]?
 }
 
@@ -18,5 +19,5 @@ struct ServiceModelData: Decodable {
     let color: String?
     let icon: String?
     let active: String?
-
+    let ispopular: Bool
 }

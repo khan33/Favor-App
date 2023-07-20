@@ -15,11 +15,12 @@ struct SignupView1: View {
     @State private var textEditorText:String = "Write down your thoughts"
     @State var calendarId: UUID = UUID()
     @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
+    @StateObject private var locationManager = LocationManager()
 
     @State var show: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            NavigationLink(destination: SignupAddPhoto(), isActive: $isNext) { EmptyView() }
+            NavigationLink(destination: SignupAddPhoto(), isActive: $viewModel.showMainTabView) { EmptyView() }
             NavigationBarView(text: "Fill Your Profile")
             
             
@@ -33,7 +34,7 @@ struct SignupView1: View {
                 
                 
                 
-                FavorTextField(placeholder: "12-01-2005", leftImage: nil, rightImage: "calander", text: $viewModel.dateOfBirth) {
+                FavorTextField(placeholder: "MM/DD/YYYY", leftImage: nil, rightImage: "calander", text: $viewModel.dateOfBirth) {
                     withAnimation {
                         show.toggle()
                     }
@@ -47,8 +48,13 @@ struct SignupView1: View {
                 
                 FavorButton(text: "Continue", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
 //                    isNext = true
-                    viewModel.performSignup()
+                    if let location = locationManager.currentLocation {
+                        viewModel.performSignup(address: locationManager.currentAddress, lat: String(location.coordinate.latitude), lng: String(location.coordinate.longitude))
+                    }
                 }
+                .opacity(viewModel.signupIsValid ? 1 : 0.5)
+                .disabled(!viewModel.signupIsValid)
+
                 .padding(.top, 24)
                 Spacer()
             }
@@ -57,9 +63,25 @@ struct SignupView1: View {
         .navigationBarHidden(true)
         .navigationTitle("")
         .spinner(isShowing: $viewModel.shouldShowLoader)
-        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
-            MainTabView()
+        .onAppear {
+            locationManager.startUpdatingLocation()
         }
+        .onDisappear {
+            locationManager.stopUpdatingLocation()
+        }
+        .overlay(
+            Group {
+                if viewModel.showMessage {
+                    MessageView(message: viewModel.errorMessage, backgroundColor: Color.red)
+                        .animation(.easeInOut)
+                }
+            }
+                .onTapGesture {
+                    viewModel.showMessage = false
+                }
+        )
+        
+        
 //        .toolBarPopover(show: $show) {
 //            DatePicker("", selection: .constant(Date()), displayedComponents: [.date])
 //                .datePickerStyle(.graphical)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfilePicModal: View {
     @Binding var show: Bool
-    
+    @Binding var showMainTab: Bool
     var body: some View {
         ZStack {
             if show {
@@ -28,6 +28,9 @@ struct ProfilePicModal: View {
                     FavorText(text: "*Adding a picture will increase your chance of winning favors.", textColor: Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)), fontType: .regular, fontSize: 16, alignment: .center)
                     
                     FavorButton(text: "NO", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
+                        show.toggle()
+                        showMainTab.toggle()
+
                     }
                     .padding(.horizontal, 24)
 
@@ -54,6 +57,6 @@ struct ProfilePicModal: View {
 
 struct ProfilePicModal_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePicModal(show: .constant(true))
+        ProfilePicModal(show: .constant(true), showMainTab: .constant(true))
     }
 }

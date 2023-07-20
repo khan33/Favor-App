@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AuthenticationServices
+
 
 struct LoginView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -25,8 +27,7 @@ struct LoginView: View {
         VStack(alignment: .leading, spacing: 8) {
             Group {
                 NavigationLink(destination: ForgotPasswordView(), isActive: $isShowingForgotPasswordView) { EmptyView() }
-                
-//                NavigationLink(destination: MainView(), isActive: $viewModel.showMainTabView) { EmptyView() }
+                NavigationLink(destination: MainTabView(), isActive: $viewModel.showMainTabView) { EmptyView() }
             }
             NavigationBarView(text: "")
             FavorText(text: "Login to your Account", textColor: .appBlack, fontType: .bold, fontSize: 48, alignment:.leading , lineSpace: 0)
@@ -75,10 +76,47 @@ struct LoginView: View {
                 .padding(.bottom, 16)
                 .frame(maxWidth: .infinity)
                 
-                HStack(alignment: .center) {
-                    SocialIconView(imageName: "fb")
-                    SocialIconView(imageName: "google")
-                    SocialIconView(imageName: "apple")
+                HStack(alignment: .center, spacing: 16) {
+                    SocialIconView(imageName: "fb") { print("tap on facebook button")}
+                    SocialIconView(imageName: "google") {
+                        FirebaseAuth.shared.signInWithGoogle(presenting: getRootViewController()) { result in
+                            switch result {
+                            case .failure(let error):
+                                print(error)
+                            case .success(let data):
+                                if let data = data?.user {
+                                    viewModel.performSocialLogin(name: data.displayName ?? "", email: data.email ?? "", token: data.uid ?? "", login_type: "google")
+                                }
+                            }
+                        }
+                    }
+                    SocialIconView(imageName: "apple") {
+                        
+                    }
+                    .overlay {
+                        SignInWithAppleButton { (request) in
+                            // requesting param for apple login....
+                            viewModel.nonce = randomNonceString()
+                            request.requestedScopes = [.email, .fullName]
+                            request.nonce = sha256(viewModel.nonce)
+                        } onCompletion: { (result) in
+                            // getting error or success....
+                            switch result {
+                            case .success(let user):
+                                print(user)
+                                guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
+                                    return
+                                }
+                                viewModel.appleAuthentication(credential: credential)
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                            }
+                        }
+                        .signInWithAppleButtonStyle(.white)
+                        .blendMode(.overlay)
+                        .frame(width: 20, height: 30)
+                    }
+
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 
@@ -104,9 +142,21 @@ struct LoginView: View {
         .navigationBarHidden(true)
         .navigationTitle("")
         .spinner(isShowing: $viewModel.shouldShowLoader)
-        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
-            MainTabView()
-        }
+//        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
+//            MainTabView()
+//        }
+        .overlay(
+            Group {
+                if viewModel.showMessage {
+                    MessageView(message: viewModel.errorMessage, backgroundColor: Color.red)
+                        .animation(.easeInOut)
+                }
+            }
+                .onTapGesture {
+                    viewModel.showMessage = false
+                }
+        )
+
     }
     
     var buttonOpacity: Double {

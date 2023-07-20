@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct SocialIconView: View {
-    
     let imageName: String
+    var action: (() -> Void)?
     
     var body: some View {
         ZStack {
-            
             RoundedRectangle(cornerRadius: 12)
                 .foregroundColor(.white)
-                .frame(width: 88, height: 60)
+                .frame(width: 98, height: 60)
                 .border(.appBorderColor, width: 1, cornerRadius: 12)
 
             Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 44, height: 44)
+        }
+        .onTapGesture {
+            action?()
         }
     }
 }

@@ -83,12 +83,7 @@ struct PostFavorView: View {
                 }
                 FavorButton(text: "Post", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                     if let image = selectedImage {
-                        
-                        viewModel.uploadImageToServer(image) { result in
-                            if result == true {
-//                                self.presentationMode.wrappedValue.dismiss()
-                            }
-                        }
+                        viewModel.postFavor(image)
                     }
 
                     //viewModel.postFavor()

@@ -14,6 +14,7 @@ struct NetworkConstants {
     
     static let loginService = "login"
     static let register = "register"
+    static let socialLogin = "loginWithSocial"
     static let logout = "logout"
     static let resetPassword = "reset-password"
     static let forgotPassword = "forget-password"
