@@ -19,7 +19,7 @@ struct LoginModel: Decodable {
 struct Login: Decodable {
     let token: String?
     let user: User?
-    let new_register: Bool? = false
+    var new_register: Bool? = false
     
     private enum CodingKeys: String, CodingKey {
         case token = "token"

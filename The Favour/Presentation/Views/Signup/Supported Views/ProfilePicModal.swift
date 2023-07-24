@@ -29,7 +29,6 @@ struct ProfilePicModal: View {
                     
                     FavorButton(text: "NO", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                         show.toggle()
-                        showMainTab.toggle()
 
                     }
                     .padding(.horizontal, 24)
@@ -37,7 +36,7 @@ struct ProfilePicModal: View {
                     
                     FavorButton(text: "Yes", width: .infinity, height: 60, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
                         withAnimation(.linear(duration: 0.3)) {
-                            show.toggle()
+                            showMainTab.toggle()
                         }
 
                     }

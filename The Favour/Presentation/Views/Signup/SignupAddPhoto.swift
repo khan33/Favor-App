@@ -27,9 +27,9 @@ struct SignupAddPhoto: View {
                 
                 ZStack(alignment: .bottomTrailing) {
                     if let img = selectedImage {
-                        AvatarView(image: Image(uiImage:  img), size: 200)
+                        AvatarView(image: Image(uiImage:  img), size: 200, profileImageURL: nil)
                     } else {
-                        AvatarView(image: Image("avatar"), size: 200)
+                        AvatarView(image: Image("avatar"), size: 200, profileImageURL: nil)
                     }
                     
                     Image("edit_profile")
@@ -65,7 +65,7 @@ struct SignupAddPhoto: View {
                 
             }
             .padding()
-            ProfilePicModal(show: $showModally, showMainTab: $isNext)
+            ProfilePicModal(show: $showModally, showMainTab: $viewModel.showMainTabView)
                 .transition(.move(edge: .bottom))
             
         }
@@ -80,16 +80,6 @@ struct SignupAddPhoto: View {
         }
 
     }
-    var btnBack : some View { Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                Image("ic_back") // set image here
-                    .aspectRatio(contentMode: .fit)
-                }
-            }
-        }
-    
 }
 
 struct SignupAddPhoto_Previews: PreviewProvider {

@@ -21,12 +21,12 @@ struct ResetPasswordView: View {
                 .padding(.top, 40)
                 .padding(.bottom, 12)
             
-            FavorTextField(placeholder: "Token", leftImage: "Message", rightImage: nil, text: $viewModel.code)
+            FavorTextField(placeholder: "Token", leftImage: "Lock", rightImage: nil, text: $viewModel.code)
             
             
-            FavorTextField(placeholder: "Password", leftImage: "Lock", rightImage: nil, text: $viewModel.password)
+            FavorTextField(placeholder: "Password", leftImage: "Lock", rightImage: nil, isPassword: true, text: $viewModel.password)
             
-            FavorTextField(placeholder: "Confirm Password", leftImage: "Lock", rightImage: nil, text: $viewModel.confirmPassord)
+            FavorTextField(placeholder: "Confirm Password", leftImage: "Lock", rightImage: nil, isPassword: true, text: $viewModel.confirmPassord)
     
             FavorButton(text: "Submit", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                 viewModel.resetPassword(email: email)

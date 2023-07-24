@@ -19,8 +19,8 @@ struct SignupView: View {
     var body: some View {
         VStack {
             NavigationLink(destination: LoginView(), isActive: $isShowingLoginView) { EmptyView() }
-            NavigationLink(destination: MainView(), isActive: $isShowingSignupView) { EmptyView() }
-            NavigationLink(destination: MainView(), isActive: $viewModel.showUserRoleView) { EmptyView() }
+            NavigationLink(destination: MainView(new_register: viewModel.new_register), isActive: $viewModel.showUserRoleView) { EmptyView() }
+            NavigationLink(destination: MainTabView(), isActive: $viewModel.showMainTabView) { EmptyView() }
 
 //            NavigationBarView(text: "")
 
@@ -124,7 +124,7 @@ struct SignupView: View {
                 FavorText(text:"Don’t have an account?")
                 
                 FavorButton(text: "Sign up", width: 60, height: 60, textColor: .appPrimaryColor, bgColor: .white ) {
-                    self.isShowingSignupView = true
+                    viewModel.showUserRoleView = true
                 }
 
             }
@@ -135,9 +135,7 @@ struct SignupView: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .spinner(isShowing: $viewModel.shouldShowLoader)
-        .fullScreenCover(isPresented: $viewModel.showMainTabView) {
-            MainTabView()
-        }
+        
 
     }
     

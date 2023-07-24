@@ -23,6 +23,7 @@ struct DocumentUploadView: View {
     @State private var imageType: ImageSideType = .front
     @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
 
+    @State private var showAlert: Bool = false
     var body: some View {
         ZStack {
             VStack (spacing: 16){
@@ -30,7 +31,7 @@ struct DocumentUploadView: View {
                 FavorText(text: "Steps 2 of 2", textColor: .appTitleColor, fontType: .bold, fontSize: 20, alignment: .center, lineSpace: 0)
                     .padding(.vertical, 18)
                 
-                FavorText(text: "Upload a jpg, png or pdf, max size 1mb", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
+                FavorText(text: "Upload a jpg, png or jpeg, max size 1mb", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .medium, fontSize: 18, alignment: .center, lineSpace: 0)
                     .padding(.bottom, 18)
                 
                 DocumentUploadButton(title: "Upload Id Front", image: $selectedFrontImage) {
@@ -55,9 +56,9 @@ struct DocumentUploadView: View {
                             let params: [String : String] = ["file_type" : "passport"]
                             viewModel.updateUserProfileAttachment(params, [mediaImage, mediaImage1])
                         }
-                        
-                        
+                        return
                     }
+                    showAlert = true
                     
                     
                 }
@@ -81,6 +82,13 @@ struct DocumentUploadView: View {
         .fullScreenCover(isPresented: $viewModel.showMainTabView) {
             MainTabView()
         }
+        
+        .alert(isPresented: $showAlert, content: {
+            Alert(title: Text("Alert"),
+                  message: Text("Upload your ID Card / Driving License photo."),
+                  dismissButton: .default(Text("OK")))
+        })
+
 
     }
     var btnBack : some View { Button(action: {

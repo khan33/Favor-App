@@ -14,11 +14,7 @@ import CoreLocation
 
 class AthenticationViewModel: ObservableObject {
     
-    
-   
-
     @Published var alertType: AlertType?
-
     private let authenticationManager: AthenticationManager = AthenticationManager()
     let phoneRegexPattern = #"^\d{10}$"#
     let dateRegexPattern = #"^(0[1-9]|1[0-2])/(0[1-9]|1\d|2\d|3[01])/\d{4}$"#
@@ -28,22 +24,27 @@ class AthenticationViewModel: ObservableObject {
     @Published var signupIsValid = false
     @Published var showMainTabView: Bool = false
     @Published var nonce = ""
-    @Published var code: String = "NApi1OJE"
+    @Published var code: String = ""
 
-    @Published var email: String = "atta123@gmail.com"
-    @Published var password: String = "admin123"
-    @Published var confirmPassord: String = "admin123"
-    @Published var fullName: String = "Atta khan"
-    @Published var dateOfBirth: String = "12/12/2009"
-    @Published var phoneNumber: String = "1234567890"
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var confirmPassord: String = ""
+    @Published var fullName: String = ""
+    @Published var dateOfBirth: String = ""
+    @Published var phoneNumber: String = ""
     @Published var showUserRoleView: Bool = false
+    @Published var new_register: Bool = false
+
+    
+    
     @Published private(set) var isEmailValid: Bool = false
     @Published private(set) var isResetPasswordFormValid: Bool = false
 
     @Published var shouldShowLoader: Bool = false
     @Published var errorMessage: String = ""
     @Published var showMessage: Bool = false
-    
+    @Published var user: User?
+
     private var toastTimer: AnyCancellable?
 
     var moveToNextScreen: ((Int) -> Void)?
@@ -287,6 +288,13 @@ class AthenticationViewModel: ObservableObject {
                 if let token = data.token {
                     KeychainManager.saveAuthToken(token)
                 }
+                if let userObject = data.user {
+                    let encoder = JSONEncoder()
+                    if let encoded = try? encoder.encode(userObject) {
+                        UserDefaults.standard.set(encoded, forKey: "currentUser")
+                    }
+                }
+                
                 
                 if let type = data.user?.user_selected_type {
                     self.userType = type
@@ -296,12 +304,18 @@ class AthenticationViewModel: ObservableObject {
                     shouldShowLoader = false
                     showUserRoleView = true
                 }
+                self.new_register = data.new_register ?? false
                 
                 PrefsManager.shared.username = data.user?.name ?? "Test User"
 
             }
         }
     }
+    
+    func storeUser(_ user: User) {
+        self.user = user
+    }
+
     
    
 }

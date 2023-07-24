@@ -11,10 +11,13 @@ struct ForgotPasswordView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var email: String = ""
     @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
+    @State private var isShowingSignupView = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             NavigationLink(destination: ResetPasswordView(email: viewModel.email), isActive: $viewModel.showMainTabView) { EmptyView() }
+            NavigationLink(destination: MainView(new_register: false), isActive: $isShowingSignupView) { EmptyView() }
+
             NavigationBarView(text: "")
 
             FavorText(text: "Forgot Password", textColor: .appBlack, fontType: .bold, fontSize: 36.0, alignment:.leading , lineSpace: 0)
@@ -36,7 +39,9 @@ struct ForgotPasswordView: View {
             HStack(spacing: 0) {
                 FavorText(text:"Don’t have an account?")
                 
-                FavorButton(text: "Sign up", width: 60, height: 60, textColor: .appPrimaryColor, bgColor: .white )
+                FavorButton(text: "Sign up", width: 60, height: 60, textColor: .appPrimaryColor, bgColor: .white ) {
+                    self.isShowingSignupView = true
+                }
                 
             }
             

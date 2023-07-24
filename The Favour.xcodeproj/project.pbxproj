@@ -131,7 +131,6 @@
 		E8FB17D02A1E3B2B0013C18E /* AthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17CF2A1E3B2B0013C18E /* AthenticationManager.swift */; };
 		E8FB17D32A1E3B6E0013C18E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17D22A1E3B6E0013C18E /* LoginModel.swift */; };
 		E8FB17D52A1E3BF80013C18E /* AthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB17D42A1E3BF80013C18E /* AthenticationViewModel.swift */; };
-		E8FDB83C2A1B435D00E727D4 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB83B2A1B435D00E727D4 /* Investment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -249,7 +248,6 @@
 		E8FB17CF2A1E3B2B0013C18E /* AthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthenticationManager.swift; sourceTree = "<group>"; };
 		E8FB17D22A1E3B6E0013C18E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		E8FB17D42A1E3BF80013C18E /* AthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthenticationViewModel.swift; sourceTree = "<group>"; };
-		E8FDB83B2A1B435D00E727D4 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +307,6 @@
 		E809304229DDC21C003BFEFE = {
 			isa = PBXGroup;
 			children = (
-				E8FDB83B2A1B435D00E727D4 /* Investment.swift */,
 				E809304D29DDC21C003BFEFE /* The Favour */,
 				E809304C29DDC21C003BFEFE /* Products */,
 			);
@@ -333,7 +330,6 @@
 				E894EE8C29E0252B00837AFD /* Presentation */,
 				E894EE8F29E0254C00837AFD /* Business Logic */,
 				E894EE9029E0255800837AFD /* Core */,
-				E809304E29DDC21C003BFEFE /* The_FavourApp.swift */,
 				E809305029DDC21C003BFEFE /* ContentView.swift */,
 				E809305229DDC21D003BFEFE /* Assets.xcassets */,
 				E809305429DDC21D003BFEFE /* Preview Content */,
@@ -532,6 +528,7 @@
 		E894EE8B29E0252500837AFD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E809304E29DDC21C003BFEFE /* The_FavourApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -912,7 +909,6 @@
 				E866B27A2A0E6C350084E6E1 /* RatingView.swift in Sources */,
 				E8A5E17E29F95A020077E2F0 /* AddNewCard.swift in Sources */,
 				E853CAA529EC0EAE00021DCB /* Font+Extension.swift in Sources */,
-				E8FDB83C2A1B435D00E727D4 /* Investment.swift in Sources */,
 				E87532392A13A9FD007E3089 /* BookingInfoView.swift in Sources */,
 				E8E57A662A08D907000F452F /* HomeView.swift in Sources */,
 				E8A7A2342A14A03F006E6CCD /* NeedFavorDetailView.swift in Sources */,
@@ -1090,7 +1086,7 @@
 				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
 				DEVELOPMENT_TEAM = H98W7T82D5;
 				ENABLE_PREVIEWS = YES;
@@ -1102,7 +1098,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = "";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1129,7 +1125,7 @@
 				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
 				DEVELOPMENT_TEAM = H98W7T82D5;
 				ENABLE_PREVIEWS = YES;
@@ -1141,7 +1137,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = "";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

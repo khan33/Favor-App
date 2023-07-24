@@ -37,9 +37,10 @@ final class FavorViewModel: ObservableObject {
     @Published var titleError: String = ""
     @Published var descError: String = ""
     @Published var tagsError: String = ""
-    @Published var service : String? = nil
-    @Published var selectionIndex = 0
-
+    @Published var service : String = ""
+    @Published var selectedService: ServiceModelData?
+    @Published var alertMsg: String = ""
+    @Published var isAlertShow: Bool = false
     init() {
     }
         
@@ -111,6 +112,7 @@ final class FavorViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] model in
+                
                 if let data = model.data {
                     self?.favors = data
                     self?.favors?.sort{ $0.id ?? 0 < $1.id ?? 0 }
@@ -132,9 +134,10 @@ final class FavorViewModel: ObservableObject {
     func filterFavorbyService(service_id : Int) {
         if service_id != 0 {
             self.popularServicFavors = self.favors?.filter { $0.category_id ?? 0 == service_id }
-        } else {
-            self.popularServicFavors = self.favors
+            return
         }
+        self.popularServicFavors = self.favors
+        
     }
     
     func getService() {
@@ -170,7 +173,7 @@ final class FavorViewModel: ObservableObject {
     func postFavor(_ image: UIImage) {
         if validateInputs() {
             shouldShowLoader = true
-            let category_id = services?[selectionIndex].id ?? 1
+            let category_id = self.selectedService?.id ?? 0
             let favor = Favor(title: title, tags: tags, category_id: String(category_id), revisions: "3", total_price: "1000", status: "published", description: desc, meta_data: desc, lat: "31.417947", lng: "74.257103", address: "Lahore", search_tags: tags, favor_id: nil, icon: "")
             guard let mediaImage = Media(withImage: image, forKey: "icon") else { return }
             favorManager.favorPost(favor: favor, media: [mediaImage])
@@ -178,12 +181,13 @@ final class FavorViewModel: ObservableObject {
                     switch completion {
                     case let .failure(error):
                         self?.shouldShowLoader = false
-                        print("Couldn't login: \(error)")
+                        print("Couldn't Post Favor: \(error)")
                     case .finished:
                         self?.shouldShowLoader = false
                         break
                     }
                 } receiveValue: { [weak self] model in
+                    self?.isAlertShow = true
                     if let data = model.message {
                         print(data)
                     }

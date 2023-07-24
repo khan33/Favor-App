@@ -17,10 +17,14 @@ struct MainView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var isMainView = false
     @StateObject var viewModel: AthenticationViewModel = AthenticationViewModel()
-
+    
+    let new_register: Bool
+    
     var body: some View {
         VStack(spacing: 12) {
             NavigationLink(destination: SignupView1(), isActive: $isMainView) { EmptyView() }
+            NavigationLink(destination: MainTabView(), isActive: $viewModel.showMainTabView) { EmptyView() }
+
             NavigationBarView(text: "Select Favor Type")
                 .padding()
 
@@ -29,14 +33,14 @@ struct MainView: View {
                 .init(color: Color(#colorLiteral(red: 0.6509804129600525, green: 0.3176470696926117, blue: 0.8196078538894653, alpha: 1)), location: 0),
                 .init(color: Color(#colorLiteral(red: 0.6165271997451782, green: 0.3500000238418579, blue: 1, alpha: 1)), location: 1)])) {
                     
-//                    if PrefsManager.shared.favorType == "" {
-//                        let user = User(id: nil, first_name: nil, last_name: nil, contact_number: nil, email: nil, name: nil, user_type: nil, address: nil, dob: nil, id_card: nil, user_types: nil, user_selected_type: FavorType.needFavor.rawValue, lat: nil, lng: nil, profile_photo: nil, user_status: nil, file_back_url: nil, file_front_url: nil, file_type: nil, login_type: nil, token: nil)
-//                        viewModel.updateProfile(user)
-//                    } else {
+                    if new_register == true && PrefsManager.shared.favorType == "" {
+                        let user = User(id: nil, first_name: nil, last_name: nil, contact_number: nil, email: nil, name: nil, user_type: nil, address: nil, dob: nil, id_card: nil, user_types: nil, user_selected_type: FavorType.needFavor.rawValue, lat: nil, lng: nil, profile_photo: nil, user_status: nil, file_back_url: nil, file_front_url: nil, file_type: nil, login_type: nil, token: nil)
+                        viewModel.updateProfile(user)
+                    } else {
                         isMainView = true
+                    }
+                    PrefsManager.shared.favorType = FavorType.needFavor.rawValue
 
-                        PrefsManager.shared.favorType = FavorType.needFavor.rawValue
-//                    }
                 }
                 .padding(.top, 24)
             
@@ -44,13 +48,13 @@ struct MainView: View {
             FavorCardView(title: "I CAN DO YOU A FAVOR", subTitle: "Get discount for every order, only valid for today", imageName: "do_favor", gradientColor: Gradient(stops: [
                 .init(color: Color(#colorLiteral(red: 0.13333334028720856, green: 0.7333333492279053, blue: 0.6117647290229797, alpha: 1)), location: 0),
                 .init(color: Color(#colorLiteral(red: 0.20682293176651, green: 0.8708333373069763, blue: 0.7362953424453735, alpha: 1)), location: 1)])) {
-                    if PrefsManager.shared.favorType == "" {
-                        let user = User(id: nil, first_name: nil, last_name: nil, contact_number: nil, email: nil, name: nil, user_type: nil, address: nil, dob: nil, id_card: nil, user_types: nil, user_selected_type: FavorType.needFavor.rawValue, lat: nil, lng: nil, profile_photo: nil, user_status: nil, file_back_url: nil, file_front_url: nil, file_type: nil, login_type: nil, token: nil)
+                    if PrefsManager.shared.favorType == "" && new_register == true {
+                        let user = User(id: nil, first_name: nil, last_name: nil, contact_number: nil, email: nil, name: nil, user_type: nil, address: nil, dob: nil, id_card: nil, user_types: nil, user_selected_type: FavorType.canDoFavor.rawValue, lat: nil, lng: nil, profile_photo: nil, user_status: nil, file_back_url: nil, file_front_url: nil, file_type: nil, login_type: nil, token: nil)
                         viewModel.updateProfile(user)
                     } else {
                         isMainView = true
-                        PrefsManager.shared.favorType = FavorType.canDoFavor.rawValue
                     }
+                    PrefsManager.shared.favorType = FavorType.canDoFavor.rawValue
                 }
             
             Spacer()
@@ -76,6 +80,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(new_register: false)
     }
 }

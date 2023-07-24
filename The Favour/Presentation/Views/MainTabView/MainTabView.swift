@@ -45,7 +45,8 @@ struct MainTabView: View {
                         .tag(0)
 
                     
-                } else {
+                }
+                else {
                     HomeView()
                         .onChange(of: tappedTwice, perform: { newValue in
                             guard newValue else { return }

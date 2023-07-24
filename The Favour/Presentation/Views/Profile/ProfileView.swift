@@ -21,6 +21,7 @@ struct ProfileView: View {
     @State private var isReport = false
     @State private var isAlert = false
     @State var shouldPerformLogout: Bool = false
+    @State private var user: User?
 
     var body: some View {
         ZStack {
@@ -88,6 +89,14 @@ struct ProfileView: View {
                 SignupView()
             }
         }
+        .onAppear {
+            // Retrieve the User object from UserDefaults when the view appears
+            let decoder = JSONDecoder()
+            if let data = UserDefaults.standard.data(forKey: "currentUser"),
+               let storedUser = try? decoder.decode(User.self, from: data) {
+                self.user = storedUser
+            }
+        }
 
     }
         
@@ -104,7 +113,13 @@ struct ProfileView: View {
     
     private var avatarImage: some View {
         ZStack(alignment: .bottomTrailing) {
-            AvatarView(image: Image("user_profile"), size: 120)
+            
+            if let img = user?.profile_photo {
+                AvatarView(image: Image("user_profile"), size: 120, profileImageURL: URL(string: img)!)
+            } else {
+                AvatarView(image: Image("user_profile"), size: 120, profileImageURL: nil)
+            }
+            
             Image("edit_profile")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -116,9 +131,9 @@ struct ProfileView: View {
     
     private var personalInfo: some View {
         VStack(spacing: 4) {
-            FavorText(text: "Andrew Ainsley", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .bold, fontSize: 24, alignment: .center, lineSpace: 0)
+            FavorText(text: user?.name ?? "", textColor: Color(#colorLiteral(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)), fontType: .bold, fontSize: 24, alignment: .center, lineSpace: 0)
             
-            FavorText(text: "andrew_ainsley@yourdomain.com", textColor: .appLightGrey, fontType: .semiBold, fontSize: 14, alignment: .center, lineSpace: 0)
+            FavorText(text: user?.email ?? "", textColor: .appLightGrey, fontType: .semiBold, fontSize: 14, alignment: .center, lineSpace: 0)
             
         }
     }

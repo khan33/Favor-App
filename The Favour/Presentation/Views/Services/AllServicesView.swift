@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllServicesView: View {
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     
     @StateObject var viewModel: FavorViewModel = FavorViewModel()

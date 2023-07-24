@@ -14,7 +14,9 @@ struct PostFavorView: View {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-    @ObservedObject private var viewModel: FavorViewModel = FavorViewModel()
+    @StateObject private var viewModel: FavorViewModel = FavorViewModel()
+    @State private var showPicker = false
+    @FocusState private var isPickerFocused: Bool
 
     var body: some View {
         
@@ -24,25 +26,47 @@ struct PostFavorView: View {
                 .padding(.bottom, 24)
             ScrollView {
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .foregroundColor(.appTextFieldColor)
-                        .border(.appWhite, width: 1, cornerRadius: 12)
-                    HStack {
-                        TextFieldWithInputView(data: viewModel.serviceName, placeholder: "Select Service", selectionIndex: self.$viewModel.selectionIndex, selectedText: self.$viewModel.service)
-                            .foregroundColor(.appBlack)
-                            .font(.localizedFont(fontType: .regular, fontSize: 14))
-                        Image("down")
-                    }
-                    .padding(.horizontal)
-                }
-                .frame(height: 60)
-//                if ((viewModel.service?.isEmpty) == nil) {
-//                    FavorText(text: "Select Service", textColor: .red, fontType: .regular, fontSize: 9, alignment: .center, lineSpace: 0)
-//                        .padding(.horizontal, 8)
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: 12)
+//                        .foregroundColor(.appTextFieldColor)
+//                        .border(.appWhite, width: 1, cornerRadius: 12)
+//                    HStack {
+//
+//                        TextFieldWithInputView(data: viewModel.services, placeholder: "Select Service", selectedData: $viewModel.selectedService)
+//
+//
+//                            .foregroundColor(.appBlack)
+//                            .font(.localizedFont(fontType: .regular, fontSize: 14))
+//                        Image("down")
+//                    }
+//                    .padding(.horizontal)
 //                }
+//                .frame(height: 60)
+                
+                
+                
+                
                 
                 VStack(alignment: .leading) {
+                    
+                    FavorTextField(placeholder: "Select Service", leftImage: nil, rightImage: "down", text: $viewModel.service) {
+                        showPicker = true
+                    }
+                    if showPicker {
+                        Picker(selection: $viewModel.service, label: Text("")) {
+                            ForEach(viewModel.serviceName, id: \.self) { country in
+                                Text(country).tag(country)
+                            }
+                        }
+                        .pickerStyle(InlinePickerStyle())
+                        .focused($isPickerFocused) // Bind picker's focus to the focus state
+                        .onChange(of: viewModel.service) { _ in
+                            showPicker = false // Dismiss the picker after selection
+                        }
+                    }
+
+                    
+                    
                     FavorTextField(placeholder: "Title", leftImage: nil, rightImage: nil, text: $viewModel.title)
                     FavorText(text: viewModel.titleError, textColor: .red, fontType: .regular, fontSize: 9, alignment: .center, lineSpace: 0)
                         .padding(.horizontal, 8)
@@ -64,7 +88,6 @@ struct PostFavorView: View {
                     FavorText(text: viewModel.tagsError, textColor: .red, fontType: .regular, fontSize: 9, alignment: .center, lineSpace: 0)
                         .padding(.horizontal, 8)
                 }
-                
                 VStack {
                     FavorButton(text: "Upload Image", width: .infinity, height: 44, textColor: .appPrimaryColor, bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {
                         showImagePicker = true
@@ -101,6 +124,14 @@ struct PostFavorView: View {
         .onAppear {
             viewModel.getService()
         }
+        .alert(isPresented: $viewModel.isAlertShow, content: {
+            Alert(title: Text("Alert"),
+                  message: Text(viewModel.alertMsg),
+                  dismissButton: .default(Text("OK"), action: {
+                // Perform any action here if needed before dismissing the view
+                presentationMode.wrappedValue.dismiss()
+            }))
+        })
     }
 }
 
@@ -110,11 +141,10 @@ struct PostFavorView_Previews: PreviewProvider {
     }
 }
 struct TextFieldWithInputView : UIViewRepresentable {
-    var data : [String]
+    var data : [ServiceModelData]?
     var placeholder : String
 
-    @Binding var selectionIndex : Int
-    @Binding var selectedText : String?
+    @Binding var selectedData : ServiceModelData?
 
     private let textField = UITextField()
     private let picker = UIPickerView()
@@ -136,7 +166,7 @@ struct TextFieldWithInputView : UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UITextField, context: UIViewRepresentableContext<TextFieldWithInputView>) {
-        uiView.text = selectedText
+       // uiView.text = selectedText
     }
 
     class Coordinator: NSObject, UIPickerViewDataSource, UIPickerViewDelegate , UITextFieldDelegate {
@@ -151,14 +181,14 @@ struct TextFieldWithInputView : UIViewRepresentable {
             return 1
         }
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return self.parent.data.count
+            return self.parent.data?.count ?? 0
         }
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return self.parent.data[row]
+            return self.parent.data?[row].name
         }
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            self.parent.$selectionIndex.wrappedValue = row
-            self.parent.selectedText = self.parent.data[self.parent.selectionIndex]
+//            self.parent.$selectionIndex.wrappedValue = row
+            self.parent.selectedData = self.parent.data?[row]
             self.parent.textField.endEditing(true)
 
         }
@@ -183,18 +213,19 @@ struct TextViewWrapper: UIViewRepresentable {
         
         textView.backgroundColor = .clear
         textView.text = "Description"
+        textView.textColor = .lightGray
         textView.returnKeyType = .done
         return textView
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        if text.isEmpty {
-            uiView.text = "Description"
-            uiView.textColor = .lightGray
-        } else {
-            uiView.text = text
-            uiView.textColor = .black
-        }
+//        if text.isEmpty {
+//            uiView.text = "Description"
+//            uiView.textColor = .lightGray
+//        } else {
+//            uiView.text = text
+//            uiView.textColor = .black
+//        }
         
     }
     
@@ -217,7 +248,7 @@ struct TextViewWrapper: UIViewRepresentable {
         
         func textViewDidEndEditing(_ textView: UITextView) {
             if textView.text.isEmpty {
-                textView.text = "Description"
+                //textView.text = "Description"
                 textView.textColor = .lightGray
             }
         }

@@ -26,7 +26,9 @@ struct FavorTextField: View {
                     Image(left_image)
                 }
                 if !isPassword {
-                    TextField(placeholder, text: $text)
+                    TextField(placeholder, text: $text, onEditingChanged: { editing in
+                        action?()
+                    })
                         .foregroundColor(.appBlack)
                         .font(.localizedFont(fontType: .regular, fontSize: 14))
                 } else {

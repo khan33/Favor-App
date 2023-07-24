@@ -28,6 +28,8 @@ struct LoginView: View {
             Group {
                 NavigationLink(destination: ForgotPasswordView(), isActive: $isShowingForgotPasswordView) { EmptyView() }
                 NavigationLink(destination: MainTabView(), isActive: $viewModel.showMainTabView) { EmptyView() }
+                NavigationLink(destination: MainView(new_register: false), isActive: $isShowingSignupView) { EmptyView() }
+
             }
             NavigationBarView(text: "")
             FavorText(text: "Login to your Account", textColor: .appBlack, fontType: .bold, fontSize: 48, alignment:.leading , lineSpace: 0)
@@ -53,6 +55,7 @@ struct LoginView: View {
                             FavorText(text: "Remember me", textColor: .appBlack, fontType: .bold, fontSize: 14.0)
                         }
                     }
+//                    .frame(maxWidth: .infinity, alignment: .leading)
                     
                     
                     
