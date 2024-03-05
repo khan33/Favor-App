@@ -26,8 +26,8 @@ class AthenticationViewModel: ObservableObject {
     @Published var nonce = ""
     @Published var code: String = ""
 
-    @Published var email: String = ""
-    @Published var password: String = ""
+    @Published var email: String = "seller@gmail.com"
+    @Published var password: String = "admin123"
     @Published var confirmPassord: String = ""
     @Published var fullName: String = ""
     @Published var dateOfBirth: String = ""

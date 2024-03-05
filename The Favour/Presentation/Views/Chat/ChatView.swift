@@ -13,24 +13,27 @@ struct ChatView: View {
     
     var body: some View {
         VStack {
-            List {
-                ForEach(messages.indices, id: \.self) { index in
-                    MessageBubbleView(message: messages[index].message, isSender: messages[index].isSender)
-                        .padding([.top, .bottom,])
-                }
-                .padding()
-            }
-            
-            HStack {
-                TextField("Enter your message", text: $newMessage)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button(action: sendMessage) {
-                    Text("Send")
-                }
-                .padding(.leading, 8)
-            }
-            .padding()
+            Text("Chat Feature is under development phase...")
+                .frame(maxWidth: .infinity, alignment: .center)
+                .frame(maxHeight: .infinity, alignment: .center)
+//            List {
+//                ForEach(messages.indices, id: \.self) { index in
+//                    MessageBubbleView(message: messages[index].message, isSender: messages[index].isSender)
+//                        .padding([.top, .bottom,])
+//                }
+//                .padding()
+//            }
+//            
+//            HStack {
+//                TextField("Enter your message", text: $newMessage)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                
+//                Button(action: sendMessage) {
+//                    Text("Send")
+//                }
+//                .padding(.leading, 8)
+//            }
+//            .padding()
         }
         .onAppear {
             messages.append((message: "How are you today", isSender: false))

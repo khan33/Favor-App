@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E803DD4E2B15B0AD001B4963 /* StripePaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803DD4D2B15B0AD001B4963 /* StripePaymentViewModel.swift */; };
 		E8064FDC29F9A261000A3D3F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8064FDB29F9A261000A3D3F /* ProfileView.swift */; };
 		E8064FDE29F9A939000A3D3F /* SettingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */; };
 		E809304F29DDC21C003BFEFE /* The_FavourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809304E29DDC21C003BFEFE /* The_FavourApp.swift */; };
@@ -112,6 +113,10 @@
 		E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB029EC55C4005A56BB /* SocialIconView.swift */; };
 		E8BF4AB329EC5B7E005A56BB /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB229EC5B7E005A56BB /* ForgotPasswordView.swift */; };
 		E8BF4AB529EC5CB4005A56BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF4AB429EC5CB4005A56BB /* MainView.swift */; };
+		E8DA33892B4BC2D900CEBC18 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = E8DA33882B4BC2D900CEBC18 /* Stripe */; };
+		E8DA338B2B4BC2D900CEBC18 /* StripeApplePay in Frameworks */ = {isa = PBXBuildFile; productRef = E8DA338A2B4BC2D900CEBC18 /* StripeApplePay */; };
+		E8DA338D2B4BC2D900CEBC18 /* StripePaymentSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E8DA338C2B4BC2D900CEBC18 /* StripePaymentSheet */; };
+		E8DA338F2B4BC2D900CEBC18 /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = E8DA338E2B4BC2D900CEBC18 /* StripePaymentsUI */; };
 		E8E57A622A08D077000F452F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A612A08D077000F452F /* SearchBarView.swift */; };
 		E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A632A08D68A000F452F /* CustomNavigationBarView.swift */; };
 		E8E57A662A08D907000F452F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E57A652A08D907000F452F /* HomeView.swift */; };
@@ -134,6 +139,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E803DD4D2B15B0AD001B4963 /* StripePaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripePaymentViewModel.swift; sourceTree = "<group>"; };
 		E8064FDB29F9A261000A3D3F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E8064FDD29F9A939000A3D3F /* SettingMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuItem.swift; sourceTree = "<group>"; };
 		E809304B29DDC21C003BFEFE /* The Favour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Favour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,13 +261,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DA338D2B4BC2D900CEBC18 /* StripePaymentSheet in Frameworks */,
+				E8DA338B2B4BC2D900CEBC18 /* StripeApplePay in Frameworks */,
 				E83131C72A4A048B005D80C0 /* FirebaseAnalytics in Frameworks */,
 				E8A5E18729F966CC0077E2F0 /* DPOTPView in Frameworks */,
 				E8A2B0A82A056C4500D7F524 /* SwiftUITooltip in Frameworks */,
 				E83131CD2A4A048B005D80C0 /* FirebaseFirestore in Frameworks */,
 				E8FB17CA2A1E3A610013C18E /* KeychainSwift in Frameworks */,
 				E8A89E6B2A61251A006DF4AE /* GoogleSignInSwift in Frameworks */,
+				E8DA338F2B4BC2D900CEBC18 /* StripePaymentsUI in Frameworks */,
 				E8A89E692A61251A006DF4AE /* GoogleSignIn in Frameworks */,
+				E8DA33892B4BC2D900CEBC18 /* Stripe in Frameworks */,
 				E8595A4A29FAAC2100CF9302 /* HalfASheet in Frameworks */,
 				E8503F942A0B68B900451ABE /* SwiftUIX in Frameworks */,
 				E83131CB2A4A048B005D80C0 /* FirebaseCrashlytics in Frameworks */,
@@ -274,6 +284,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E803DD4C2B15B080001B4963 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				E803DD4D2B15B0AD001B4963 /* StripePaymentViewModel.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
 		E8064FD929F9A23C000A3D3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +643,7 @@
 		E894EE9629E025A600837AFD /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				E803DD4C2B15B080001B4963 /* Payments */,
 				E83131B42A47FD4D005D80C0 /* Favor */,
 				E8FB17CD2A1E3AF70013C18E /* Auth */,
 			);
@@ -784,6 +803,10 @@
 				E83131CE2A4A048B005D80C0 /* FirebaseMessaging */,
 				E8A89E682A61251A006DF4AE /* GoogleSignIn */,
 				E8A89E6A2A61251A006DF4AE /* GoogleSignInSwift */,
+				E8DA33882B4BC2D900CEBC18 /* Stripe */,
+				E8DA338A2B4BC2D900CEBC18 /* StripeApplePay */,
+				E8DA338C2B4BC2D900CEBC18 /* StripePaymentSheet */,
+				E8DA338E2B4BC2D900CEBC18 /* StripePaymentsUI */,
 			);
 			productName = "The Favour";
 			productReference = E809304B29DDC21C003BFEFE /* The Favour.app */;
@@ -822,6 +845,7 @@
 				E83131B12A47F6D2005D80C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				E83131C52A4A048B005D80C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E8A89E672A61251A006DF4AE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E8DA33872B4BC2D900CEBC18 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
 			);
 			productRefGroup = E809304C29DDC21C003BFEFE /* Products */;
 			projectDirPath = "";
@@ -921,6 +945,7 @@
 				E8EDC60B2A0A6F5C00E20378 /* NavigationBarView.swift in Sources */,
 				E8BF4AB129EC55C4005A56BB /* SocialIconView.swift in Sources */,
 				E853CAA729EC126F00021DCB /* FavorButton.swift in Sources */,
+				E803DD4E2B15B0AD001B4963 /* StripePaymentViewModel.swift in Sources */,
 				E8FB17C72A1E398C0013C18E /* KeychainManager.swift in Sources */,
 				E8E57A642A08D68A000F452F /* CustomNavigationBarView.swift in Sources */,
 				E8A2B0992A050A2600D7F524 /* ServicesView.swift in Sources */,
@@ -1085,10 +1110,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
-				DEVELOPMENT_TEAM = H98W7T82D5;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H98W7T82D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Favour-Info.plist";
@@ -1108,6 +1135,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.the.app.favor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = production;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1124,10 +1152,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "The Favour/The Favour.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"The Favour/Preview Content\"";
-				DEVELOPMENT_TEAM = H98W7T82D5;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H98W7T82D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Favour-Info.plist";
@@ -1147,6 +1177,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.the.app.favor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = production;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1236,6 +1267,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		E8DA33872B4BC2D900CEBC18 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.20.0;
+			};
+		};
 		E8FB17C82A1E3A610013C18E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -1306,6 +1345,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8A89E672A61251A006DF4AE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		E8DA33882B4BC2D900CEBC18 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DA33872B4BC2D900CEBC18 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = Stripe;
+		};
+		E8DA338A2B4BC2D900CEBC18 /* StripeApplePay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DA33872B4BC2D900CEBC18 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripeApplePay;
+		};
+		E8DA338C2B4BC2D900CEBC18 /* StripePaymentSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DA33872B4BC2D900CEBC18 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripePaymentSheet;
+		};
+		E8DA338E2B4BC2D900CEBC18 /* StripePaymentsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8DA33872B4BC2D900CEBC18 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripePaymentsUI;
 		};
 		E8FB17C92A1E3A610013C18E /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -27,8 +27,9 @@ struct LoginView: View {
         VStack(alignment: .leading, spacing: 8) {
             Group {
                 NavigationLink(destination: ForgotPasswordView(), isActive: $isShowingForgotPasswordView) { EmptyView() }
-                NavigationLink(destination: MainTabView(), isActive: $viewModel.showMainTabView) { EmptyView() }
+//                NavigationLink(destination: MainTabView(), isActive: $viewModel.showMainTabView) { EmptyView() }
                 NavigationLink(destination: MainView(new_register: false), isActive: $isShowingSignupView) { EmptyView() }
+                NavigationLink(destination: CheckoutView(), isActive: $viewModel.showMainTabView) { EmptyView() }
 
             }
             NavigationBarView(text: "")

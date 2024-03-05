@@ -17,6 +17,7 @@ struct PostFavorView: View {
     @StateObject private var viewModel: FavorViewModel = FavorViewModel()
     @State private var showPicker = false
     @FocusState private var isPickerFocused: Bool
+    @StateObject private var locationManager = LocationManager()
 
     var body: some View {
         
@@ -25,46 +26,40 @@ struct PostFavorView: View {
             NavigationBarView(text: "Post a favor")
                 .padding(.bottom, 24)
             ScrollView {
-                
-//                ZStack {
-//                    RoundedRectangle(cornerRadius: 12)
-//                        .foregroundColor(.appTextFieldColor)
-//                        .border(.appWhite, width: 1, cornerRadius: 12)
-//                    HStack {
-//
-//                        TextFieldWithInputView(data: viewModel.services, placeholder: "Select Service", selectedData: $viewModel.selectedService)
-//
-//
-//                            .foregroundColor(.appBlack)
-//                            .font(.localizedFont(fontType: .regular, fontSize: 14))
-//                        Image("down")
-//                    }
-//                    .padding(.horizontal)
-//                }
-//                .frame(height: 60)
-                
-                
-                
-                
-                
                 VStack(alignment: .leading) {
-                    
-                    FavorTextField(placeholder: "Select Service", leftImage: nil, rightImage: "down", text: $viewModel.service) {
-                        showPicker = true
-                    }
-                    if showPicker {
-                        Picker(selection: $viewModel.service, label: Text("")) {
-                            ForEach(viewModel.serviceName, id: \.self) { country in
-                                Text(country).tag(country)
-                            }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundColor(.appTextFieldColor)
+                            .frame(height: 60)
+                            .border(.appWhite, width: 1, cornerRadius: 12)
+                        
+                        HStack {
+                            FavorText(text: viewModel.service == "" ? "Select Service" : viewModel.service, textColor: .appBlack, fontType: .regular, fontSize: 14, alignment: .leading, lineSpace: 0)
+                                .padding()
+                            Spacer()
+                            Menu(content: {
+                                if let services =  viewModel.services {
+                                    ForEach(services) { item in
+                                        Button(action: {
+                                            viewModel.selectedService = item
+                                            viewModel.service = item.name ?? ""
+                                        }) {
+                                            Text(item.name ?? "")
+                                        }
+                                    }
+                                }
+                                
+                            }, label: {
+                                Image("down")
+                                    .resizable()
+                                    .frame(maxWidth:12, maxHeight: 12)
+                                
+                            })
+                            
                         }
-                        .pickerStyle(InlinePickerStyle())
-                        .focused($isPickerFocused) // Bind picker's focus to the focus state
-                        .onChange(of: viewModel.service) { _ in
-                            showPicker = false // Dismiss the picker after selection
-                        }
-                    }
+                        .padding(.trailing, 12)
 
+                    }
                     
                     
                     FavorTextField(placeholder: "Title", leftImage: nil, rightImage: nil, text: $viewModel.title)
@@ -106,7 +101,10 @@ struct PostFavorView: View {
                 }
                 FavorButton(text: "Post", width: .infinity, height: 60, bgColor: .appPrimaryColor) {
                     if let image = selectedImage {
-                        viewModel.postFavor(image)
+                        if let location = locationManager.currentLocation {
+                            //lat: "31.417947", lng: "74.257103"
+                            viewModel.postFavor(image: image, lat: String(location.coordinate.latitude), lng: String(location.coordinate.longitude), address: locationManager.currentAddress)
+                        }
                     }
 
                     //viewModel.postFavor()
@@ -122,7 +120,11 @@ struct PostFavorView: View {
             ImagePickerView(selectedImage: $selectedImage)
         }
         .onAppear {
+            locationManager.startUpdatingLocation()
             viewModel.getService()
+        }
+        .onDisappear {
+            locationManager.stopUpdatingLocation()
         }
         .alert(isPresented: $viewModel.isAlertShow, content: {
             Alert(title: Text("Alert"),
@@ -138,63 +140,6 @@ struct PostFavorView: View {
 struct PostFavorView_Previews: PreviewProvider {
     static var previews: some View {
         PostFavorView()
-    }
-}
-struct TextFieldWithInputView : UIViewRepresentable {
-    var data : [ServiceModelData]?
-    var placeholder : String
-
-    @Binding var selectedData : ServiceModelData?
-
-    private let textField = UITextField()
-    private let picker = UIPickerView()
-    
-
-    func makeCoordinator() -> TextFieldWithInputView.Coordinator {
-        Coordinator(textfield: self)
-    }
-
-    func makeUIView(context: UIViewRepresentableContext<TextFieldWithInputView>) -> UITextField {
-        picker.delegate = context.coordinator
-        picker.dataSource = context.coordinator
-        picker.backgroundColor = .gray
-        picker.tintColor = .black
-        textField.placeholder = placeholder
-        textField.inputView = picker
-        textField.delegate = context.coordinator
-        return textField
-    }
-
-    func updateUIView(_ uiView: UITextField, context: UIViewRepresentableContext<TextFieldWithInputView>) {
-       // uiView.text = selectedText
-    }
-
-    class Coordinator: NSObject, UIPickerViewDataSource, UIPickerViewDelegate , UITextFieldDelegate {
-
-        private let parent : TextFieldWithInputView
-
-        init(textfield : TextFieldWithInputView) {
-            self.parent = textfield
-        }
-
-        func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 1
-        }
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return self.parent.data?.count ?? 0
-        }
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return self.parent.data?[row].name
-        }
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//            self.parent.$selectionIndex.wrappedValue = row
-            self.parent.selectedData = self.parent.data?[row]
-            self.parent.textField.endEditing(true)
-
-        }
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            self.parent.textField.resignFirstResponder()
-        }
     }
 }
 struct TextViewWrapper: UIViewRepresentable {

@@ -13,11 +13,16 @@ struct ServiceModel: Decodable {
     let data: [ServiceModelData]?
 }
 
-struct ServiceModelData: Decodable {
+struct ServiceModelData: Decodable, Identifiable {
     let id: Int?
     let name: String?
     let color: String?
     let icon: String?
-    let active: String?
+    let active: Bool?
     let ispopular: Bool
+    
+    var uniqueID: Int {
+        id ?? 0 
+    }
+
 }

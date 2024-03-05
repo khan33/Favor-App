@@ -51,6 +51,10 @@ extension Endpoint {
         return Endpoint(path: NetworkConstants.socialLogin)
     }
     
+    static var payment_check_stripe: Self {
+        return Endpoint(path: NetworkConstants.payment_check_stripe)
+    }
+    
     static var logout: Self {
         return Endpoint(path: NetworkConstants.logout)
     }

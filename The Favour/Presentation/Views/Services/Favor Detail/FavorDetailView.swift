@@ -155,7 +155,7 @@ extension FavorDetailView {
     }
     
     @ViewBuilder private var favorHeaderInfo: some View {
-        FavorInfoView(image: favor_detail.media?[0].media_url ?? "", name: favor_detail.category ?? "", favTitle: favor_detail.title ?? "", rating: "4.8", totalReview: "| 8.889")
+        FavorInfoView(image: favor_detail.media?.count ?? 0 > 0 ?  favor_detail.media?[0].media_url ?? "" : "", name: favor_detail.category ?? "", favTitle: favor_detail.title ?? "", rating: "4.8", totalReview: "| 8.889")
         
         HStack {
             FavorButton(text: favor_detail.category ?? "", width: 90, height: 24, textColor: .appPrimaryColor, fontType: .regular, fontSize: 10,  bgColor: Color(red: 0.945, green: 0.906, blue: 1)) {

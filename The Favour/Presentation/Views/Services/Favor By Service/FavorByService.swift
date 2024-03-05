@@ -51,7 +51,7 @@ struct FavorByService: View {
 
 struct FavorByService_Previews: PreviewProvider {
     static var previews: some View {
-        var service: ServiceModelData = ServiceModelData(id: 1, name: "Cleaning", color: nil, icon: nil, active: "", ispopular: true)
+        var service: ServiceModelData = ServiceModelData(id: 1, name: "Cleaning", color: nil, icon: nil, active: false, ispopular: true)
         FavorByService(service: service)
     }
 }

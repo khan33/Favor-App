@@ -24,6 +24,7 @@ protocol AthenticationManagerProtocol: AnyObject {
     
     func updateAttachmentFiles(params: [String: String]?, files: [Media]) -> AnyPublisher<LoginModel, Error>
 
+    func stripePayment(booking_id: String, paymentMethodId: String) -> AnyPublisher<StripePaymentResult, Error>
 
     
 }
@@ -38,7 +39,7 @@ final class AthenticationManager: AthenticationManagerProtocol {
     
     func login(email: String, password: String) -> AnyPublisher<LoginModel, Error> {
         let endPoint = Endpoint.login
-        let params = ["email": email, "password": password]
+        let params = ["email": email, "password": password, "fcm_token": "abdddsad"]
         return networkManager.request(type: LoginModel.self, url: endPoint.url, httpMethod: .POST, headers: endPoint.headers, parameters: params)
     }
     
@@ -112,6 +113,16 @@ final class AthenticationManager: AthenticationManagerProtocol {
 
         return networkManager.mutlipartResuest(type: LoginModel.self, url: endPoint.url, headers: endPoint.headers, parameters: params, media: files)
     }
+    
+    func stripePayment(booking_id: String, paymentMethodId: String) -> AnyPublisher<StripePaymentResult, Error> {
+        let endPoint = Endpoint.payment_check_stripe
+        let params = [
+            "booking_id": booking_id,
+            "paymentMethodId": paymentMethodId
+        ]
+        return networkManager.request(type: StripePaymentResult.self, url: endPoint.url, httpMethod: .POST, headers: endPoint.headers, parameters: params)
+    }
+
 
     
 }

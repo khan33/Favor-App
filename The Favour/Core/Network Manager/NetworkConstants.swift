@@ -9,8 +9,9 @@ import Foundation
 
 struct NetworkConstants {
     static let scheme = "https"
-    static let host = "favorapp.mymobilecompare.co.uk"
-    static let path = "/public/api/v1/"
+    static let host = "aalphahub.com"
+//https:aalphahub.com/favorapp/public/api/v1
+    static let path = "/favorapp/public/api/v1/"
     
     static let loginService = "login"
     static let register = "register"
@@ -18,7 +19,7 @@ struct NetworkConstants {
     static let logout = "logout"
     static let resetPassword = "reset-password"
     static let forgotPassword = "forget-password"
-    
+    static let payment_check_stripe = "payment_check_stripe"
     
     
     static let getFavor = "favors"

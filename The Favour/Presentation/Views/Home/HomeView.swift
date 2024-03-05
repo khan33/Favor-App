@@ -78,7 +78,7 @@ struct HomeView: View {
                                     .padding(.horizontal, 8)
                             } else {
                                 ForEach(favor.indices.prefix(6), id: \.self) { index in
-                                    FavorListView(image: favor[index].media?[0].media_url ?? "", name: favor[index].category ?? "Cleaning", favTitle: favor[index].title ?? "", rating: "4.8", totalReview: "8.889 reviews") {
+                                    FavorListView(image: favor[index].media?.count ?? 0 > 0 ? favor[index].media?[0].media_url ?? "" : "", name: favor[index].category ?? "Cleaning", favTitle: favor[index].title ?? "", rating: "4.8", totalReview: "8.889 reviews") {
                                         favor_detail = favor[index]
                                         favorDetail.toggle()
                                     }

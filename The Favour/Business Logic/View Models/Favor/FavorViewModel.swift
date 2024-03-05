@@ -123,7 +123,7 @@ final class FavorViewModel: ObservableObject {
                     self?.services?.sort{ $0.id ?? 0 < $1.id ?? 0 }
                     
                     self?.popularServices = self?.services?.filter { $0.ispopular == true }
-                    self?.popularServices?.insert(ServiceModelData(id: 0, name: "All", color: "", icon: "", active: "", ispopular: true), at: 0)
+                    self?.popularServices?.insert(ServiceModelData(id: 0, name: "All", color: "", icon: "", active: false, ispopular: true), at: 0)
 
                 }
                 print(model)
@@ -155,8 +155,6 @@ final class FavorViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] model in
                 if model.error == false {
-                    
-                    
                     if let services = model.data {
                         self?.services = services
                         for item in services {
@@ -170,11 +168,11 @@ final class FavorViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func postFavor(_ image: UIImage) {
+    func postFavor(image: UIImage, lat: String, lng: String, address: String) {
         if validateInputs() {
             shouldShowLoader = true
             let category_id = self.selectedService?.id ?? 0
-            let favor = Favor(title: title, tags: tags, category_id: String(category_id), revisions: "3", total_price: "1000", status: "published", description: desc, meta_data: desc, lat: "31.417947", lng: "74.257103", address: "Lahore", search_tags: tags, favor_id: nil, icon: "")
+            let favor = Favor(title: title, tags: tags, category_id: String(category_id), revisions: "3", total_price: "1000", status: "published", description: desc, meta_data: desc, lat: lat, lng: lng, address: address, search_tags: tags, favor_id: nil, icon: "")
             guard let mediaImage = Media(withImage: image, forKey: "icon") else { return }
             favorManager.favorPost(favor: favor, media: [mediaImage])
                 .sink { [weak self] completion in
